@@ -6,8 +6,8 @@ import DragItem from "../dragItem/dragItem.component";
 import { rotate } from "@/lib";
 import "./dragContainer.styles.scss";
 
-
-const DragContainer = () => {
+const DragContainer = ({ params }: { params: ItemParticle[] }) => {
+  console.log("params: ", params);
   const [array, setArray] = React.useState<ItemParticle[] | null>([]);
   const [targetElementId, setTargetElementId] = React.useState<null | string>();
   const [dragging, setDragging] = React.useState<HTMLElement | null>(null);
@@ -16,18 +16,7 @@ const DragContainer = () => {
   // const router = useRouter();
 
   useEffect(() => {
-    const characters:ItemParticle[] = [
-      {
-        id: 1,
-        character: "お",
-        tags: "",
-      },
-      {
-        id: 2,
-        character: "を",
-        tags: "",
-      },
-    ];
+    const characters: ItemParticle[] = params;
     setArray(characters);
   }, []);
 
@@ -97,24 +86,27 @@ const DragContainer = () => {
       {array &&
         array.map((item) => {
           return (
-            <li
-              key={item.id}
-              className="dragListItem"
-              onDragEnd={(ev) => {
-                handleDragLeave(ev);
-              }}
-              onDrop={(ev) => {
-                handleDragDrop(ev);
-              }}
-            >
-              {/* <Link
+            item && (
+              <li
+                // attention
+                key={item.id}
+                className="dragListItem"
+                onDragEnd={(ev) => {
+                  handleDragLeave(ev);
+                }}
+                onDrop={(ev) => {
+                  handleDragDrop(ev);
+                }}
+              >
+                {/* <Link
                 to={`/histories/${item.id}`}
                 style={{ textDecoration: "none" }}
               >
                 <DragItem {...dragItemProps}>{item}</DragItem>
               </Link> */}
-              <DragItem {...dragItemProps}>{item}</DragItem>
-            </li>
+                <DragItem {...dragItemProps}>{item}</DragItem>
+              </li>
+            )
           );
         })}
     </div>

@@ -6,6 +6,8 @@ import "./dragItem.styles.scss";
 const DragItem = (props: DragItemProps) => {
   const { children, dragging, handleDragEnter, handleDragStart, isDragging } =
     props;
+  
+  console.log("dragging: ", props)
 
   const dragItemRef = React.useRef(null);
 
