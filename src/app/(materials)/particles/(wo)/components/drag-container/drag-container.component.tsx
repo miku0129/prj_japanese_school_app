@@ -4,6 +4,7 @@ import React, { DragEvent, useRef, useEffect } from "react";
 import Image from "next/image";
 import img_o from "../../public/images/img_o.png";
 import img_wo from "../../public/images/img_wo.png";
+import styles from "./drag-container.style.module.scss";
 
 export default function DragContainer() {
   const containerRef1 = useRef<HTMLInputElement>(null);
@@ -26,60 +27,76 @@ export default function DragContainer() {
     ev.dataTransfer.setData("text", ev.target.id);
   };
 
-  function drop1(ev: DragEvent<HTMLDivElement>) {
+  function drop(id: number, ev: DragEvent<HTMLDivElement>) {
     ev.preventDefault();
-    console.log("dropped1");
-
     const data = ev.dataTransfer.getData("text");
-    containerRef1.current!.appendChild(document.getElementById(data)!);
+    if (id === 1) {
+      containerRef1.current!.appendChild(document.getElementById(data)!);
+    } else if (id === 2) {
+      containerRef2.current!.appendChild(document.getElementById(data)!);
+    } else if (id === 3) {
+      containerRef3.current!.appendChild(document.getElementById(data)!);
+    }
   }
-  function drop2(ev: DragEvent<HTMLDivElement>) {
-    ev.preventDefault();
-    console.log("dropped2");
-
-    const data = ev.dataTransfer.getData("text");
-    containerRef2.current!.appendChild(document.getElementById(data)!);
-  }
-  function drop3(ev: DragEvent<HTMLDivElement>) {
-    ev.preventDefault();
-    console.log("dropped2");
-
-    const data = ev.dataTransfer.getData("text");
-    containerRef3.current!.appendChild(document.getElementById(data)!);
-  }
-
 
   return (
-    <div>
-      <p>Drag image into the rectangle:</p>
+    <div className={styles.dragContainerBase}>
+      <div className={`${styles.phrase} ${styles.asking}`}>
+        <p>ど</p>
+        <p>の</p>
+        <p>ひ</p>
+        <p>ら</p>
+        <p>が</p>
+        <p>な</p>
+        <p>が</p>
+        <p>正</p>
+        <p>し</p>
+        <p>い</p>
+        <p>か</p>
+        <p>な</p>
+        <p>？</p>
+      </div>
 
-      <div
-        id="div1"
-        onDrop={(ev) => {
-          drop1(ev);
-        }}
-        onDragOver={(ev) => allowDrop(ev)}
-        className="drag-container"
-        ref={containerRef1}
-      ></div>
-      <div
-        id="div2"
-        onDrop={(ev) => {
-          drop2(ev);
-        }}
-        onDragOver={(ev) => allowDrop(ev)}
-        className="drag-container"
-        ref={containerRef2}
-      ></div>
-      <div
-        id="div3"
-        onDrop={(ev) => {
-          drop3(ev);
-        }}
-        onDragOver={(ev) => allowDrop(ev)}
-        className="drag-container"
-        ref={containerRef3}
-      ></div>
+      <div className={styles.choises}>
+        <div
+          id="div1"
+          onDrop={(ev) => {
+            drop(1, ev);
+          }}
+          onDragOver={(ev) => allowDrop(ev)}
+          className={styles.dragContainer}
+          ref={containerRef1}
+        ></div>
+        <div
+          id="div2"
+          onDrop={(ev) => {
+            drop(2, ev);
+          }}
+          onDragOver={(ev) => allowDrop(ev)}
+          className={styles.dragContainer}
+          ref={containerRef2}
+        ></div>
+      </div>
+
+      <div className={styles.phrase}>
+        <p>お</p>
+        <p>に</p>
+        <p>ぎ</p>
+        <p>り</p>
+        <p> </p>
+        <div
+          id="div3"
+          onDrop={(ev) => {
+            drop(3, ev);
+          }}
+          onDragOver={(ev) => allowDrop(ev)}
+          className={styles.dragContainer}
+          ref={containerRef3}
+        ></div>
+        <p>た</p>
+        <p>べ</p>
+        <p>る</p>
+      </div>
 
       <Image
         id="o"
@@ -106,14 +123,7 @@ export default function DragContainer() {
         style={{ border: "solid 3px red" }}
       />
 
-      <style jsx>{`
-        .drag-container {
-          width: 70px;
-          height: 70px;
-          padding: 10px;
-          border: 1px solid #aaaaaa;
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </div>
   );
 }
