@@ -1,0 +1,23 @@
+.dragItem {
+    padding: 10px;
+    background-color: gainsboro;
+    width: 40vw;
+    border: solid gray 1px;
+    cursor: pointer;
+    &:hover {
+      background-color: palegoldenrod;
+    }
+  }
+  
+  .placeHolder {
+    background-color: white;
+  }
+  
+  .tag {
+    border: solid white 1px;
+    margin-right: 5px;
+  }
+  
+  .drag-item-font {
+    color: white;
+  }
