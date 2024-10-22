@@ -1,0 +1,14 @@
+.resultContainerBase {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.phrase {
+  grid-area: 2 / 3 / 5 / 4;
+}
+.btn {
+  grid-area: 5 / 2 / 6 / 3;
+}

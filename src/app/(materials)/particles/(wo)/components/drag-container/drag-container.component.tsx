@@ -6,7 +6,11 @@ import Image from "next/image";
 import img_o from "../../public/images/img_o.png";
 import img_wo from "../../public/images/img_wo.png";
 import styles from "./drag-container.style.module.scss";
-import { CustomPhraseStyle, CustomPhraseMarginLeftStyle } from "@/styles/styled-components/page";
+import {
+  CustomPhraseStyle,
+  CustomBtnContainerStyle,
+  CustomIconBtnStyle,
+} from "@/styles/styled-components/page";
 
 export default function DragContainer() {
   const containerRef1 = useRef<HTMLInputElement>(null);
@@ -46,18 +50,21 @@ export default function DragContainer() {
 
   function getResult() {
     const data = document.getElementById("div3");
-    const answer = data!.getElementsByTagName("img")[0].id;
-    // console.log("any", any?.getElementsByTagName("img")[0].id)
-    if (answer === correct_answer) {
-      router.push("/pass");
+    if (data!.getElementsByTagName("img").length === 0) {
+      window.alert("ひらがなをえらんでね");
     } else {
-      router.push("/fail");
+      const answer = data!.getElementsByTagName("img")[0].id;
+      if (answer === correct_answer) {
+        router.push("/pass");
+      } else {
+        router.push("/fail");
+      }
     }
   }
 
   return (
     <div className={styles.dragContainerBase}>
-      <CustomPhraseMarginLeftStyle>
+      <CustomPhraseStyle className={styles.phrase}>
         <p>ど</p>
         <p>の</p>
         <p>ひ</p>
@@ -71,7 +78,7 @@ export default function DragContainer() {
         <p>か</p>
         <p>な</p>
         <p>？</p>
-      </CustomPhraseMarginLeftStyle>
+      </CustomPhraseStyle>
 
       <div className={styles.choises}>
         <div
@@ -139,11 +146,11 @@ export default function DragContainer() {
         style={{ border: "solid 3px red" }}
       />
 
-      <div className={styles.btnContainer}>
-        <button className={styles.btnAnswer} onClick={getResult}>
-          こたえ
-        </button>
-      </div>
+      <CustomBtnContainerStyle onClick={getResult}>
+        <CustomIconBtnStyle>
+          <i className="fa-solid fa-arrow-left"></i>
+        </CustomIconBtnStyle>
+      </CustomBtnContainerStyle>
     </div>
   );
 }
