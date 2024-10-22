@@ -1,11 +1,13 @@
+"use client";
+
 import {
   CustomBtnContainerStyle,
   CustomShowResultStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
-import styles from "./page.module.scss";
+import styles from "./pass.module.scss";
 
-export default function Page() {
+export default function Pass() {
   return (
     <div className={styles.resultContainerBase}>
       <CustomShowResultStyle background="lightgreen" className={styles.phrase}>

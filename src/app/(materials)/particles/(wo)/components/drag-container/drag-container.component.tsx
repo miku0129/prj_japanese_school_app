@@ -54,11 +54,7 @@ export default function DragContainer() {
       window.alert("ひらがなをえらんでね");
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
-      if (answer === correct_answer) {
-        router.push("/pass");
-      } else {
-        router.push("/fail");
-      }
+      router.push(`/particles/result/?params=${correct_answer === answer}`);
     }
   }
 

@@ -1,11 +1,15 @@
+"use client"
+
+import { useRouter } from "next/navigation";
 import {
   CustomBtnContainerStyle,
   CustomShowResultStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
-import styles from "./page.module.scss";
+import styles from "./fail.module.scss";
 
-export default function Page() {
+export default function Fail() {
+  const router = useRouter();
   return (
     <div className={styles.resultContainerBase}>
       <CustomShowResultStyle background="coral" className={styles.phrase}>
@@ -15,8 +19,8 @@ export default function Page() {
         <p>👻</p>
       </CustomShowResultStyle>
       <CustomBtnContainerStyle className={styles.btn}>
-        <CustomIconBtnStyle>
-        <i className="fa-solid fa-rotate-right"></i>
+        <CustomIconBtnStyle onClick={() => router.back()}>
+          <i className="fa-solid fa-rotate-right"></i>
         </CustomIconBtnStyle>
       </CustomBtnContainerStyle>
     </div>
