@@ -1,15 +1,20 @@
 "use client";
 
 import React, { DragEvent, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import img_o from "../../public/images/img_o.png";
 import img_wo from "../../public/images/img_wo.png";
 import styles from "./drag-container.style.module.scss";
+import { CustomPhraseStyle, CustomPhraseMarginLeftStyle } from "@/styles/styled-components/page";
 
 export default function DragContainer() {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);
+
+  const router = useRouter();
+  const correct_answer = "wo";
 
   useEffect(() => {
     containerRef1.current!.appendChild(document.getElementById("wo")!);
@@ -39,9 +44,20 @@ export default function DragContainer() {
     }
   }
 
+  function getResult() {
+    const data = document.getElementById("div3");
+    const answer = data!.getElementsByTagName("img")[0].id;
+    // console.log("any", any?.getElementsByTagName("img")[0].id)
+    if (answer === correct_answer) {
+      router.push("/pass");
+    } else {
+      router.push("/fail");
+    }
+  }
+
   return (
     <div className={styles.dragContainerBase}>
-      <div className={`${styles.phrase} ${styles.asking}`}>
+      <CustomPhraseMarginLeftStyle>
         <p>ど</p>
         <p>の</p>
         <p>ひ</p>
@@ -55,7 +71,7 @@ export default function DragContainer() {
         <p>か</p>
         <p>な</p>
         <p>？</p>
-      </div>
+      </CustomPhraseMarginLeftStyle>
 
       <div className={styles.choises}>
         <div
@@ -78,7 +94,7 @@ export default function DragContainer() {
         ></div>
       </div>
 
-      <div className={styles.phrase}>
+      <CustomPhraseStyle>
         <p>お</p>
         <p>に</p>
         <p>ぎ</p>
@@ -96,7 +112,7 @@ export default function DragContainer() {
         <p>た</p>
         <p>べ</p>
         <p>る</p>
-      </div>
+      </CustomPhraseStyle>
 
       <Image
         id="o"
@@ -123,7 +139,11 @@ export default function DragContainer() {
         style={{ border: "solid 3px red" }}
       />
 
-      <style jsx>{``}</style>
+      <div className={styles.btnContainer}>
+        <button className={styles.btnAnswer} onClick={getResult}>
+          こたえ
+        </button>
+      </div>
     </div>
   );
 }

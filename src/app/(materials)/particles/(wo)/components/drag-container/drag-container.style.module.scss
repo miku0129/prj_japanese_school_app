@@ -11,16 +11,16 @@
   padding: 10px;
   border: 1px solid #aaaaaa;
 }
-.phrase {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  p {
-    font-size: 1.3em;
-    max-height: 0.1em;
-    text-align: center;
-  }
-}
+// .phrase {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   p {
+//     font-size: 1.3em;
+//     max-height: 0.1em;
+//     text-align: center;
+//   }
+// }
 .asking {
   margin-left: 5rem;
 }
@@ -28,4 +28,12 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.btnAnswer {
+  height: 10vh;
 }
