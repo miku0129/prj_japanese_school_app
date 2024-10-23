@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomIconBtnStyle } from "@/styles/styled-components/page";
 import { useRouter } from "next/navigation";
 
 export default function DragContainerBtn({
@@ -8,5 +9,9 @@ export default function DragContainerBtn({
   params: ItemParticle;
 }) {
   const router = useRouter();
-  return <button onClick={() => router.push(`/particles/${item.id}`)}>{item.id}</button>;
+  return (
+    <CustomIconBtnStyle onClick={() => router.push(`/particles/${item.id}`)}>
+      <i className="fa-solid fa-backward-step"></i>
+    </CustomIconBtnStyle>
+  );
 }

@@ -3,28 +3,31 @@
 import { useParams, useRouter } from "next/navigation";
 import {
   CustomBtnContainerStyle,
-  CustomShowResultStyle,
+  CustomColoredPhraseStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 import styles from "./pass.module.scss";
-import { DATA } from "@/app/(materials)/particles/(wo)/page";
+import { DATA } from "@/app/(materials)/particles/(wo)/data";
 
 export default function Pass() {
   const params = useParams<{ tag: string; id: string }>();
   const router = useRouter();
   const getMessage = () => {
-    window.alert("💯クリアおめでとう！")
-    router.push('/particles')
-  }
+    window.alert("💯クリアおめでとう！");
+    router.push("/particles");
+  };
 
   return (
     <div className={styles.resultContainerBase}>
-      <CustomShowResultStyle background="lightgreen" className={styles.phrase}>
+      <CustomColoredPhraseStyle
+        background="lightgreen"
+        className={styles.phrase}
+      >
         <p>あ</p>
         <p>た</p>
         <p>り</p>
         <p>🎉</p>
-      </CustomShowResultStyle>
+      </CustomColoredPhraseStyle>
       <CustomBtnContainerStyle className={styles.btn}>
         {DATA[DATA.length - 1].id > Number(params.id) && (
           <CustomIconBtnStyle
@@ -34,9 +37,7 @@ export default function Pass() {
           </CustomIconBtnStyle>
         )}
         {DATA[DATA.length - 1].id === Number(params.id) && (
-          <CustomIconBtnStyle
-            onClick={getMessage}
-          >
+          <CustomIconBtnStyle onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink"></i>
           </CustomIconBtnStyle>
         )}

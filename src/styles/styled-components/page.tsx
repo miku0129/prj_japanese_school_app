@@ -20,11 +20,11 @@ export const CustomPhraseStyle = styled.div`
   }
 `;
 
-export const CustomShowResultStyle = styled.div<{
+export const CustomColoredPhraseStyle = styled.div<{
   background: string;
 }>`
   ${(props) => `background-color: ${props.background}`};
-  height: 25rem;
+  height: 30rem;
   width: 10rem;
   overflow-x: hidden;
   overflow-y: hidden;

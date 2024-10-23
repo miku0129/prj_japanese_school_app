@@ -1,62 +1,36 @@
 import DragContainerBtn from "./components/drag-container-btn/drag-container-btn.component";
-
-export const DATA = [
-  {
-    id: 1,
-    phrase_front: "おにぎり",
-    phrase_back: "たべる",
-    choices: [
-      {
-        id: 1,
-        character: "お",
-        pron: "o",
-        props: "solid 3px blue",
-        image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-      },
-      {
-        id: 2,
-        character: "を",
-        pron: "wo",
-        props: "solid 3px red",
-        image: "https://i.ibb.co/Gnyk250/img-wo.png",
-      },
-    ],
-    character: "wo",
-  },
-  {
-    id: 2,
-    phrase_front: "いもうと",
-    phrase_back: "よぶ",
-    choices: [
-      {
-        id: 1,
-        character: "を",
-        pron: "wo",
-        props: "solid 3px red",
-        image: "https://i.ibb.co/Gnyk250/img-wo.png",
-      },
-      {
-        id: 2,
-        character: "お",
-        pron: "o",
-        props: "solid 3px blue",
-        image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-      },
-    ],
-    character: "wo",
-  },
-];
+import styles from "./page.module.scss";
+import { DATA } from "./data";
+import {
+  CustomBtnContainerStyle,
+  CustomColoredPhraseStyle,
+} from "@/styles/styled-components/page";
 
 export default function Page() {
   return (
-    <div>
-      {DATA.map((item: ItemParticle) => {
+    <div className={styles.pageContainerBase}>
+      {/* {DATA.map((item: ItemParticle) => {
         return (
           <div key={item.id}>
             <DragContainerBtn params={item} />
           </div>
         );
-      })}
+      })} */}
+      <CustomColoredPhraseStyle background="yellow" className={styles.phrase}>
+        {" "}
+        <p>こ</p>
+        <p>と</p>
+        <p>ば</p>
+        <p>を</p>
+        <p>さ</p>
+        <p>が</p>
+        <p>そ</p>
+        <p>う</p>
+        <p>🔍</p>
+      </CustomColoredPhraseStyle>
+      <CustomBtnContainerStyle className={styles.btn}>
+        <DragContainerBtn params={DATA[0]} />
+      </CustomBtnContainerStyle>
     </div>
   );
 }

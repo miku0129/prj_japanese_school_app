@@ -59,7 +59,9 @@ export default function DragContainer({
       window.alert("ひらがなをえらんでね");
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
-      router.push(`/particles/${item.id}/result/?params=${correct_answer === answer}`);
+      router.push(
+        `/particles/${item.id}/result/?params=${correct_answer === answer}`
+      );
     }
   }
 
