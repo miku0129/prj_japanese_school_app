@@ -10,10 +10,10 @@ interface SearchParams {
 }
 
 export default function Page({
-  params,
+  // params,
   searchParams,
 }: {
-  params: Params;
+  // params: Params;
   searchParams: SearchParams;
 }) {
   const result = searchParams.params === "true" ? true : false;
