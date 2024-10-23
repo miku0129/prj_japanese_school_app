@@ -1,6 +1,6 @@
 // Note: correct reordering algo
 export const rotate = (
-    array: Item[],
+    array: ItemParticle[],
     originIndex: number,
     targetIndex: number
   ) => {
