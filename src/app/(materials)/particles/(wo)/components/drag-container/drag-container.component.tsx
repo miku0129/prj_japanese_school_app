@@ -3,8 +3,6 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import img_o from "../../public/images/img_o.png";
-import img_wo from "../../public/images/img_wo.png";
 import styles from "./drag-container.style.module.scss";
 import {
   CustomPhraseStyle,
@@ -12,18 +10,26 @@ import {
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 
-export default function DragContainer() {
+export default function DragContainer({
+  params: item,
+}: {
+  params: ItemParticle;
+}) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);
 
   const router = useRouter();
-  const correct_answer = "wo";
+  const correct_answer = item.character;
 
   useEffect(() => {
-    containerRef1.current!.appendChild(document.getElementById("wo")!);
-    containerRef2.current!.appendChild(document.getElementById("o")!);
-  }, []);
+    containerRef1.current!.appendChild(
+      document.getElementById(item.choices[0].pron)!
+    );
+    containerRef2.current!.appendChild(
+      document.getElementById(item.choices[1].pron)!
+    );
+  }, [item.choices]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -32,7 +38,6 @@ export default function DragContainer() {
   const drag = (
     ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
   ) => {
-    console.log("dragged");
     ev.dataTransfer.setData("text", ev.target.id);
   };
 
@@ -54,7 +59,7 @@ export default function DragContainer() {
       window.alert("ひらがなをえらんでね");
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
-      router.push(`/particles/result/?params=${correct_answer === answer}`);
+      router.push(`/particles/${item.id}/result/?params=${correct_answer === answer}`);
     }
   }
 
@@ -98,10 +103,9 @@ export default function DragContainer() {
       </div>
 
       <CustomPhraseStyle>
-        <p>お</p>
-        <p>に</p>
-        <p>ぎ</p>
-        <p>り</p>
+        {item.phrase_front.split("").map((char: string, idx) => {
+          return <p key={idx}>{char}</p>;
+        })}
         <p> </p>
         <div
           id="div3"
@@ -112,14 +116,14 @@ export default function DragContainer() {
           className={styles.dragContainer}
           ref={containerRef3}
         ></div>
-        <p>た</p>
-        <p>べ</p>
-        <p>る</p>
+        {item.phrase_back.split("").map((char: string, idx) => {
+          return <p key={idx}>{char}</p>;
+        })}
       </CustomPhraseStyle>
 
       <Image
-        id="o"
-        src={img_o.src}
+        id={item.choices[0].pron}
+        src={item.choices[0].image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -127,11 +131,11 @@ export default function DragContainer() {
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: "solid 3px blue" }}
+        style={{ border: item.choices[0].props }}
       />
       <Image
-        id="wo"
-        src={img_wo.src}
+        id={item.choices[1].pron}
+        src={item.choices[1].image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -139,7 +143,7 @@ export default function DragContainer() {
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: "solid 3px red" }}
+        style={{ border: item.choices[1].props }}
       />
 
       <CustomBtnContainerStyle onClick={getResult}>

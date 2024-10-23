@@ -1,9 +1,24 @@
-interface Item {
+interface ItemSkeleton {
   id: number;
   character: string;
 }
 
-interface ItemParticle extends Item {
+interface ChoiceSkeleton {
+  id: number;
+  character: string;
+}
+
+interface ParticleChoice extends ChoiceSkeleton {
+  pron: string;
+  props: string;
+  image: string;
+}
+
+interface ItemParticle extends ItemSkeleton {
+  phrase_front: string;
+  phrase_back: string;
+  choices: ParticleChoice[];
+  character: string;
   tags?: string;
 }
 

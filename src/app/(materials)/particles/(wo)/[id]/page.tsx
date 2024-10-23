@@ -1,7 +1,12 @@
-export default function Page() {
-  return (
-    <div>
-      page
-    </div>
-  );
+import DragContainer from "../components/drag-container/drag-container.component";
+import { DATA } from "../page";
+
+export default function Page({ params }: { params: { id: string } }) {
+  const data = DATA.find((item) => {
+    const id: string = String(item.id);
+    return id === params.id;
+  });
+  if (data) {
+    return <div>{<DragContainer params={data} />}</div>;
+  }
 }
