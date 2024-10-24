@@ -13,8 +13,6 @@ import {
 import { polyfill } from "mobile-drag-drop";
 import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scroll-behaviour";
 
-// Webpackなどでcssを読み込めるようにしている場合
-// js内で読みこめない場合は普通にlinkタグで読み込んでください。
 import "mobile-drag-drop/default.css";
 
 export default function DragContainer({
@@ -60,7 +58,6 @@ export default function DragContainer({
   const drag = (
     ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
   ) => {
-    console.log("drag start ");
     ev.dataTransfer.effectAllowed = "move";
     ev.dataTransfer.setData("text", ev.target.id);
   };
