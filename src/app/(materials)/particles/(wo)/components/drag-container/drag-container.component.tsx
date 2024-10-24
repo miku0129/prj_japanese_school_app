@@ -38,6 +38,8 @@ export default function DragContainer({
   const drag = (
     ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
   ) => {
+    console.log("drag start ")
+    ev.dataTransfer.effectAllowed = "move";
     ev.dataTransfer.setData("text", ev.target.id);
   };
 
