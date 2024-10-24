@@ -13,8 +13,8 @@ export default function Pass() {
   const params = useParams<{ tag: string; id: string }>();
   const router = useRouter();
   const getMessage = () => {
-    // window.alert("💯クリアおめでとう！");
-    router.push("/particles");
+    window.alert("💯クリアおめでとう！");
+    router.push("/");
   };
 
   return (

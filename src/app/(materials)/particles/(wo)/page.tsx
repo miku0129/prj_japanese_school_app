@@ -9,15 +9,7 @@ import {
 export default function Page() {
   return (
     <div className={styles.pageContainerBase}>
-      {/* {DATA.map((item: ItemParticle) => {
-        return (
-          <div key={item.id}>
-            <DragContainerBtn params={item} />
-          </div>
-        );
-      })} */}
       <CustomColoredPhraseStyle background="yellow" className={styles.phrase}>
-        {" "}
         <p>こ</p>
         <p>と</p>
         <p>ば</p>

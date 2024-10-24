@@ -1,9 +1,9 @@
-// import styles from "./../styles/css-modules/page.module.css";
+import MenuBtn from "@/components/menu-btn/menu-btn.component";
 
 export default function Home() {
   return (
     <div>
-      hello next js
+      <MenuBtn params="/particles" />
     </div>
   );
 }
