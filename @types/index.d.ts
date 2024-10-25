@@ -1,6 +1,8 @@
 interface ItemSkeleton {
   id: number;
   character: string;
+  category: string;
+  subcategory: string;
 }
 
 interface ChoiceSkeleton {

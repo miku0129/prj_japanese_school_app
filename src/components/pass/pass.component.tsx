@@ -11,11 +11,17 @@ import { DATA } from "@/app/(materials)/particles/wo/beginners/data";
 
 export default function Pass() {
   const params = useParams<{ tag: string; id: string }>();
+
   const router = useRouter();
   const getMessage = () => {
     window.alert("💯クリアおめでとう！");
     router.push("/");
   };
+
+  const item = DATA.find((item) => {
+    const id: string = String(item.id);
+    return id === params.id;
+  });
 
   return (
     <div className={styles.resultContainerBase}>
@@ -31,7 +37,13 @@ export default function Pass() {
       <CustomBtnContainerStyle className={styles.btn}>
         {DATA[DATA.length - 1].id > Number(params.id) && (
           <CustomIconBtnStyle
-            onClick={() => router.push(`/particles/wo/beginners/${Number(params.id) + 1}`)}
+            onClick={() =>
+              router.push(
+                `/${item?.category}/${item?.character}/${item?.subcategory}/${
+                  Number(params.id) + 1
+                }`
+              )
+            }
           >
             <i className="fa-solid fa-check"></i>
           </CustomIconBtnStyle>
