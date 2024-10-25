@@ -1,4 +1,4 @@
-import DragContainer from "../components/drag-container/drag-container.component";
+import WoBeguinnerSect from "../components/wo-beguinner/wo-beguinner-sect.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -7,6 +7,6 @@ export default function Page({ params }: { params: { id: string } }) {
     return id === params.id;
   });
   if (data) {
-    return <div>{<DragContainer params={data} />}</div>;
+    return <div>{<WoBeguinnerSect params={data} />}</div>;
   }
 }

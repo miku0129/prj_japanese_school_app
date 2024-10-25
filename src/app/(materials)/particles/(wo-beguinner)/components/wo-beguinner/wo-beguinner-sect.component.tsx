@@ -3,7 +3,7 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "./drag-container.style.module.scss";
+import styles from "./wo-beguinner-sect.style.module.scss";
 import {
   CustomPhraseStyle,
   CustomBtnContainerStyle,
@@ -15,7 +15,7 @@ import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scro
 
 import "mobile-drag-drop/default.css";
 
-export default function DragContainer({
+export default function WoBeguinnerSect({
   params: item,
 }: {
   params: ItemParticle;
@@ -87,7 +87,7 @@ export default function DragContainer({
   }
 
   return (
-    <div className={styles.dragContainerBase}>
+    <div className={styles.woBeguinnerBase}>
       <CustomPhraseStyle className={styles.phrase}>
         <p>ど</p>
         <p>の</p>
@@ -111,7 +111,7 @@ export default function DragContainer({
             drop(1, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.dragContainer}
+          className={styles.woBeguinner}
           ref={containerRef1}
         ></div>
         <div
@@ -120,7 +120,7 @@ export default function DragContainer({
             drop(2, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.dragContainer}
+          className={styles.woBeguinner}
           ref={containerRef2}
         ></div>
       </div>
@@ -136,7 +136,7 @@ export default function DragContainer({
             drop(3, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.dragContainer}
+          className={styles.woBeguinner}
           ref={containerRef3}
         ></div>
         {item.phrase_back.split("").map((char: string, idx) => {

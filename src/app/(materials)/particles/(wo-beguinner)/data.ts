@@ -109,8 +109,5 @@ export const DATA = [
       ],
       character: "wo",
     },
-
-
-
   ];
   

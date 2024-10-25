@@ -1,4 +1,5 @@
-import DragContainerBtn from "./components/drag-container-btn/drag-container-btn.component";
+import WoBeguinnerBtn from "./components/wo-beguinner-btn/wo-beguinner-btn.component";
+
 import styles from "./page.module.scss";
 import { DATA } from "./data";
 import {
@@ -21,7 +22,7 @@ export default function Page() {
         <p>🔍</p>
       </CustomColoredPhraseStyle>
       <CustomBtnContainerStyle className={styles.btn}>
-        <DragContainerBtn params={DATA[0]} />
+        <WoBeguinnerBtn params={DATA[0]} />
       </CustomBtnContainerStyle>
     </div>
   );

@@ -1,20 +1,19 @@
-.dragContainerBase {
+.woBeguinnerBase {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: row-reverse;
   gap: 1rem;
   justify-content: center;
 }
-.dragContainer {
+.woBeguinner {
   width: 70px;
   height: 70px;
   padding: 10px;
   border: 1px solid #aaaaaa;
   touch-action: none;
 }
-.phrase{
+.phrase {
   margin-left: 3rem;
-
 }
 .choises {
   display: flex;
