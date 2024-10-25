@@ -1,4 +1,4 @@
-import WoBeguinnerSect from "../components/wo-beguinner/wo-beguinner-sect.component";
+import WoBeguinnerSect from "../components/wo-beginner-sect/wo-beginner-sect.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { id: string } }) {

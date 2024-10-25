@@ -3,7 +3,7 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "./wo-beguinner-sect.style.module.scss";
+import styles from "./wo-beginner-sect.style.module.scss";
 import {
   CustomPhraseStyle,
   CustomBtnContainerStyle,
@@ -81,7 +81,9 @@ export default function WoBeguinnerSect({
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
       router.push(
-        `/particles/${item.id}/result/?params=${correct_answer === answer}`
+        `/particles/wo/beginners/${item.id}/result/?params=${
+          correct_answer === answer
+        }`
       );
     }
   }

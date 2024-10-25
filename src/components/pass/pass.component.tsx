@@ -7,7 +7,7 @@ import {
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 import styles from "./pass.module.scss";
-import { DATA } from "@/app/(materials)/particles/(wo-beguinner)/data";
+import { DATA } from "@/app/(materials)/particles/wo/beginners/data";
 
 export default function Pass() {
   const params = useParams<{ tag: string; id: string }>();
@@ -31,7 +31,7 @@ export default function Pass() {
       <CustomBtnContainerStyle className={styles.btn}>
         {DATA[DATA.length - 1].id > Number(params.id) && (
           <CustomIconBtnStyle
-            onClick={() => router.push(`/particles/${Number(params.id) + 1}`)}
+            onClick={() => router.push(`/particles/wo/beginners/${Number(params.id) + 1}`)}
           >
             <i className="fa-solid fa-check"></i>
           </CustomIconBtnStyle>

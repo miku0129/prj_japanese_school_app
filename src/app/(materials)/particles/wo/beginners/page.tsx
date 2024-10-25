@@ -1,4 +1,4 @@
-import WoBeguinnerBtn from "./components/wo-beguinner-btn/wo-beguinner-btn.component";
+import WoBeguinnerBtn from "./components/wo-beginner-btn/wo-beginner-btn.component";
 
 import styles from "./page.module.scss";
 import { DATA } from "./data";

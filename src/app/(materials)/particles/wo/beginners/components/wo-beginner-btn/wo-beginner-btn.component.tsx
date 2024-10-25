@@ -10,7 +10,7 @@ export default function WoBeguinnerBtn({
 }) {
   const router = useRouter();
   return (
-    <CustomIconBtnStyle onClick={() => router.push(`/particles/${item.id}`)}>
+    <CustomIconBtnStyle onClick={() => router.push(`/particles/wo/beginners/${item.id}`)}>
       <i className="fa-solid fa-backward-step"></i>
     </CustomIconBtnStyle>
   );
