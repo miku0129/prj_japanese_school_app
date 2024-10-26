@@ -7,7 +7,7 @@ import {
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 import styles from "./pass.module.scss";
-import { DATA } from "@/app/(materials)/particles/wo/beginners/data";
+import { DATA } from "@/app/(materials)/particles/[character]/beginners/data";
 
 export default function Pass() {
   const params = useParams<{ tag: string; id: string }>();

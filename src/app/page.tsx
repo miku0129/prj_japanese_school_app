@@ -1,9 +1,9 @@
-import MenuBtn from "@/components/menu-btn/menu-btn.component";
+import MenuBoard from "@/components/menu-board/menu-board.component";
+import { DATA } from "./(materials)/particles/[character]/beginners/data";
 
-export default function Home() {
-  return (
-    <div>
-      <MenuBtn params="/particles/wo/beginners" />
-    </div>
-  );
+export default function Page() {
+  const data_source = DATA; 
+  if (data_source) {
+    return <MenuBoard params={data_source} />;
+  }
 }

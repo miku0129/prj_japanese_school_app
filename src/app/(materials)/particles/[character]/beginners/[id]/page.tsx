@@ -2,11 +2,11 @@ import WoBeguinnerSect from "../components/wo-beginner-sect/wo-beginner-sect.com
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { id: string } }) {
-  const data = DATA.find((item) => {
+  const item = DATA.find((item) => {
     const id: string = String(item.id);
     return id === params.id;
   });
-  if (data) {
-    return <div>{<WoBeguinnerSect params={data} />}</div>;
+  if (item) {
+    return <div>{<WoBeguinnerSect params={item} />}</div>;
   }
 }
