@@ -10,10 +10,7 @@ import {
 } from "@/styles/styled-components/page";
 import styles from "./question.style.module.scss";
 
-import { polyfill } from "mobile-drag-drop";
-import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scroll-behaviour";
-
-import "mobile-drag-drop/default.css";
+import { mobileDragNDrop } from "@/lib";
 
 export default function Question({ params: item }: { params: ItemParticle }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
@@ -23,27 +20,15 @@ export default function Question({ params: item }: { params: ItemParticle }) {
   const router = useRouter();
   const correct_answer = item.character;
 
-  // iOS/Androidのときだけ、usePolyfill=trueになる
-  const usePolyfill = polyfill({
-    dragImageTranslateOverride: scrollBehaviourDragImageTranslateOverride,
-  });
-
-  if (usePolyfill) {
-    // https://github.com/timruffles/mobile-drag-drop#polyfill-requires-dragenter-listener
-    // このpolyfill使用の場合 dragenter イベント時に Event.preventDefault() を呼ぶ必要がある
-    document.addEventListener("dragenter", function (event) {
-      event.preventDefault();
-    });
-    // https://github.com/timruffles/mobile-drag-drop/issues/77
-    window.addEventListener("touchmove", function () {}, { passive: false });
-  }
+  // // iOS/Androidのときだけ、usePolyfill=trueになる
+  mobileDragNDrop();
 
   useEffect(() => {
     containerRef1.current!.appendChild(
-      document.getElementById(item.choices[0].pron)!
+      document.getElementById(item.choices[0].en)!
     );
     containerRef2.current!.appendChild(
-      document.getElementById(item.choices[1].pron)!
+      document.getElementById(item.choices[1].en)!
     );
   }, [item.choices]);
 
@@ -77,7 +62,7 @@ export default function Question({ params: item }: { params: ItemParticle }) {
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
       router.push(
-        `/particles/wo/beginners/${item.id}/result/?params=${
+        `/particles/${item.category_id}/result/?level=${item.level}&state=${
           correct_answer === answer
         }`
       );
@@ -143,7 +128,7 @@ export default function Question({ params: item }: { params: ItemParticle }) {
       </CustomPhraseStyle>
 
       <Image
-        id={item.choices[0].pron}
+        id={item.choices[0].en}
         src={item.choices[0].image}
         alt="picture"
         draggable="true"
@@ -155,7 +140,7 @@ export default function Question({ params: item }: { params: ItemParticle }) {
         style={{ border: item.choices[0].props }}
       />
       <Image
-        id={item.choices[1].pron}
+        id={item.choices[1].en}
         src={item.choices[1].image}
         alt="picture"
         draggable="true"

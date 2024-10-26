@@ -1,9 +1,15 @@
+interface SearchParams {
+  [key: string]: string | string[] | undefined;
+}
+interface Params {
+  [key: string]: string;
+}
+
 interface ItemSkeleton {
   id: number;
-  character: string;
   category: string;
-  subcategory: string;
-  sub_id: number; 
+  category_id: number;
+  level: string;
 }
 
 interface ChoiceSkeleton {
@@ -12,16 +18,16 @@ interface ChoiceSkeleton {
 }
 
 interface ParticleChoice extends ChoiceSkeleton {
-  pron: string;
+  en: string;
   props: string;
   image: string;
 }
 
 interface ItemParticle extends ItemSkeleton {
+  character: string;
   phrase_front: string;
   phrase_back: string;
   choices: ParticleChoice[];
-  character: string;
   tags?: string;
 }
 

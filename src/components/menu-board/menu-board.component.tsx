@@ -4,25 +4,25 @@ import { useRouter } from "next/navigation";
 
 export default function MenuBoard({ params }: { params: ItemParticle[] }) {
   const router = useRouter();
-  console.log("data_source", params);
   return (
     <div>
-      {/* 各単元各レベルの1問目のみだけ表示されるよう調整する */}
-      {params.map((item: ItemParticle) => {
-        return (
-          <div key={item.id}>
-            <button
-              onClick={() =>
-                router.push(
-                  `/${item.category}/${item.character}/${item.subcategory}/${item.sub_id}`
-                )
-              }
-            >
-              {item.sub_id}
-            </button>
-          </div>
-        );
-      })}
+      {params
+        .filter((item: ItemParticle) => item.category_id === 1)
+        .map((item: ItemParticle) => {
+          return (
+            <div key={item.id}>
+              <button
+                onClick={() =>
+                  router.push(
+                    `/particles/${item.category_id}?level=${item.level}`
+                  )
+                }
+              >
+                {`${item.category_id} ${item.category}/ ${item.level}`}
+              </button>
+            </div>
+          );
+        })}
     </div>
   );
 }

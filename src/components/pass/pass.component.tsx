@@ -1,16 +1,21 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import {
   CustomBtnContainerStyle,
   CustomColoredPhraseStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 import styles from "./pass.module.scss";
-import { DATA } from "@/app/(materials)/particles/[character]/beginners/data";
+import { DATA } from "@/app/(materials)/particles/data";
 
 export default function Pass() {
-  const params = useParams<{ tag: string; id: string }>();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const category = pathname.split("/")[1];
+  const category_id = pathname.split("/")[2];
+  const level = searchParams.get("level");
 
   const router = useRouter();
   const getMessage = () => {
@@ -18,10 +23,9 @@ export default function Pass() {
     router.push("/");
   };
 
-  const item = DATA.find((item) => {
-    const id: string = String(item.id);
-    return id === params.id;
-  });
+  const current_exercise = DATA.filter(
+    (item) => item.category === category
+  ).filter((item) => item.level === level);
 
   return (
     <div className={styles.resultContainerBase}>
@@ -35,20 +39,21 @@ export default function Pass() {
         <p>🎉</p>
       </CustomColoredPhraseStyle>
       <CustomBtnContainerStyle className={styles.btn}>
-        {DATA[DATA.length - 1].id > Number(params.id) && (
+        {current_exercise[current_exercise.length - 1].category_id >
+          Number(category_id) && (
           <CustomIconBtnStyle
             onClick={() =>
               router.push(
-                `/${item?.category}/${item?.character}/${item?.subcategory}/${
-                  Number(params.id) + 1
-                }`
+                `/${category}/${Number(category_id) + 1}?level=${level}`
               )
             }
           >
             <i className="fa-solid fa-check"></i>
           </CustomIconBtnStyle>
         )}
-        {DATA[DATA.length - 1].id === Number(params.id) && (
+
+        {current_exercise[current_exercise.length - 1].category_id ===
+          Number(category_id) && (
           <CustomIconBtnStyle onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink"></i>
           </CustomIconBtnStyle>
