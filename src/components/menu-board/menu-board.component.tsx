@@ -1,9 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import MenuBtn from "../menu-btn/menu-btn.component";
 
 export default function MenuBoard({ params }: { params: ItemParticle[] }) {
-  const router = useRouter();
   return (
     <div>
       {params
@@ -11,15 +10,7 @@ export default function MenuBoard({ params }: { params: ItemParticle[] }) {
         .map((item: ItemParticle) => {
           return (
             <div key={item.id}>
-              <button
-                onClick={() =>
-                  router.push(
-                    `/particles/${item.category_id}?level=${item.level}`
-                  )
-                }
-              >
-                {`${item.category_id} ${item.category}/ ${item.level}`}
-              </button>
+              <MenuBtn params={item} />
             </div>
           );
         })}

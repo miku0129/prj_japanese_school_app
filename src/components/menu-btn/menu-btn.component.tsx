@@ -7,22 +7,27 @@ import {
 } from "@/styles/styled-components/page";
 import styles from "./menu-btn.module.scss";
 
-export default function MenuBtn({ params: url }: { params: string }) {
+export default function MenuBtn({ params }: { params: ItemParticle }) {
   const router = useRouter();
   return (
     <div className={styles.menuBtn}>
       <CustomPhraseStyle>
-        <p>を</p>
-        <p>を</p>
-        <p>つ</p>
-        <p>か</p>
-        <p>う</p>
         <p>こ</p>
         <p>と</p>
         <p>ば</p>
+        <p>を</p>
+        <p>さ</p>
+        <p>が</p>
+        <p>そ</p>
+        <p>う</p>
+        <p>🥚</p>
       </CustomPhraseStyle>
       <div className={styles.btn}>
-        <CustomIconBtnStyle onClick={() => router.push(`${url}`)}>
+        <CustomIconBtnStyle
+          onClick={() =>
+            router.push(`/${params.category}/1?level=${params.level}`)
+          }
+        >
           <i className="fa-solid fa-check"></i>
         </CustomIconBtnStyle>
       </div>
