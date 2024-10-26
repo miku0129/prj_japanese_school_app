@@ -1,4 +1,5 @@
-import WoBeguinnerSect from "../components/wo-beginner-sect/wo-beginner-sect.component";
+// import WoBeguinnerSect from "../components/wo-beginner-sect/wo-beginner-sect.component";
+import Question from "../components/question/question.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -7,6 +8,6 @@ export default function Page({ params }: { params: { id: string } }) {
     return id === params.id;
   });
   if (item) {
-    return <div>{<WoBeguinnerSect params={item} />}</div>;
+    return <div>{<Question params={item} />}</div>;
   }
 }

@@ -3,23 +3,19 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import styles from "./wo-beginner-sect.style.module.scss";
 import {
   CustomPhraseStyle,
   CustomBtnContainerStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
+import styles from "./question.style.module.scss";
 
 import { polyfill } from "mobile-drag-drop";
 import { scrollBehaviourDragImageTranslateOverride } from "mobile-drag-drop/scroll-behaviour";
 
 import "mobile-drag-drop/default.css";
 
-export default function WoBeguinnerSect({
-  params: item,
-}: {
-  params: ItemParticle;
-}) {
+export default function Question({ params: item }: { params: ItemParticle }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);

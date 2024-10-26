@@ -3,7 +3,7 @@
 import { CustomIconBtnStyle } from "@/styles/styled-components/page";
 import { useRouter } from "next/navigation";
 
-export default function WoBeguinnerBtn({
+export default function Button({
   params: item,
 }: {
   params: ItemParticle;
