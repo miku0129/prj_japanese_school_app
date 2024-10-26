@@ -8,11 +8,15 @@ import {
   CustomBtnContainerStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
-import styles from "./question.style.module.scss";
+import styles from "./question-beginner.style.module.scss";
 
 import { mobileDragNDrop } from "@/lib";
 
-export default function Question({ params: item }: { params: ItemParticle }) {
+export default function QuestionBeginner({
+  params: item,
+}: {
+  params: ItemParticle;
+}) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);

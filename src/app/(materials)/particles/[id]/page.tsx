@@ -1,4 +1,4 @@
-import Question from "../components/question/question.component";
+import QuestionBeginner from "../components/question-beginner/question-beginner.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { id: string } }) {
@@ -9,7 +9,7 @@ export default function Page({ params }: { params: { id: string } }) {
     }
   );
   if (item && item.level === "beginner") {
-    return <div>{<Question params={item} />}</div>;
+    return <div>{<QuestionBeginner params={item} />}</div>;
   } else {
     // レベルで設問を分ける
   }
