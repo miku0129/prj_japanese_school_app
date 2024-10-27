@@ -3,14 +3,25 @@ import { DATA } from "../data";
 
 export default function Page({ params }: { params: { category_id: string } }) {
   const category_id = params.category_id;
-  const item = DATA.filter((item) => item.category === "particles").find(
-    (item) => {
+  const particle_items = DATA.filter((item) => item.category === "particles");
+
+  const particle_beginner_item = particle_items
+    .filter((item) => item.level === "beginner")
+    .find((item) => {
       return item.category_id === Number(category_id);
-    }
-  );
-  if (item && item.level === "beginner") {
-    return <div>{<QuestionBeginner params={item} />}</div>;
-  } else {
-    // レベルで設問を分ける
+    });
+  const particle_intermediate_item = particle_items
+    .filter((item) => item.level === "intermediate")
+    .find((item) => {
+      return item.category_id === Number(category_id);
+    });
+
+  if (
+    particle_beginner_item?.phrase_front &&
+    particle_beginner_item?.level === "beginner"
+  ) {
+    return <div>{<QuestionBeginner params={particle_beginner_item} />}</div>;
+  } else if (particle_intermediate_item?.level === "intermediate") {
+    return <div>intermediate</div>;
   }
 }

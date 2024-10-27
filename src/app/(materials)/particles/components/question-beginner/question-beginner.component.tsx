@@ -15,7 +15,7 @@ import { mobileDragNDrop } from "@/lib";
 export default function QuestionBeginner({
   params: item,
 }: {
-  params: ItemParticle;
+  params: ItemParticleBeginner;
 }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
