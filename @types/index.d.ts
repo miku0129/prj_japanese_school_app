@@ -19,9 +19,16 @@ interface ChoiceSkeleton {
   character: string;
 }
 
-interface ParticleChoice extends ChoiceSkeleton {
+interface ChoiceParticleBeginner extends ChoiceSkeleton {
   en: string;
   props: string;
+  image: string;
+}
+
+interface ChoiceParticleIntermediate extends ChoiceSkeleton {
+  en: string;
+  style_height: string;
+  style_width: string;
   image: string;
 }
 
@@ -29,12 +36,13 @@ interface ItemParticleBeginner extends ItemSkeleton {
   character: string;
   phrase_front: string;
   phrase_back: string;
-  choices: ParticleChoice[];
+  choices: ChoiceParticleBeginner[];
 }
 
 interface ItemParticleIntermediate extends ItemSkeleton {
   character: string;
-  choices: ParticleChoice[];
+  choices: ChoiceParticleIntermediate[];
+  answer: string;
 }
 
 interface DragItemProps {

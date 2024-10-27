@@ -1,0 +1,35 @@
+.particlesIntermediateBase {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  justify-content: center;
+}
+.particlesIntermediateChoice {
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  touch-action: none;
+}
+.particlesIntermediateAnswerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 70px;
+  border: solid 2px gainsboro;
+
+  .particlesIntermediateAnswer {
+    padding: 10px;
+    // border: 1px solid #aaaaaa;
+    touch-action: none;
+    height: 70px;
+  }
+}
+.phrase {
+  margin-left: 3rem;
+}
+.choises {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

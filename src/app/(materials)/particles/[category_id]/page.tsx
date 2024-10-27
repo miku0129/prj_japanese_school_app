@@ -1,4 +1,5 @@
 import QuestionBeginner from "../components/question-beginner/question-beginner.component";
+import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { category_id: string } }) {
@@ -22,6 +23,8 @@ export default function Page({ params }: { params: { category_id: string } }) {
   ) {
     return <div>{<QuestionBeginner params={particle_beginner_item} />}</div>;
   } else if (particle_intermediate_item?.level === "intermediate") {
-    return <div>intermediate</div>;
+    return (
+      <div>{<QuestionIntermediate params={particle_intermediate_item} />}</div>
+    );
   }
 }
