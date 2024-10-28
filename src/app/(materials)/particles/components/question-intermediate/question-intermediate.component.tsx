@@ -81,14 +81,26 @@ export default function QuestionIntermediate({
   }
 
   function getResult() {
-    const data = document.getElementById("div3");
-    if (data!.getElementsByTagName("img").length === 0) {
+    const user_answer1 = document.getElementById("div5");
+    const user_answer2 = document.getElementById("div6");
+    const user_answer3 = document.getElementById("div7");
+
+    if (
+      user_answer1!.getElementsByTagName("img").length === 0 ||
+      user_answer2!.getElementsByTagName("img").length === 0 ||
+      user_answer3!.getElementsByTagName("img").length === 0
+    ) {
       window.alert("ひらがなをえらんでね");
     } else {
-      const answer = data!.getElementsByTagName("img")[0].id;
+      const user_answer =
+        `${user_answer1!.getElementsByTagName("img")[0].id} ` +
+        user_answer2!.getElementsByTagName("img")[0].id +
+        ` ${user_answer3!.getElementsByTagName("img")[0].id}`;
+      console.log("user_answer", user_answer);
+      console.log("correct_answer", correct_answer);
       router.push(
         `/particles/${item.category_id}/result/?level=${item.level}&state=${
-          correct_answer === answer
+          correct_answer === user_answer
         }`
       );
     }
