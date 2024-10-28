@@ -1,13 +1,21 @@
 "use client";
 
 import MenuBtn from "../menu-btn/menu-btn.component";
+import styles from "./menu-board.module.scss";
 
-export default function MenuBoard({ params }: { params: ItemParticle[] }) {
+export default function MenuBoard({
+  params,
+}: {
+  params: ( ItemParticleBeginner | ItemParticleIntermediate) [];
+}) {
   return (
-    <div>
+    <div className={styles.menuBoard}>
       {params
-        .filter((item: ItemParticle) => item.category_id === 1)
-        .map((item: ItemParticle) => {
+        .filter(
+          (item: ItemParticleBeginner | ItemParticleIntermediate) =>
+            item.is_index
+        )
+        .map((item: ItemParticleBeginner | ItemParticleIntermediate) => {
           return (
             <div key={item.id}>
               <MenuBtn params={item} />

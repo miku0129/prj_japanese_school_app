@@ -4,7 +4,7 @@ import "mobile-drag-drop/default.css";
 
 // Note: correct reordering algo
 export const rotate = (
-  array: ItemParticle[],
+  array: ItemParticleBeginner[],
   originIndex: number,
   targetIndex: number
 ) => {

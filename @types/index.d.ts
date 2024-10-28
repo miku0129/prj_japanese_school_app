@@ -1,15 +1,17 @@
-interface SearchParams {
-  [key: string]: string | string[] | undefined;
-}
 interface Params {
   [key: string]: string;
+}
+
+interface SearchParams {
+  [key: string]: string | string[] | undefined;
 }
 
 interface ItemSkeleton {
   id: number;
   category: string;
-  category_id: number;
   level: string;
+  category_id: number;
+  is_index: boolean;
 }
 
 interface ChoiceSkeleton {
@@ -17,22 +19,29 @@ interface ChoiceSkeleton {
   character: string;
 }
 
-interface ParticleChoice extends ChoiceSkeleton {
+interface Choice extends ChoiceSkeleton {
   en: string;
-  props: string;
   image: string;
+  style_border?: string;
+  style_height?: number;
+  style_width?: number;
 }
 
-interface ItemParticle extends ItemSkeleton {
+interface ItemParticleBeginner extends ItemSkeleton {
   character: string;
   phrase_front: string;
   phrase_back: string;
-  choices: ParticleChoice[];
-  tags?: string;
+  choices: Choice[];
+}
+
+interface ItemParticleIntermediate extends ItemSkeleton {
+  character: string;
+  choices: Choice[];
+  answer: string;
 }
 
 interface DragItemProps {
-  children: ItemParticle;
+  children: ItemParticleBeginner | ItemParticleIntermediate;
   dragging: HTMLElement | null;
   handleDragEnter: (ev: DragEvent<HTMLDivElement>) => void;
   handleDragStart: (ev: DragEvent<HTMLDivElement>) => void;

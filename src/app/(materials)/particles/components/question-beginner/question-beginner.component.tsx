@@ -8,11 +8,15 @@ import {
   CustomBtnContainerStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
-import styles from "./question.style.module.scss";
+import styles from "./question-beginner.style.module.scss";
 
 import { mobileDragNDrop } from "@/lib";
 
-export default function Question({ params: item }: { params: ItemParticle }) {
+export default function QuestionBeginner({
+  params: item,
+}: {
+  params: ItemParticleBeginner;
+}) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);
@@ -137,7 +141,6 @@ export default function Question({ params: item }: { params: ItemParticle }) {
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: item.choices[0].props }}
       />
       <Image
         id={item.choices[1].en}
@@ -149,7 +152,6 @@ export default function Question({ params: item }: { params: ItemParticle }) {
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: item.choices[1].props }}
       />
 
       <CustomBtnContainerStyle onClick={getResult}>

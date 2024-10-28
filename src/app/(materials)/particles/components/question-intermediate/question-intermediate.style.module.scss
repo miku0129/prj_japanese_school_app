@@ -1,0 +1,35 @@
+.particlesIntermediateBase {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  justify-content: center;
+}
+.particlesIntermediateChoice {
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  touch-action: none;
+}
+.particlesIntermediateAnswerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 70px;
+  border: solid 2px lightgreen;
+
+  .particlesIntermediateAnswer {
+    padding: 10px;
+    touch-action: none;
+    min-height: 9rem;
+    // border: 1px solid #aaaaaa;
+  }
+}
+.phrase {
+  margin-left: 3rem;
+}
+.choises {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
