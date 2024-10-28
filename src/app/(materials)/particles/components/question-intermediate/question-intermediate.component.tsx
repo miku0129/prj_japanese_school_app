@@ -159,7 +159,6 @@ export default function QuestionIntermediate({
           onDragOver={(ev) => allowDrop(ev)}
           className={styles.particlesIntermediateAnswer}
           ref={containerRef5}
-          style={{ height: item.choices[2].style_height }}
         ></div>
         <div
           id="div6"
@@ -178,7 +177,6 @@ export default function QuestionIntermediate({
           onDragOver={(ev) => allowDrop(ev)}
           className={styles.particlesIntermediateAnswer}
           ref={containerRef7}
-          style={{ height: item.choices[3].style_height }}
         ></div>
       </div>
 

@@ -16,13 +16,13 @@
   justify-content: center;
   gap: 10px;
   width: 70px;
-  border: solid 2px gainsboro;
+  border: solid 2px lightgreen;
 
   .particlesIntermediateAnswer {
     padding: 10px;
-    // border: 1px solid #aaaaaa;
     touch-action: none;
-    height: 70px;
+    min-height: 9rem;
+    // border: 1px solid #aaaaaa;
   }
 }
 .phrase {
