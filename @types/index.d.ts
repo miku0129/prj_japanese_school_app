@@ -22,7 +22,7 @@ interface ChoiceSkeleton {
 interface Choice extends ChoiceSkeleton {
   en: string;
   image: string;
-  props?: string;
+  style_border?: string;
   style_height?: number;
   style_width?: number;
 }
