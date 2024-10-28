@@ -141,7 +141,6 @@ export default function QuestionBeginner({
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: item.choices[0].props }}
       />
       <Image
         id={item.choices[1].en}
@@ -153,7 +152,6 @@ export default function QuestionBeginner({
         ) => drag(ev)}
         width="70"
         height="70"
-        style={{ border: item.choices[1].props }}
       />
 
       <CustomBtnContainerStyle onClick={getResult}>
