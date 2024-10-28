@@ -6,7 +6,7 @@ import styles from "./menu-board.module.scss";
 export default function MenuBoard({
   params,
 }: {
-  params: ItemParticleBeginner[] | ItemParticleIntermediate[];
+  params: ( ItemParticleBeginner | ItemParticleIntermediate) [];
 }) {
   return (
     <div className={styles.menuBoard}>

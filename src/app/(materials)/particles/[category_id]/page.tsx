@@ -11,6 +11,7 @@ export default function Page({ params }: { params: { category_id: string } }) {
     .find((item) => {
       return item.category_id === Number(category_id);
     });
+
   const particle_intermediate_item = particle_items
     .filter((item) => item.level === "intermediate")
     .find((item) => {
@@ -22,7 +23,10 @@ export default function Page({ params }: { params: { category_id: string } }) {
     particle_beginner_item?.level === "beginner"
   ) {
     return <div>{<QuestionBeginner params={particle_beginner_item} />}</div>;
-  } else if (particle_intermediate_item?.level === "intermediate") {
+  } else if (
+    particle_intermediate_item?.answer &&
+    particle_intermediate_item?.level === "intermediate"
+  ) {
     return (
       <div>{<QuestionIntermediate params={particle_intermediate_item} />}</div>
     );
