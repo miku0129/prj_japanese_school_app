@@ -89,6 +89,11 @@ const Audio: React.FC<AudioProps> = ({ audioLink }) => {
       progressBar.value = percentage;
       // Update the progress bar's text (for browsers that don't support the progress element)
       progressBar.innerHTML = progressBar.title = percentage + "% played";
+
+      // button convert to 'play' mode after finish listening
+      if (percentage === 100) {
+        setIsBtnShowPlay(true);
+      }
     }
   };
 

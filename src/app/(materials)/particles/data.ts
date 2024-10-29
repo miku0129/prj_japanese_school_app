@@ -274,6 +274,6 @@ export const DATA = [
     level: "advanced",
     is_index: true,
     answer: "おかし　を　たべる",
-    sound_resource: "https://actions.google.com/sounds/v1/alarms/medium_bell_ringing_near.ogg",
+    sound_resource: "https://dl.dropboxusercontent.com/scl/fi/t38z24pdovzyyacijg3yr/.m4a?rlkey=kecn86sfljz9k92m1ihkngbk3&st=w434541t&dl=0",
   },
 ];
