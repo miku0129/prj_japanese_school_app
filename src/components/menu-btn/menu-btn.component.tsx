@@ -10,7 +10,10 @@ import styles from "./menu-btn.module.scss";
 export default function MenuBtn({
   params,
 }: {
-  params: ItemParticleBeginner | ItemParticleIntermediate | ItemParticleAdvanced;
+  params:
+    | ItemParticleBeginner
+    | ItemParticleIntermediate
+    | ItemParticleAdvanced;
 }) {
   const router = useRouter();
   return (
@@ -41,11 +44,27 @@ export default function MenuBtn({
           <p>🐣</p>
         </CustomPhraseStyle>
       )}
+      {params.level === "advanced" && (
+        <CustomPhraseStyle>
+          <p>こ</p>
+          <p>と</p>
+          <p>ば</p>
+          <p>を</p>
+          <p>か</p>
+          <p>き</p>
+          <p>と</p>
+          <p>ろ</p>
+          <p>う</p>
+          <p>🐓</p>
+        </CustomPhraseStyle>
+      )}
 
       <div className={styles.btn}>
         <CustomIconBtnStyle
           onClick={() =>
-            router.push(`/${params.category}/${params.category_id}?level=${params.level}`)
+            router.push(
+              `/${params.category}/${params.category_id}?level=${params.level}`
+            )
           }
         >
           <i className="fa-solid fa-check"></i>
