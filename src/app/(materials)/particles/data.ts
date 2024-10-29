@@ -267,4 +267,13 @@ export const DATA = [
     is_index: false,
     answer: "kuruma ha hashiru",
   },
+  {
+    id: 9,
+    category: "particles",
+    category_id: 9,
+    level: "advanced",
+    is_index: true,
+    answer: "おかし　を　たべる",
+    sound_resource: "/url",
+  },
 ];

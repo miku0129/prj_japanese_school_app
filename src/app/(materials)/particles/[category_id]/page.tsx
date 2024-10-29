@@ -24,11 +24,15 @@ export default function Page({ params }: { params: { category_id: string } }) {
   ) {
     return <div>{<QuestionBeginner params={particle_beginner_item} />}</div>;
   } else if (
-    particle_intermediate_item?.answer &&
+    particle_intermediate_item?.answer && particle_intermediate_item?.character &&
     particle_intermediate_item?.level === "intermediate"
   ) {
     return (
       <div>{<QuestionIntermediate params={particle_intermediate_item} />}</div>
+    );
+  } else {
+    return (
+      <div>advanced</div>
     );
   }
 }

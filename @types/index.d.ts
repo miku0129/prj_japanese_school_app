@@ -9,8 +9,8 @@ interface SearchParams {
 interface ItemSkeleton {
   id: number;
   category: string;
-  level: string;
   category_id: number;
+  level: string;
   is_index: boolean;
 }
 
@@ -39,6 +39,12 @@ interface ItemParticleIntermediate extends ItemSkeleton {
   choices: Choice[];
   answer: string;
 }
+
+interface ItemParticleAdvanced extends ItemSkeleton {
+  answer: string;
+  sound_resource: string;
+}
+
 
 interface DragItemProps {
   children: ItemParticleBeginner | ItemParticleIntermediate;

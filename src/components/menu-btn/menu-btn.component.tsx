@@ -10,7 +10,7 @@ import styles from "./menu-btn.module.scss";
 export default function MenuBtn({
   params,
 }: {
-  params: ItemParticleBeginner | ItemParticleIntermediate;
+  params: ItemParticleBeginner | ItemParticleIntermediate | ItemParticleAdvanced;
 }) {
   const router = useRouter();
   return (
