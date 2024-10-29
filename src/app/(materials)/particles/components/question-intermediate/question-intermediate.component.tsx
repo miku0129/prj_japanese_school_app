@@ -96,8 +96,6 @@ export default function QuestionIntermediate({
         `${user_answer1!.getElementsByTagName("img")[0].id} ` +
         user_answer2!.getElementsByTagName("img")[0].id +
         ` ${user_answer3!.getElementsByTagName("img")[0].id}`;
-      console.log("user_answer", user_answer);
-      console.log("correct_answer", correct_answer);
       router.push(
         `/particles/${item.category_id}/result/?level=${item.level}&state=${
           correct_answer === user_answer

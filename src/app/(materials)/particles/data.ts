@@ -273,7 +273,17 @@ export const DATA = [
     category_id: 9,
     level: "advanced",
     is_index: true,
-    answer: "おかし　を　たべる",
+    answer: "おかしをたべる",
     sound_resource: "https://dl.dropboxusercontent.com/scl/fi/t38z24pdovzyyacijg3yr/.m4a?rlkey=kecn86sfljz9k92m1ihkngbk3&st=w434541t&dl=0",
   },
+  {
+    id: 10,
+    category: "particles",
+    category_id: 10,
+    level: "advanced",
+    is_index: false,
+    answer: "おにはこわい",
+    sound_resource: "https://dl.dropboxusercontent.com/scl/fi/t38z24pdovzyyacijg3yr/.m4a?rlkey=kecn86sfljz9k92m1ihkngbk3&st=w434541t&dl=0",
+  },
+
 ];

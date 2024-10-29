@@ -1,0 +1,37 @@
+.phraseContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.answerOuterContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  gap: 6rem;
+}
+
+.answerBoard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.answerPhraseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    justify-content: start;
+    font-size: 2.5rem;
+    max-height: 0.1rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
