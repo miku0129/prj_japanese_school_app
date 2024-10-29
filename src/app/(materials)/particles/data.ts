@@ -274,7 +274,8 @@ export const DATA = [
     level: "advanced",
     is_index: true,
     answer: "おかしをたべる",
-    sound_resource: "https://dl.dropboxusercontent.com/scl/fi/t38z24pdovzyyacijg3yr/.m4a?rlkey=kecn86sfljz9k92m1ihkngbk3&st=w434541t&dl=0",
+    sound_resource:
+      "https://dl.dropboxusercontent.com/scl/fi/058e25tmspifom94vep3h/okashiwotaberu.m4a?rlkey=yynjlfxfoj69eekq7cgd7njza&st=d0hej04r&dl=0",
   },
   {
     id: 10,
@@ -283,7 +284,7 @@ export const DATA = [
     level: "advanced",
     is_index: false,
     answer: "おにはこわい",
-    sound_resource: "https://dl.dropboxusercontent.com/scl/fi/t38z24pdovzyyacijg3yr/.m4a?rlkey=kecn86sfljz9k92m1ihkngbk3&st=w434541t&dl=0",
+    sound_resource:
+      "https://dl.dropboxusercontent.com/scl/fi/ybe00sx6hc87nhycica3n/onihakowai.m4a?rlkey=hcdddo8i2mjn7cl45ptkatwgs&st=gyzsimc9&dl=0",
   },
-
 ];
