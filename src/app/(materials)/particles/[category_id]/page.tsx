@@ -1,5 +1,6 @@
 import QuestionBeginner from "../components/question-beginner/question-beginner.component";
 import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
+import QuestionAdvanced from "../components/question-advanced/question-advanced.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { category_id: string } }) {
@@ -37,7 +38,10 @@ export default function Page({ params }: { params: { category_id: string } }) {
     return (
       <div>{<QuestionIntermediate params={particle_intermediate_item} />}</div>
     );
-  } else {
-    return <div>{particle_advanced_item?.level}</div>;
+  } else if (
+    particle_advanced_item?.answer &&
+    particle_advanced_item?.sound_resource
+  ) {
+    return <div>{<QuestionAdvanced params={particle_advanced_item} />}</div>;
   }
 }
