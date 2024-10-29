@@ -18,7 +18,6 @@ export default function QuestionAdvanced({
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const router = useRouter();
-
   const particleItems = DATA.filter((item) => item.category === "particles");
 
   function answerHandler() {
@@ -27,9 +26,7 @@ export default function QuestionAdvanced({
 
   function pageHandler() {
     const nextCategoryId = item.category_id + 1;
-    router.push(
-      `/particles/${nextCategoryId}/?level=${item.level}`
-    );
+    router.push(`/particles/${nextCategoryId}/?level=${item.level}`);
   }
 
   const getMessage = () => {
@@ -49,8 +46,8 @@ export default function QuestionAdvanced({
           <p>と</p>
           <p>ろ</p>
           <p>う</p>
-          <p>📝</p>
         </CustomPhraseStyle>
+
         <div className={styles.answerOuterContainer}>
           {showAnswer && (
             <div className={styles.answerBoard}>
