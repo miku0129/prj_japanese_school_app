@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import "./../styles/global-css/globals.css";
+
+export const metadata: Metadata = {
+  title: "Learning together",
+  description: "We support learning Japanese",
+};
 
 export default function RootLayout({
   children,
@@ -16,7 +22,8 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}</body>
     </html>
   );
 }
