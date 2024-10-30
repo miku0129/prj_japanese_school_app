@@ -1,5 +1,6 @@
 import QuestionBeginner from "../components/question-beginner/question-beginner.component";
 import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
+import QuestionAdvanced from "../components/question-advanced/question-advanced.component";
 import { DATA } from "../data";
 
 export default function Page({ params }: { params: { category_id: string } }) {
@@ -18,6 +19,12 @@ export default function Page({ params }: { params: { category_id: string } }) {
       return item.category_id === Number(category_id);
     });
 
+  const particle_advanced_item = particle_items
+    .filter((item) => item.level === "advanced")
+    .find((item) => {
+      return item.category_id === Number(category_id);
+    });
+
   if (
     particle_beginner_item?.phrase_front &&
     particle_beginner_item?.level === "beginner"
@@ -25,10 +32,16 @@ export default function Page({ params }: { params: { category_id: string } }) {
     return <div>{<QuestionBeginner params={particle_beginner_item} />}</div>;
   } else if (
     particle_intermediate_item?.answer &&
+    particle_intermediate_item?.character &&
     particle_intermediate_item?.level === "intermediate"
   ) {
     return (
       <div>{<QuestionIntermediate params={particle_intermediate_item} />}</div>
     );
+  } else if (
+    particle_advanced_item?.answer &&
+    particle_advanced_item?.sound_resource
+  ) {
+    return <div>{<QuestionAdvanced params={particle_advanced_item} />}</div>;
   }
 }
