@@ -1,37 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Learning together 🎌
 
-## Getting Started
+## Concept of this application
 
-First, run the development server:
+The primary purpose of [this application](https://prj-japanese-school-app.vercel.app/) is to create an **enjoyable environment** for children to learn Japanese.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Currently, the app offers exercises focusing on the particles 'ha' and 'wo'. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The questions are divided into three levels of difficulty, allowing students to select the level that best matches their ability:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* <font color="gray">Beginner level:</font> "Let's look for words" – Select the appropriate particle to complete the sentence.
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWV6YTU3MjRxNWVyNjk4ZWFqYnM2eDIwNzhocWxraDEybGVheGpyNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jnKiDYlTj6laIQmc3l/giphy.gif" height=300px style="border: 1px red solid;"><hr>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* <font color="gray">Intermediate level</font>: "Let's make up words" – Combine words and particles to form sentences.
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWlieTgzZ2E3eHljOGN2bXh2MDZlNnZmdWZjdG5qNHF3eHliYjVicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BZMrH67BYp3Y9RfWow/giphy.gif" height=300px style="border: 1px red solid;"><hr>
 
-## Learn More
+* <font color="gray">Advanced level</font>: "Let's dictate words" – Dictation practice.
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTZtNGN6emIzOXdkZ3pkbWZ4MHNxcnN6c3BvN2c4aWZuZ3Nqdms3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zr66kx2qxaJz3FiTBo/giphy.gif" height=300px style="border: 1px red solid;"><hr>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# prj_japanese_school_app
+Enjoy your learning path! 😉  
