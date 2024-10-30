@@ -287,4 +287,24 @@ export const DATA = [
     sound_resource:
       "https://dl.dropboxusercontent.com/scl/fi/ybe00sx6hc87nhycica3n/onihakowai.m4a?rlkey=hcdddo8i2mjn7cl45ptkatwgs&st=gyzsimc9&dl=0",
   },
+  {
+    id: 11,
+    category: "particles",
+    category_id: 11,
+    level: "advanced",
+    is_index: false,
+    answer: "ろうそくをけす",
+    sound_resource:
+      "https://dl.dropboxusercontent.com/scl/fi/6excmxiiwdxs3ic4fwctx/rousokuwokesu.m4a?rlkey=ani6gpscx5wr8ctlpyqamd15t&st=n175os33&dl=0",
+  },
+  {
+    id: 12,
+    category: "particles",
+    category_id: 12,
+    level: "advanced",
+    is_index: false,
+    answer: "バナナはおいしい",
+    sound_resource:
+      "https://dl.dropboxusercontent.com/scl/fi/1f77r5cj6g4bethfmydwx/bananahaoishii.m4a?rlkey=3g5bdu36lxdc92l5tbjov8arr&st=xp6xhwev&dl=0",
+  },
 ];

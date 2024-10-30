@@ -41,6 +41,7 @@ const Audio: React.FC<AudioProps> = ({ audioLink }) => {
       if (player.paused || player.ended) {
         handleShowPlayBtn();
         player.play();
+        player.playbackRate = 0.7
       } else {
         handleShowPlayBtn();
         player.pause();

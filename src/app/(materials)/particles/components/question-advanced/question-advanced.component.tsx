@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Audio from "@/components/audio/audio.component";
 import {
@@ -19,6 +19,12 @@ export default function QuestionAdvanced({
   const [showAnswer, setShowAnswer] = useState(false);
   const router = useRouter();
   const particleItems = DATA.filter((item) => item.category === "particles");
+
+  useEffect(() => {
+    if (item.is_index) {
+      window.alert("きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。");
+    }
+  }, [item.is_index]);
 
   function answerHandler() {
     setShowAnswer(!showAnswer);
@@ -51,6 +57,11 @@ export default function QuestionAdvanced({
         <div className={styles.answerOuterContainer}>
           {showAnswer && (
             <div className={styles.answerBoard}>
+              <div className={styles.explanation}>
+                <p>こ</p>
+                <p>た</p>
+                <p>え</p>
+              </div>
               <div className={styles.answerPhraseContainer}>
                 {item.answer.split("").map((char: string, idx) => {
                   return <p key={idx}>{char}</p>;
