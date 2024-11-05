@@ -35,15 +35,20 @@ interface TestQuestion {
 }
 
 export default function TestComponent({ params }: { params: TestQuestion[] }) {
-  console.log("category", params);
+  console.log("params", params);
   return (
     <div>
       {params.map((item: TestQuestion) => {
         return (
           <div key={item.id}>
             <p>{item.character}</p>
-            {/* <p>{item.additionalQuestion!.phrase_front}</p> */}
-            {/* <p>{item.choices![0].character}</p> */}
+            {item.additionalQuestion && (
+              <p>{item.additionalQuestion!.phrase_front}</p>
+            )}
+            {item.choices![0] && <p>{item.choices![0].choice.character}</p>}
+            {item.answer && <p>{item.answer}</p>}
+
+            <p>.....</p>
           </div>
         );
       })}

@@ -63,7 +63,7 @@ export default function QuestionAdvanced({
                 <p>え</p>
               </div>
               <div className={styles.answerPhraseContainer}>
-                {item.answer.split("").map((char: string, idx) => {
+                {item.answer.split("").map((char: string, idx:number) => {
                   return <p key={idx}>{char}</p>;
                 })}
               </div>
