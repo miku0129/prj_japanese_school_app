@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import prisma from "../../../../../../prisma";
 import Fail from "@/components/fail/fail.component";
 import Pass from "@/components/pass/pass.component";
 

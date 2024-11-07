@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import prisma from "../../../../../prisma";
 import QuestionBeginner from "../components/question-beginner/question-beginner.component";
 import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
 import QuestionAdvanced from "../components/question-advanced/question-advanced.component";

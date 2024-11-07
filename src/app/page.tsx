@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import prisma from "../../prisma";
 import MenuBoard from "@/components/menu-board/menu-board.component";
 
 // import TestComponent from "@/components/test.component";
