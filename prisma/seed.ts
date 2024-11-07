@@ -16,6 +16,7 @@ async function main() {
           level: seedData[i].level,
           isIndex: seedData[i].isIndex,
           category: seedData[i].category,
+          answer: seedData[i].answer,
           choices: {
             create: seedData[i].choices,
           },
@@ -33,6 +34,7 @@ async function main() {
           level: seedData[i].level,
           isIndex: seedData[i].isIndex,
           category: seedData[i].category,
+          answer: seedData[i].answer,
           choices: {
             create: seedData[i].choices,
           },

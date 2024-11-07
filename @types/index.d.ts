@@ -14,9 +14,9 @@ interface Choice extends ItemSkeleton {
   character: string;
   en: string;
   image: string;
-  style_border?: string;
-  style_height?: number;
-  style_width?: number;
+  styleHeight?: string | null;
+  styleWidth?: string | null;
+
 }
 interface ChoiceContainer {
   choice: Choice;
