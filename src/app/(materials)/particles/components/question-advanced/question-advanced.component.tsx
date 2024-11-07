@@ -12,27 +12,31 @@ import styles from "./question-advanced.style.module.scss";
 import { DATA } from "../../data";
 
 export default function QuestionAdvanced({
-  params: item,
+  params: question,
 }: {
-  params: ItemParticleAdvanced;
+  params: Question;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const router = useRouter();
-  const particleItems = DATA.filter((item) => item.category === "particles");
+  const particleItems = DATA.filter(
+    (question) => question.category === "particles"
+  );
 
   useEffect(() => {
-    if (item.is_index) {
-      window.alert("きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。");
+    if (question.isIndex) {
+      window.alert(
+        "きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。"
+      );
     }
-  }, [item.is_index]);
+  }, [question.isIndex]);
 
   function answerHandler() {
     setShowAnswer(!showAnswer);
   }
 
   function pageHandler() {
-    const nextCategoryId = item.category_id + 1;
-    router.push(`/particles/${nextCategoryId}/?level=${item.level}`);
+    const nextCategoryId = question.categoryId + 1;
+    router.push(`/particles/${nextCategoryId}/?level=${question.level}`);
   }
 
   const getMessage = () => {
@@ -63,7 +67,7 @@ export default function QuestionAdvanced({
                 <p>え</p>
               </div>
               <div className={styles.answerPhraseContainer}>
-                {item.answer.split("").map((char: string, idx:number) => {
+                {question.answer!.split("").map((char: string, idx: number) => {
                   return <p key={idx}>{char}</p>;
                 })}
               </div>
@@ -76,7 +80,7 @@ export default function QuestionAdvanced({
               </CustomIconBtnStyle>
             </CustomBtnContainerStyle>
           )}
-          {showAnswer && particleItems.length > item.category_id && (
+          {showAnswer && particleItems.length > question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
@@ -90,7 +94,7 @@ export default function QuestionAdvanced({
               </CustomBtnContainerStyle>
             </div>
           )}
-          {showAnswer && particleItems.length === item.category_id && (
+          {showAnswer && particleItems.length === question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
@@ -106,7 +110,9 @@ export default function QuestionAdvanced({
           )}
         </div>
       </div>
-      <Audio audioLink={item.sound_resource} />
+      {question.additionalQuestion?.sound_resource && (
+        <Audio audioLink={question.additionalQuestion!.sound_resource} />
+      )}
     </div>
   );
 }
