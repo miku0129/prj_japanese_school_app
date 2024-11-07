@@ -9,18 +9,26 @@ import {
   CustomBtnContainerStyle,
 } from "@/styles/styled-components/page";
 import styles from "./question-advanced.style.module.scss";
-import { DATA } from "../../data";
 
 export default function QuestionAdvanced({
   params: question,
 }: {
   params: Question;
 }) {
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const router = useRouter();
-  const particleItems = DATA.filter(
-    (question) => question.category === "particles"
-  );
+
+  useEffect(() => {
+    async function getQuestions() {
+      const res = await fetch(`/api/particles/`, {
+        method: "GET",
+      });
+      const data = await res.json();
+      setQuestions(data)
+    }
+    getQuestions();
+  }, []);
 
   useEffect(() => {
     if (question.isIndex) {
@@ -80,7 +88,7 @@ export default function QuestionAdvanced({
               </CustomIconBtnStyle>
             </CustomBtnContainerStyle>
           )}
-          {showAnswer && particleItems.length > question.categoryId && (
+          {showAnswer && questions.length > question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
@@ -94,7 +102,7 @@ export default function QuestionAdvanced({
               </CustomBtnContainerStyle>
             </div>
           )}
-          {showAnswer && particleItems.length === question.categoryId && (
+          {showAnswer && questions.length === question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
