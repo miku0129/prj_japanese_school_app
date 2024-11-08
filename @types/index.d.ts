@@ -1,3 +1,9 @@
+interface HomeIndex {
+  en: string;
+  jp: string;
+  sample: string;
+}
+
 interface Params {
   [key: string]: string;
 }
