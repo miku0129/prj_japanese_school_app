@@ -7,9 +7,8 @@ import {
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
 import styles from "./pass.module.scss";
-import { DATA } from "@/app/(materials)/particles/data";
 
-export default function Pass() {
+export default function Pass({ params }: { params: Question[] }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -23,9 +22,9 @@ export default function Pass() {
     router.push("/");
   };
 
-  const current_exercise = DATA.filter(
-    (item) => item.category === category
-  ).filter((item) => item.level === level);
+  const current_exercise = params
+    .filter((question) => question.category === category)
+    .filter((question) => question.level === level);
 
   return (
     <div className={styles.resultContainerBase}>
@@ -39,7 +38,7 @@ export default function Pass() {
         <p>🎉</p>
       </CustomColoredPhraseStyle>
       <CustomBtnContainerStyle className={styles.btn}>
-        {current_exercise[current_exercise.length - 1].category_id >
+        {current_exercise[current_exercise.length - 1].categoryId >
           Number(category_id) && (
           <CustomIconBtnStyle
             onClick={() =>
@@ -52,7 +51,7 @@ export default function Pass() {
           </CustomIconBtnStyle>
         )}
 
-        {current_exercise[current_exercise.length - 1].category_id ===
+        {current_exercise[current_exercise.length - 1].categoryId ===
           Number(category_id) && (
           <CustomIconBtnStyle onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink"></i>

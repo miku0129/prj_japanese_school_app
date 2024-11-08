@@ -9,30 +9,42 @@ import {
   CustomBtnContainerStyle,
 } from "@/styles/styled-components/page";
 import styles from "./question-advanced.style.module.scss";
-import { DATA } from "../../data";
 
 export default function QuestionAdvanced({
-  params: item,
+  params: question,
 }: {
-  params: ItemParticleAdvanced;
+  params: Question;
 }) {
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const router = useRouter();
-  const particleItems = DATA.filter((item) => item.category === "particles");
 
   useEffect(() => {
-    if (item.is_index) {
-      window.alert("きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。");
+    async function getQuestions() {
+      const res = await fetch(`/api/particles/`, {
+        method: "GET",
+      });
+      const data = await res.json();
+      setQuestions(data)
     }
-  }, [item.is_index]);
+    getQuestions();
+  }, []);
+
+  useEffect(() => {
+    if (question.isIndex) {
+      window.alert(
+        "きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。"
+      );
+    }
+  }, [question.isIndex]);
 
   function answerHandler() {
     setShowAnswer(!showAnswer);
   }
 
   function pageHandler() {
-    const nextCategoryId = item.category_id + 1;
-    router.push(`/particles/${nextCategoryId}/?level=${item.level}`);
+    const nextCategoryId = question.categoryId + 1;
+    router.push(`/particles/${nextCategoryId}/?level=${question.level}`);
   }
 
   const getMessage = () => {
@@ -63,7 +75,7 @@ export default function QuestionAdvanced({
                 <p>え</p>
               </div>
               <div className={styles.answerPhraseContainer}>
-                {item.answer.split("").map((char: string, idx) => {
+                {question.answer!.split("").map((char: string, idx: number) => {
                   return <p key={idx}>{char}</p>;
                 })}
               </div>
@@ -76,7 +88,7 @@ export default function QuestionAdvanced({
               </CustomIconBtnStyle>
             </CustomBtnContainerStyle>
           )}
-          {showAnswer && particleItems.length > item.category_id && (
+          {showAnswer && questions.length > question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
@@ -90,7 +102,7 @@ export default function QuestionAdvanced({
               </CustomBtnContainerStyle>
             </div>
           )}
-          {showAnswer && particleItems.length === item.category_id && (
+          {showAnswer && questions.length === question.categoryId && (
             <div className={styles.buttonContainer}>
               <CustomBtnContainerStyle>
                 <CustomIconBtnStyle onClick={() => answerHandler()}>
@@ -106,7 +118,9 @@ export default function QuestionAdvanced({
           )}
         </div>
       </div>
-      <Audio audioLink={item.sound_resource} />
+      {question.additionalQuestion?.sound_resource && (
+        <Audio audioLink={question.additionalQuestion!.sound_resource} />
+      )}
     </div>
   );
 }

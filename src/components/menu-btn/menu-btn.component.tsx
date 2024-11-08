@@ -10,10 +10,7 @@ import styles from "./menu-btn.module.scss";
 export default function MenuBtn({
   params,
 }: {
-  params:
-    | ItemParticleBeginner
-    | ItemParticleIntermediate
-    | ItemParticleAdvanced;
+  params: Question
 }) {
   const router = useRouter();
   return (
@@ -63,7 +60,7 @@ export default function MenuBtn({
         <CustomIconBtnStyle
           onClick={() =>
             router.push(
-              `/${params.category}/${params.category_id}?level=${params.level}`
+              `/${params.category}/${params.categoryId}?level=${params.level}`
             )
           }
         >

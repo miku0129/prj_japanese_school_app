@@ -1,9 +1,9 @@
-import MenuBoard from "@/components/menu-board/menu-board.component";
-import { DATA } from "./(materials)/particles/data";
+import HomeBoard from "@/components/home-board/home-board.component";
 
-export default function Page() {
-  const data_source = DATA; 
-  if (data_source) {
-    return <MenuBoard params={data_source} />;
-  }
+export default async function Page() {
+  return (
+    <div>
+      <HomeBoard />
+    </div>
+  );
 }

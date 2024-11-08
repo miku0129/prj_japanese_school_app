@@ -13,9 +13,9 @@ import styles from "./question-intermediate.style.module.scss";
 import { mobileDragNDrop } from "@/lib";
 
 export default function QuestionIntermediate({
-  params: item,
+  params: question,
 }: {
-  params: ItemParticleIntermediate;
+  params: Question;
 }) {
   // // iOS/Androidのときだけ、usePolyfill=trueになる
   mobileDragNDrop();
@@ -29,25 +29,25 @@ export default function QuestionIntermediate({
   const containerRef7 = useRef<HTMLInputElement>(null);
 
   const router = useRouter();
-  const correct_answer = item.answer;
+  const correct_answer = question.answer;
 
   useEffect(() => {
     const setChoices = () => {
       containerRef1.current!.appendChild(
-        document.getElementById(item.choices[0].en)!
+        document.getElementById(question.choices[0].choice.en)!
       );
       containerRef2.current!.appendChild(
-        document.getElementById(item.choices[1].en)!
+        document.getElementById(question.choices[1].choice.en)!
       );
       containerRef3.current!.appendChild(
-        document.getElementById(item.choices[2].en)!
+        document.getElementById(question.choices[2].choice.en)!
       );
       containerRef4.current!.appendChild(
-        document.getElementById(item.choices[3].en)!
+        document.getElementById(question.choices[3].choice.en)!
       );
     };
     setChoices();
-  }, [item.choices]);
+  }, [question.choices]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -97,9 +97,9 @@ export default function QuestionIntermediate({
         user_answer2!.getElementsByTagName("img")[0].id +
         ` ${user_answer3!.getElementsByTagName("img")[0].id}`;
       router.push(
-        `/particles/${item.category_id}/result/?level=${item.level}&state=${
-          correct_answer === user_answer
-        }`
+        `/particles/${question.categoryId}/result/?level=${
+          question.level
+        }&state=${correct_answer === user_answer}`
       );
     }
   }
@@ -191,48 +191,48 @@ export default function QuestionIntermediate({
       </div>
 
       <Image
-        id={item.choices[0].en}
-        src={item.choices[0].image}
+        id={question.choices[0].choice.en}
+        src={question.choices[0].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(item.choices[0].style_width)}
-        height={Number(item.choices[0].style_height)}
+        width={Number(question.choices[0].choice.styleWidth)}
+        height={Number(question.choices[0].choice.styleHeight)}
       />
       <Image
-        id={item.choices[1].en}
-        src={item.choices[1].image}
+        id={question.choices[1].choice.en}
+        src={question.choices[1].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(item.choices[1].style_width)}
-        height={Number(item.choices[1].style_height)}
+        width={Number(question.choices[1].choice.styleWidth)}
+        height={Number(question.choices[1].choice.styleHeight)}
       />
       <Image
-        id={item.choices[2].en}
-        src={item.choices[2].image}
+        id={question.choices[2].choice.en}
+        src={question.choices[2].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(item.choices[2].style_width)}
-        height={Number(item.choices[2].style_height)}
+        width={Number(question.choices[2].choice.styleWidth)}
+        height={Number(question.choices[2].choice.styleHeight)}
       />
       <Image
-        id={item.choices[3].en}
-        src={item.choices[3].image}
+        id={question.choices[3].choice.en}
+        src={question.choices[3].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(item.choices[3].style_width)}
-        height={Number(item.choices[3].style_height)}
+        width={Number(question.choices[3].choice.styleWidth)}
+        height={Number(question.choices[3].choice.styleHeight)}
       />
 
       <CustomBtnContainerStyle onClick={getResult}>

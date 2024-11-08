@@ -13,28 +13,28 @@ import styles from "./question-beginner.style.module.scss";
 import { mobileDragNDrop } from "@/lib";
 
 export default function QuestionBeginner({
-  params: item,
+  params: question,
 }: {
-  params: ItemParticleBeginner;
+  params: Question;
 }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);
 
   const router = useRouter();
-  const correct_answer = item.character;
+  const correct_answer = question.character;
 
   // // iOS/Androidのときだけ、usePolyfill=trueになる
   mobileDragNDrop();
 
   useEffect(() => {
     containerRef1.current!.appendChild(
-      document.getElementById(item.choices[0].en)!
+      document.getElementById(question.choices[0].choice.en)!
     );
     containerRef2.current!.appendChild(
-      document.getElementById(item.choices[1].en)!
+      document.getElementById(question.choices[1].choice.en)!
     );
-  }, [item.choices]);
+  }, [question.choices]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -66,9 +66,9 @@ export default function QuestionBeginner({
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
       router.push(
-        `/particles/${item.category_id}/result/?level=${item.level}&state=${
-          correct_answer === answer
-        }`
+        `/particles/${question.categoryId}/result/?level=${
+          question.level
+        }&state=${correct_answer === answer}`
       );
     }
   }
@@ -113,10 +113,12 @@ export default function QuestionBeginner({
       </div>
 
       <CustomPhraseStyle>
-        {item.phrase_front.split("").map((char: string, idx) => {
-          return <p key={idx}>{char}</p>;
-        })}
-        <p> </p>
+        {question
+          .additionalQuestion!.phrase_front!.split("")
+          .map((char: string, idx) => {
+            return <p key={idx}>{char}</p>;
+          })}
+        <p></p>
         <div
           id="div3"
           onDrop={(ev) => {
@@ -126,14 +128,16 @@ export default function QuestionBeginner({
           className={styles.woBeguinner}
           ref={containerRef3}
         ></div>
-        {item.phrase_back.split("").map((char: string, idx) => {
-          return <p key={idx}>{char}</p>;
-        })}
+        {question
+          .additionalQuestion!.phrase_back!.split("")
+          .map((char: string, idx) => {
+            return <p key={idx}>{char}</p>;
+          })}
       </CustomPhraseStyle>
 
       <Image
-        id={item.choices[0].en}
-        src={item.choices[0].image}
+        id={question.choices[0].choice.en}
+        src={question.choices[0].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -143,8 +147,8 @@ export default function QuestionBeginner({
         height="70"
       />
       <Image
-        id={item.choices[1].en}
-        src={item.choices[1].image}
+        id={question.choices[1].choice.en}
+        src={question.choices[1].choice.image}
         alt="picture"
         draggable="true"
         onDragStart={(

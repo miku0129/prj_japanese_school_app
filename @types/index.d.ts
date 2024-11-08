@@ -1,3 +1,9 @@
+interface HomeIndex {
+  en: string;
+  jp: string;
+  sample: string;
+}
+
 interface Params {
   [key: string]: string;
 }
@@ -8,46 +14,40 @@ interface SearchParams {
 
 interface ItemSkeleton {
   id: number;
-  category: string;
-  category_id: number;
-  level: string;
-  is_index: boolean;
 }
 
-interface ChoiceSkeleton {
-  id: number;
+interface Choice extends ItemSkeleton {
   character: string;
-}
-
-interface Choice extends ChoiceSkeleton {
   en: string;
   image: string;
-  style_border?: string;
-  style_height?: number;
-  style_width?: number;
+  styleHeight?: string | null;
+  styleWidth?: string | null;
+
+}
+interface ChoiceContainer {
+  choice: Choice;
+  choiceId: number;
+  questionId: number;
+}
+interface AdditionalQuestion extends ItemSkeleton {
+  phrase_front?: string | null;
+  phrase_back?: string | null;
+  sound_resource?: string | null;
 }
 
-interface ItemParticleBeginner extends ItemSkeleton {
-  character: string;
-  phrase_front: string;
-  phrase_back: string;
-  choices: Choice[];
+interface Question extends ItemSkeleton {
+  category: string;
+  categoryId: number;
+  level: string;
+  isIndex: boolean;
+  additionalQuestion: AdditionalQuestion | null;
+  choices: ChoiceContainer[];
+  character?: string | null;
+  answer?: string | null;
 }
-
-interface ItemParticleIntermediate extends ItemSkeleton {
-  character: string;
-  choices: Choice[];
-  answer: string;
-}
-
-interface ItemParticleAdvanced extends ItemSkeleton {
-  answer: string;
-  sound_resource: string;
-}
-
 
 interface DragItemProps {
-  children: ItemParticleBeginner | ItemParticleIntermediate;
+  children: Question;
   dragging: HTMLElement | null;
   handleDragEnter: (ev: DragEvent<HTMLDivElement>) => void;
   handleDragStart: (ev: DragEvent<HTMLDivElement>) => void;
