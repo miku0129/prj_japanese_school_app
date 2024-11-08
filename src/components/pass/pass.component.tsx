@@ -19,7 +19,7 @@ export default function Pass({ params }: { params: Question[] }) {
   const router = useRouter();
   const getMessage = () => {
     window.alert("💯クリアおめでとう！");
-    router.push("/");
+    router.push(`/${category}`);
   };
 
   const current_exercise = params
