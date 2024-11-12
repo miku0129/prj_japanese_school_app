@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import Audio from "@/components/audio/audio.component";
 import {
   CustomPhraseStyle,
-  // CustomIconBtnStyle,
-  // CustomBtnContainerStyle,
+  CustomIconBtnStyle,
+  CustomBtnContainerStyle,
 } from "@/styles/styled-components/page";
 import styles from "./question-advanced.style.module.scss";
 
@@ -42,9 +42,8 @@ export default function QuestionAdvanced({
 
       <div className={styles.formContainer}>
         <div className={styles.formOuter}>
-          {/* <form onSubmit={() => submitAnswer()}> */}
-          <div className="form-like-field">
-            <div className={styles.formIner}>
+          <div className={styles.formIner}>
+            <div className="form-like-field">
               <textarea
                 cols={30}
                 onChange={(e) => setUserAnswer(e.target.value)}
@@ -53,18 +52,12 @@ export default function QuestionAdvanced({
                 value={userAnswer}
                 className={styles.inputField}
               />
-              <div className={styles.btnContainer}>
-                <button
-                  disabled={!userAnswer}
-                  // type="submit"
-                  className={styles.inputBtn}
-                  onClick={() => submitAnswer()}
-                >
-                  <i className="fa-solid fa-arrow-left"></i>
-                </button>
-              </div>
             </div>
-          {/* </form> */}
+            <CustomBtnContainerStyle>
+              <CustomIconBtnStyle disabled={!userAnswer} onClick={submitAnswer}>
+                <i className="fa-solid fa-arrow-left"></i>
+              </CustomIconBtnStyle>
+            </CustomBtnContainerStyle>
           </div>
         </div>
         {question.additionalQuestion?.sound_resource && (
