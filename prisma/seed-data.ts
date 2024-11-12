@@ -405,7 +405,7 @@ export const SEEDS = [
     categoryId: 11,
     level: "advanced",
     isIndex: false,
-    answer: "バナナはおいしい",
+    answer: "ばななはおいしい",
     choices: [],
     additionalQuestion: {
       sound_resource:
