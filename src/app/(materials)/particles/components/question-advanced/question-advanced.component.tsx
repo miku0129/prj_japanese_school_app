@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-// import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Audio from "@/components/audio/audio.component";
 import {
   CustomPhraseStyle,
@@ -15,48 +15,19 @@ export default function QuestionAdvanced({
 }: {
   params: Question;
 }) {
-  // const [questions, setQuestions] = useState<Question[]>([]);
-  // const [showAnswer, setShowAnswer] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
 
-  const [content, setContent] = useState("");
+  const router = useRouter();
 
-  // const router = useRouter();
-
-  useEffect(() => {
-    async function getQuestions() {
-      // const res = await fetch(`/api/particles/`, {
-      //   method: "GET",
-      // });
-      // const data = await res.json();
-      // setQuestions(data)
-    }
-    getQuestions();
-  }, []);
-
-  // useEffect(() => {
-  //   if (question.isIndex) {
-  //     window.alert(
-  //       "きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。"
-  //     );
-  //   }
-  // }, [question.isIndex]);
-
-  // function answerHandler() {
-  //   setShowAnswer(!showAnswer);
-  // }
-
-  // function pageHandler() {
-  //   const nextCategoryId = question.categoryId + 1;
-  //   router.push(`/particles/${nextCategoryId}/?level=${question.level}`);
-  // }
-
-  // const getMessage = () => {
-  //   window.alert("💯クリアおめでとう！");
-  //   router.push("/");
-  // };
+  function submitAnswer() {
+    router.push(
+      `/particles/${question.categoryId}/result/?level=${
+        question.level
+      }&state=${question.answer === userAnswer}`
+    );
+  }
 
   return (
-    // <div className={styles.sample}>
     <div className={styles.phraseContainer}>
       <CustomPhraseStyle>
         <p>👂</p>
@@ -71,33 +42,35 @@ export default function QuestionAdvanced({
 
       <div className={styles.formContainer}>
         <div className={styles.formOuter}>
-          <form onSubmit={() => {}}>
+          {/* <form onSubmit={() => submitAnswer()}> */}
+          <div className="form-like-field">
             <div className={styles.formIner}>
               <textarea
                 cols={30}
-                onChange={(e) => setContent(e.target.value)}
-                placeholder="こたえをかいてね"
+                onChange={(e) => setUserAnswer(e.target.value)}
+                placeholder="ひらがなでこたえをかいてね"
                 rows={2}
-                value={content}
+                value={userAnswer}
                 className={styles.inputField}
               />
               <div className={styles.btnContainer}>
                 <button
-                  disabled={!content}
-                  type="submit"
+                  disabled={!userAnswer}
+                  // type="submit"
                   className={styles.inputBtn}
+                  onClick={() => submitAnswer()}
                 >
                   <i className="fa-solid fa-arrow-left"></i>
                 </button>
               </div>
             </div>
-          </form>
+          {/* </form> */}
+          </div>
         </div>
         {question.additionalQuestion?.sound_resource && (
           <Audio audioLink={question.additionalQuestion!.sound_resource} />
         )}
       </div>
     </div>
-    // </div>
   );
 }

@@ -8,7 +8,7 @@ html{
   font-size: 62.5%; /* -> 10px */ 
 }
 
-form {
+.form-like-field {
   writing-mode: vertical-rl;
   > .field {
     > .label {
