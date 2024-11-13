@@ -59,7 +59,7 @@ export default function QuestionBeginner({
     }
   }
 
-  function getResult() {
+  function submitAnswer() {
     const data = document.getElementById("div3");
     if (data!.getElementsByTagName("img").length === 0) {
       window.alert("ひらがなをえらんでね");
@@ -158,7 +158,7 @@ export default function QuestionBeginner({
         height="70"
       />
 
-      <CustomBtnContainerStyle onClick={getResult}>
+      <CustomBtnContainerStyle onClick={submitAnswer}>
         <CustomIconBtnStyle>
           <i className="fa-solid fa-arrow-left"></i>
         </CustomIconBtnStyle>

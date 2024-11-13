@@ -80,7 +80,7 @@ export default function QuestionIntermediate({
     }
   }
 
-  function getResult() {
+  function submitAnswer() {
     const user_answer1 = document.getElementById("div5");
     const user_answer2 = document.getElementById("div6");
     const user_answer3 = document.getElementById("div7");
@@ -235,7 +235,7 @@ export default function QuestionIntermediate({
         height={Number(question.choices[3].choice.styleHeight)}
       />
 
-      <CustomBtnContainerStyle onClick={getResult}>
+      <CustomBtnContainerStyle onClick={submitAnswer}>
         <CustomIconBtnStyle>
           <i className="fa-solid fa-arrow-left"></i>
         </CustomIconBtnStyle>

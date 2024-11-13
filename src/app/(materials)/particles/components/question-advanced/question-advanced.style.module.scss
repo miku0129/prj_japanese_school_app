@@ -1,44 +1,31 @@
 .phraseContainer {
   display: flex;
   flex-direction: row-reverse;
-  gap: 3rem;
-  padding: 3rem;
+  padding: 2rem 1rem;
 }
 
-.answerOuterContainer {
-  width: 100%;
+.formContainer {
+  width: 100vw;
+}
+.formOuter {
+  display: flex;
+  justify-content: center;
+}
+.formIner {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5rem;
+  max-width: 50rem;
+  justify-content: space-evenly;
+}
+.inputField {
+  font-size: 3rem;
+}
+.btnContainer {
   display: flex;
   justify-content: flex-end;
-  flex-direction: row-reverse;
-  gap: 6rem;
 }
-
-.answerBoard {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row-reverse;
-  gap: 2rem;
-}
-
-.explanation {
-  font-size: 2rem;
-  color: gray;
-}
-
-.answerPhraseContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  p {
-    justify-content: start;
-    font-size: 2.5rem;
-    max-height: 0.1rem;
-  }
-}
-
-.buttonContainer {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 1rem;
+.inputBtn {
+  width: 8rem;
+  height: 8rem;
 }

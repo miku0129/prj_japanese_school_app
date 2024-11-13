@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Audio from "@/components/audio/audio.component";
 import {
@@ -15,112 +15,55 @@ export default function QuestionAdvanced({
 }: {
   params: Question;
 }) {
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
+
   const router = useRouter();
 
-  useEffect(() => {
-    async function getQuestions() {
-      const res = await fetch(`/api/particles/`, {
-        method: "GET",
-      });
-      const data = await res.json();
-      setQuestions(data)
-    }
-    getQuestions();
-  }, []);
-
-  useEffect(() => {
-    if (question.isIndex) {
-      window.alert(
-        "きこえた文をかいてみよう。かけたら👁を押してこたえをかくにんしよう。"
-      );
-    }
-  }, [question.isIndex]);
-
-  function answerHandler() {
-    setShowAnswer(!showAnswer);
+  function submitAnswer() {
+    router.push(
+      `/particles/${question.categoryId}/result/?level=${
+        question.level
+      }&state=${question.answer === userAnswer}`
+    );
   }
-
-  function pageHandler() {
-    const nextCategoryId = question.categoryId + 1;
-    router.push(`/particles/${nextCategoryId}/?level=${question.level}`);
-  }
-
-  const getMessage = () => {
-    window.alert("💯クリアおめでとう！");
-    router.push("/");
-  };
 
   return (
-    <div className={styles.sample}>
-      <div className={styles.phraseContainer}>
-        <CustomPhraseStyle>
-          <p>👂</p>
-          <p>音</p>
-          <p>を</p>
-          <p>き</p>
-          <p>き</p>
-          <p>と</p>
-          <p>ろ</p>
-          <p>う</p>
-        </CustomPhraseStyle>
+    <div className={styles.phraseContainer}>
+      <CustomPhraseStyle>
+        <p>👂</p>
+        <p>音</p>
+        <p>を</p>
+        <p>き</p>
+        <p>き</p>
+        <p>と</p>
+        <p>ろ</p>
+        <p>う</p>
+      </CustomPhraseStyle>
 
-        <div className={styles.answerOuterContainer}>
-          {showAnswer && (
-            <div className={styles.answerBoard}>
-              <div className={styles.explanation}>
-                <p>こ</p>
-                <p>た</p>
-                <p>え</p>
-              </div>
-              <div className={styles.answerPhraseContainer}>
-                {question.answer!.split("").map((char: string, idx: number) => {
-                  return <p key={idx}>{char}</p>;
-                })}
-              </div>
+      <div className={styles.formContainer}>
+        <div className={styles.formOuter}>
+          <div className={styles.formIner}>
+            <div className="form-like-field">
+              <textarea
+                cols={30}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                placeholder="ひらがなでこたえをかいてね"
+                rows={2}
+                value={userAnswer}
+                className={styles.inputField}
+              />
             </div>
-          )}
-          {!showAnswer && (
             <CustomBtnContainerStyle>
-              <CustomIconBtnStyle onClick={() => answerHandler()}>
-                <i className="fa-regular fa-eye"></i>
+              <CustomIconBtnStyle disabled={!userAnswer} onClick={submitAnswer}>
+                <i className="fa-solid fa-arrow-left"></i>
               </CustomIconBtnStyle>
             </CustomBtnContainerStyle>
-          )}
-          {showAnswer && questions.length > question.categoryId && (
-            <div className={styles.buttonContainer}>
-              <CustomBtnContainerStyle>
-                <CustomIconBtnStyle onClick={() => answerHandler()}>
-                  <i className="fa-regular fa-eye-slash"></i>
-                </CustomIconBtnStyle>
-              </CustomBtnContainerStyle>
-              <CustomBtnContainerStyle>
-                <CustomIconBtnStyle onClick={() => pageHandler()}>
-                  <i className="fa-solid fa-arrow-left"></i>
-                </CustomIconBtnStyle>
-              </CustomBtnContainerStyle>
-            </div>
-          )}
-          {showAnswer && questions.length === question.categoryId && (
-            <div className={styles.buttonContainer}>
-              <CustomBtnContainerStyle>
-                <CustomIconBtnStyle onClick={() => answerHandler()}>
-                  <i className="fa-regular fa-eye-slash"></i>
-                </CustomIconBtnStyle>
-              </CustomBtnContainerStyle>
-              <CustomBtnContainerStyle>
-                <CustomIconBtnStyle onClick={() => getMessage()}>
-                  <i className="fa-regular fa-face-smile-wink"></i>
-                </CustomIconBtnStyle>
-              </CustomBtnContainerStyle>
-            </div>
-          )}
+          </div>
         </div>
+        {question.additionalQuestion?.sound_resource && (
+          <Audio audioLink={question.additionalQuestion!.sound_resource} />
+        )}
       </div>
-      {question.additionalQuestion?.sound_resource && (
-        <Audio audioLink={question.additionalQuestion!.sound_resource} />
-      )}
     </div>
   );
 }
