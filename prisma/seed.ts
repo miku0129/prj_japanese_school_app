@@ -6,19 +6,40 @@ const seedData = SEEDS;
 
 async function main() {
   console.log("Seeding data...");
+  let id = 0;
+  let category_id = 0;
+  let choice_id = 0;
+  let choices = [];
+
   for (let i = 0; i < seedData.length; i++) {
+    if (seedData[i].choices[0]) {
+      for (let k = 0; k < seedData[i].choices.length; k++) {
+        choices[k] = {
+          choice: {
+            create: {
+              id: choice_id,
+              ...seedData[i].choices[k],
+            },
+          },
+        };
+        choice_id++;
+      }
+    } else {
+      choices = [];
+    }
+
     if (seedData[i].additionalQuestion) {
       await prisma.question.create({
         data: {
-          id: seedData[i].id,
+          id: id,
           character: seedData[i].character,
-          categoryId: seedData[i].categoryId,
+          categoryId: category_id,
           level: seedData[i].level,
           isIndex: seedData[i].isIndex,
           category: seedData[i].category,
           answer: seedData[i].answer,
           choices: {
-            create: seedData[i].choices,
+            create: choices,
           },
           additionalQuestion: {
             create: seedData[i].additionalQuestion,
@@ -28,19 +49,21 @@ async function main() {
     } else if (!seedData[i].additionalQuestion) {
       await prisma.question.create({
         data: {
-          id: seedData[i].id,
+          id: id,
           character: seedData[i].character,
-          categoryId: seedData[i].categoryId,
+          categoryId: category_id,
           level: seedData[i].level,
           isIndex: seedData[i].isIndex,
           category: seedData[i].category,
           answer: seedData[i].answer,
           choices: {
-            create: seedData[i].choices,
+            create: choices,
           },
         },
       });
     }
+    id++;
+    category_id++;
   }
   console.log("Data seeding complete.");
 }
