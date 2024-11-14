@@ -6,7 +6,7 @@ export default async function HomeBoard() {
     {
       en: "particles",
       jp: "助詞",
-      sample: "は、を"
+      sample: "は、を、へ"
     },
   ];
   return (

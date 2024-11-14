@@ -87,7 +87,28 @@ export const SEEDS = [
       phrase_back: "いく",
     },
   },
-
+  {
+    character: "he",
+    level: "beginner",
+    isIndex: false,
+    category: "particles",
+    choices: [
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+      },
+      {
+        character: "え",
+        en: "e",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+    ],
+    additionalQuestion: {
+      phrase_front: "まえ",
+      phrase_back: "すすむ",
+    },
+  },
   {
     character: "ha",
     level: "beginner",
@@ -144,6 +165,43 @@ export const SEEDS = [
         styleHeight: "100",
         styleWidth: "50",
         image: "https://i.ibb.co/K6Z6kZj/img-yobu.jpg",
+      },
+    ],
+  },
+  {
+    character: "he",
+    category: "particles",
+    level: "intermediate",
+    isIndex: false,
+    answer: "migi he ugoku",
+    choices: [
+      {
+        character: "うごく",
+        en: "ugoku",
+        image: "https://i.ibb.co/m9Z9Fnp/img-ugoku.jpg",
+        styleHeight: "120",
+        styleWidth: "50",
+      },
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+        styleHeight: "50",
+        styleWidth: "50",
+      },
+      {
+        character: "え",
+        en: "e",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+      {
+        character: "みぎ",
+        en: "migi",
+        styleHeight: "100",
+        styleWidth: "50",
+        image: "https://i.ibb.co/Ldjwnrc/img-migi.jpg",
       },
     ],
   },
@@ -259,14 +317,73 @@ export const SEEDS = [
     ],
   },
   {
+    character: "he",
+    category: "particles",
+    level: "intermediate",
+    isIndex: false,
+    answer: "ushiro he sagaru",
+    choices: [
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+        styleHeight: "50",
+        styleWidth: "50",
+      },
+      {
+        character: "さがる",
+        en: "sagaru",
+        image: "https://i.ibb.co/m9Z9Fnp/img-ugoku.jpg",
+        styleHeight: "120",
+        styleWidth: "50",
+      },
+      {
+        character: "え",
+        en: "e",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+      {
+        character: "うしろ",
+        en: "ushiro",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/WHsYyCb/img-ushiro.jpg",
+      },
+    ],
+  },
+  {
     category: "particles",
     level: "advanced",
     isIndex: true,
+    answer: "うちゅうへいく",
+    choices: [],
+    additionalQuestion: {
+      sound_resource:
+        "https://dl.dropboxusercontent.com/scl/fi/2eqfql8sqx7i2tfmybhtw/uchyuheiku.m4a?rlkey=36idrjqz2qkjoja2zqh07esnl&st=x8a82nvr&dl=0",
+    },
+  },
+  {
+    category: "particles",
+    level: "advanced",
+    isIndex: false,
     answer: "おにはこわい",
     choices: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/ybe00sx6hc87nhycica3n/onihakowai.m4a?rlkey=hcdddo8i2mjn7cl45ptkatwgs&st=8qnwuots&dl=0",
+    },
+  },
+  {
+    category: "particles",
+    level: "advanced",
+    isIndex: false,
+    answer: "ひだりへとぶ",
+    choices: [],
+    additionalQuestion: {
+      sound_resource:
+        "https://dl.dropboxusercontent.com/scl/fi/z3d7njvi3a23zkaquxplt/hidarihetobu.m4a?rlkey=qvwareez8az4j9aalc0sicz4l&st=o896ygmb&dl=0",
     },
   },
   {
