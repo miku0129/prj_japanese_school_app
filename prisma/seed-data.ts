@@ -1,31 +1,19 @@
 export const SEEDS = [
   {
-    id: 1,
     character: "wo",
-    categoryId: 1,
     level: "beginner",
     isIndex: true,
     category: "particles",
     choices: [
       {
-        choice: {
-          create: {
-            id: 1,
-            character: "お",
-            en: "o",
-            image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-          },
-        },
+        character: "お",
+        en: "o",
+        image: "https://i.ibb.co/HxwYW1p/img-o.png",
       },
       {
-        choice: {
-          create: {
-            id: 2,
-            character: "を",
-            en: "wo",
-            image: "https://i.ibb.co/Gnyk250/img-wo.png",
-          },
-        },
+        character: "を",
+        en: "wo",
+        image: "https://i.ibb.co/Zcwy4qv/img-wo.png",
       },
     ],
     additionalQuestion: {
@@ -34,32 +22,20 @@ export const SEEDS = [
     },
   },
   {
-    id: 2,
     character: "wo",
-    categoryId: 2,
     level: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
       {
-        choice: {
-          create: {
-            id: 3,
-            character: "お",
-            en: "o",
-            image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-          },
-        },
+        character: "お",
+        en: "o",
+        image: "https://i.ibb.co/HxwYW1p/img-o.png",
       },
       {
-        choice: {
-          create: {
-            id: 4,
-            character: "を",
-            en: "wo",
-            image: "https://i.ibb.co/Gnyk250/img-wo.png",
-          },
-        },
+        character: "を",
+        en: "wo",
+        image: "https://i.ibb.co/Zcwy4qv/img-wo.png",
       },
     ],
     additionalQuestion: {
@@ -68,32 +44,20 @@ export const SEEDS = [
     },
   },
   {
-    id: 3,
     character: "ha",
-    categoryId: 3,
     level: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
       {
-        choice: {
-          create: {
-            id: 5,
-            character: "わ",
-            en: "wa",
-            image: "https://i.ibb.co/Yj23XWD/img-wa.png",
-          },
-        },
+        character: "わ",
+        en: "wa",
+        image: "https://i.ibb.co/ft3G8n3/img-wa.png",
       },
       {
-        choice: {
-          create: {
-            id: 6,
-            character: "は",
-            en: "ha",
-            image: "https://i.ibb.co/zf7Qssr/img-ha.png",
-          },
-        },
+        character: "は",
+        en: "ha",
+        image: "https://i.ibb.co/12zdtgf/img-ha.png",
       },
     ],
     additionalQuestion: {
@@ -102,32 +66,64 @@ export const SEEDS = [
     },
   },
   {
-    id: 4,
-    character: "ha",
-    categoryId: 4,
+    character: "he",
     level: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
       {
-        choice: {
-          create: {
-            id: 7,
-            character: "は",
-            en: "ha",
-            image: "https://i.ibb.co/zf7Qssr/img-ha.png",
-          },
-        },
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
       },
       {
-        choice: {
-          create: {
-            id: 8,
-            character: "わ",
-            en: "wa",
-            image: "https://i.ibb.co/Yj23XWD/img-wa.png",
-          },
-        },
+        character: "え",
+        en: "e",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+    ],
+    additionalQuestion: {
+      phrase_front: "がっこう",
+      phrase_back: "いく",
+    },
+  },
+  {
+    character: "he",
+    level: "beginner",
+    isIndex: false,
+    category: "particles",
+    choices: [
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+      },
+      {
+        character: "え",
+        en: "e",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+    ],
+    additionalQuestion: {
+      phrase_front: "まえ",
+      phrase_back: "すすむ",
+    },
+  },
+  {
+    character: "ha",
+    level: "beginner",
+    isIndex: false,
+    category: "particles",
+    choices: [
+      {
+        character: "は",
+        en: "ha",
+        image: "https://i.ibb.co/12zdtgf/img-ha.png",
+      },
+      {
+        character: "わ",
+        en: "wa",
+        image: "https://i.ibb.co/ft3G8n3/img-wa.png",
       },
     ],
     additionalQuestion: {
@@ -135,250 +131,243 @@ export const SEEDS = [
       phrase_back: "むしです",
     },
   },
-
   {
-    id: 5,
     character: "wo",
-    categoryId: 5,
     category: "particles",
     level: "intermediate",
     isIndex: true,
     answer: "imouto wo yobu",
     choices: [
       {
-        choice: {
-          create: {
-            id: 9,
-            character: "お",
-            en: "o",
-            image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "お",
+        en: "o",
+        image: "https://i.ibb.co/HxwYW1p/img-o.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 10,
-            character: "を",
-            en: "wo",
-            image: "https://i.ibb.co/Gnyk250/img-wo.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "を",
+        en: "wo",
+        image: "https://i.ibb.co/Zcwy4qv/img-wo.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 11,
-            character: "いもうと",
-            en: "imouto",
-            styleHeight: "200",
-            styleWidth: "50",
-            image: "https://i.ibb.co/kxKnG9P/img-imouto.jpg",
-          },
-        },
+        character: "いもうと",
+        en: "imouto",
+        styleHeight: "200",
+        styleWidth: "50",
+        image: "https://i.ibb.co/31GDYmS/img-imouto.jpg",
       },
       {
-        choice: {
-          create: {
-            id: 12,
-            character: "よぶ",
-            en: "yobu",
-            styleHeight: "100",
-            styleWidth: "50",
-            image: "https://i.ibb.co/SN8pcw8/img-yobu.jpg",
-          },
-        },
+        character: "よぶ",
+        en: "yobu",
+        styleHeight: "100",
+        styleWidth: "50",
+        image: "https://i.ibb.co/K6Z6kZj/img-yobu.jpg",
       },
     ],
   },
   {
-    id: 6,
+    character: "he",
+    category: "particles",
+    level: "intermediate",
+    isIndex: false,
+    answer: "migi he ugoku",
+    choices: [
+      {
+        character: "うごく",
+        en: "ugoku",
+        image: "https://i.ibb.co/m9Z9Fnp/img-ugoku.jpg",
+        styleHeight: "120",
+        styleWidth: "50",
+      },
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+        styleHeight: "50",
+        styleWidth: "50",
+      },
+      {
+        character: "え",
+        en: "e",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+      {
+        character: "みぎ",
+        en: "migi",
+        styleHeight: "100",
+        styleWidth: "50",
+        image: "https://i.ibb.co/Ldjwnrc/img-migi.jpg",
+      },
+    ],
+  },
+  {
     character: "wo",
-    categoryId: 6,
     category: "particles",
     level: "intermediate",
     isIndex: false,
     answer: "boushi wo kaburu",
     choices: [
       {
-        choice: {
-          create: {
-            id: 13,
-            character: "お",
-            en: "o",
-            image: "https://i.ibb.co/3TjcvyJ/img-o.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "お",
+        en: "o",
+        image: "https://i.ibb.co/HxwYW1p/img-o.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 14,
-            character: "を",
-            en: "wo",
-            image: "https://i.ibb.co/Gnyk250/img-wo.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "を",
+        en: "wo",
+        image: "https://i.ibb.co/Zcwy4qv/img-wo.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 15,
-            character: "ぼうし",
-            en: "boushi",
-            styleHeight: "120",
-            styleWidth: "50",
-            image: "https://i.ibb.co/CVYRNfP/img-boushi.jpg",
-          },
-        },
+        character: "ぼうし",
+        en: "boushi",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/D4JHTLM/img-boushi.jpg",
       },
       {
-        choice: {
-          create: {
-            id: 16,
-            character: "かぶる",
-            en: "kaburu",
-            styleHeight: "120",
-            styleWidth: "50",
-            image: "https://i.ibb.co/9sZN0b1/img-kaburu.jpg",
-          },
-        },
+        character: "かぶる",
+        en: "kaburu",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/qg1zCQp/img-kaburu.jpg",
       },
     ],
   },
   {
-    id: 7,
     character: "ha",
-    categoryId: 7,
     category: "particles",
     level: "intermediate",
     isIndex: false,
     answer: "natu ha atui",
     choices: [
       {
-        choice: {
-          create: {
-            id: 17,
-            character: "なつ",
-            en: "natu",
-            image: "https://i.ibb.co/ts8myMQ/img-natu.jpg",
-            styleHeight: "100",
-            styleWidth: "50",
-          },
-        },
+        character: "なつ",
+        en: "natu",
+        image: "https://i.ibb.co/VVnCcg8/img-natu.jpg",
+        styleHeight: "100",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 18,
-            character: "わ",
-            en: "wa",
-            image: "https://i.ibb.co/Yj23XWD/img-wa.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "わ",
+        en: "wa",
+        image: "https://i.ibb.co/ft3G8n3/img-wa.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 19,
-            character: "は",
-            en: "ha",
-            styleHeight: "50",
-            styleWidth: "50",
-            image: "https://i.ibb.co/zf7Qssr/img-ha.png",
-          },
-        },
+        character: "は",
+        en: "ha",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/12zdtgf/img-ha.png",
       },
       {
-        choice: {
-          create: {
-            id: 20,
-            character: "あつい",
-            en: "atui",
-            styleHeight: "120",
-            styleWidth: "50",
-            image: "https://i.ibb.co/bPqRzXW/img-atui.jpg",
-          },
-        },
+        character: "あつい",
+        en: "atui",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/0K6tv70/img-atui.jpg",
       },
     ],
   },
   {
-    id: 8,
     character: "ha",
-    categoryId: 8,
     category: "particles",
     level: "intermediate",
     isIndex: false,
     answer: "kuruma ha hashiru",
     choices: [
       {
-        choice: {
-          create: {
-            id: 21,
-            character: "はしる",
-            en: "hashiru",
-            image: "https://i.ibb.co/fr7gNYS/img-hashiru.jpg",
-            styleHeight: "120",
-            styleWidth: "50",
-          },
-        },
+        character: "はしる",
+        en: "hashiru",
+        image: "https://i.ibb.co/bXY2wGB/img-hashiru.jpg",
+        styleHeight: "120",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 22,
-            character: "わ",
-            en: "wa",
-            image: "https://i.ibb.co/Yj23XWD/img-wa.png",
-            styleHeight: "50",
-            styleWidth: "50",
-          },
-        },
+        character: "わ",
+        en: "wa",
+        image: "https://i.ibb.co/ft3G8n3/img-wa.png",
+        styleHeight: "50",
+        styleWidth: "50",
       },
       {
-        choice: {
-          create: {
-            id: 23,
-            character: "は",
-            en: "ha",
-            styleHeight: "50",
-            styleWidth: "50",
-            image: "https://i.ibb.co/zf7Qssr/img-ha.png",
-          },
-        },
+        character: "は",
+        en: "ha",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/12zdtgf/img-ha.png",
       },
       {
-        choice: {
-          create: {
-            id: 24,
-            character: "くるま",
-            en: "kuruma",
-            styleHeight: "120",
-            styleWidth: "50",
-            image: "https://i.ibb.co/2M6DcKc/img-kuruma.jpg",
-          },
-        },
+        character: "くるま",
+        en: "kuruma",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/wM0Bvxr/img-kuruma.jpg",
       },
     ],
   },
-
   {
-    id: 9,
+    character: "he",
     category: "particles",
-    categoryId: 9,
+    level: "intermediate",
+    isIndex: false,
+    answer: "ushiro he sagaru",
+    choices: [
+      {
+        character: "へ",
+        en: "he",
+        image: "https://i.ibb.co/09vRrS6/img-he.png",
+        styleHeight: "50",
+        styleWidth: "50",
+      },
+      {
+        character: "さがる",
+        en: "sagaru",
+        image: "https://i.ibb.co/m9Z9Fnp/img-ugoku.jpg",
+        styleHeight: "120",
+        styleWidth: "50",
+      },
+      {
+        character: "え",
+        en: "e",
+        styleHeight: "50",
+        styleWidth: "50",
+        image: "https://i.ibb.co/myQxNYc/img-e.png",
+      },
+      {
+        character: "うしろ",
+        en: "ushiro",
+        styleHeight: "120",
+        styleWidth: "50",
+        image: "https://i.ibb.co/WHsYyCb/img-ushiro.jpg",
+      },
+    ],
+  },
+  {
+    category: "particles",
     level: "advanced",
     isIndex: true,
+    answer: "うちゅうへいく",
+    choices: [],
+    additionalQuestion: {
+      sound_resource:
+        "https://dl.dropboxusercontent.com/scl/fi/2eqfql8sqx7i2tfmybhtw/uchyuheiku.m4a?rlkey=36idrjqz2qkjoja2zqh07esnl&st=x8a82nvr&dl=0",
+    },
+  },
+  {
+    category: "particles",
+    level: "advanced",
+    isIndex: false,
     answer: "おにはこわい",
     choices: [],
     additionalQuestion: {
@@ -387,9 +376,18 @@ export const SEEDS = [
     },
   },
   {
-    id: 10,
     category: "particles",
-    categoryId: 10,
+    level: "advanced",
+    isIndex: false,
+    answer: "ひだりへとぶ",
+    choices: [],
+    additionalQuestion: {
+      sound_resource:
+        "https://dl.dropboxusercontent.com/scl/fi/z3d7njvi3a23zkaquxplt/hidarihetobu.m4a?rlkey=qvwareez8az4j9aalc0sicz4l&st=o896ygmb&dl=0",
+    },
+  },
+  {
+    category: "particles",
     level: "advanced",
     isIndex: false,
     answer: "おかしをたべる",
@@ -400,9 +398,7 @@ export const SEEDS = [
     },
   },
   {
-    id: 11,
     category: "particles",
-    categoryId: 11,
     level: "advanced",
     isIndex: false,
     answer: "ばななはおいしい",
@@ -413,9 +409,7 @@ export const SEEDS = [
     },
   },
   {
-    id: 12,
     category: "particles",
-    categoryId: 12,
     level: "advanced",
     isIndex: false,
     answer: "ろうそくをけす",
