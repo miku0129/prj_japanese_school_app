@@ -40,3 +40,5 @@ data.sql
 init-data.ts
 question-advanced.component_bk
 seed-data copy.ts
+
+.env_bk
