@@ -41,6 +41,7 @@ init-data.ts
 question-advanced.component_bk
 seed-data copy.ts
 
+ghcr.txt
 .env_vercel.bk
 .env.localdocker.bk
 schema.prisma_vercel.bk
