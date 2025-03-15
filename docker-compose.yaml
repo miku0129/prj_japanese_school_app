@@ -16,8 +16,8 @@ services:
     ports:
       - "4000:3000"
     volumes:
-      - /home/ubuntu/prj_japanese_school_app/:/app
-      - /home/ubuntu/prj_japanese_school_app/node_modules:/app/node_modules
+      - /home/ubuntu/apps/prj_japanese_school_app/:/app
+      - /home/ubuntu/apps/prj_japanese_school_app/node_modules:/app/node_modules
     networks:
       jp-school-net:
         aliases:
