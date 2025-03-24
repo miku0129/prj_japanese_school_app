@@ -41,6 +41,8 @@ init-data.ts
 question-advanced.component_bk
 seed-data copy.ts
 
-.env_vercel.bk
+.env.vercel.bk
+.env.vps.bk
 .env.localdocker.bk
 schema.prisma_vercel.bk
+docker-compose.vps.bk
