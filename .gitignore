@@ -46,3 +46,4 @@ seed-data copy.ts
 .env.localdocker.bk
 schema.prisma_vercel.bk
 docker-compose.vps.bk
+/src/styles/global-css.bk/

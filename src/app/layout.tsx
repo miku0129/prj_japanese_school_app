@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./../styles/global-css/globals.css";
+import "../styles/global-tailwind-css/globals.tailwind.css"
 
 export const metadata: Metadata = {
   title: "Learning together",
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="max-w-screen overflow-x-hidden text-[calc(10/16*1rem)]">
       <head>
         <link
           rel="stylesheet"
@@ -22,8 +22,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body>
-        {children}</body>
+      <body className="max-w-screen overflow-x-hidden">{children}</body>
     </html>
   );
 }
