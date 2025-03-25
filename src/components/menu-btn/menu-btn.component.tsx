@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { CustomIconBtnStyle } from "@/styles/styled-components/page";
 import CustomPhrase from "../custom-phrase";
+import CustomBtn from "../custom-btn";
 
 export default function MenuBtn({ params }: { params: Question }) {
   const router = useRouter();
@@ -19,7 +19,7 @@ export default function MenuBtn({ params }: { params: Question }) {
       )}
 
       <div className="text-center p-8">
-        <CustomIconBtnStyle
+        <CustomBtn
           onClick={() =>
             router.push(
               `/${params.category}/${params.categoryId}?level=${params.level}`
@@ -27,7 +27,7 @@ export default function MenuBtn({ params }: { params: Question }) {
           }
         >
           <i className="fa-solid fa-check"></i>
-        </CustomIconBtnStyle>
+        </CustomBtn>
       </div>
     </div>
   );
