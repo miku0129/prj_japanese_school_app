@@ -2,13 +2,6 @@
 
 import styled from "styled-components";
 
-export const CustomBaseStyle = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 1rem;
-  justify-content: center;
-`;
-
 export const CustomPhraseStyle = styled.div`
   display: flex;
   flex-direction: column;
