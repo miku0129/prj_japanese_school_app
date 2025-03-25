@@ -3,12 +3,11 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import CustomPhrase from "@/components/custom-phrase";
 import {
-  CustomPhraseStyle,
   CustomBtnContainerStyle,
   CustomIconBtnStyle,
 } from "@/styles/styled-components/page";
-import styles from "./question-beginner.style.module.scss";
 
 import { mobileDragNDrop } from "@/lib";
 
@@ -74,31 +73,16 @@ export default function QuestionBeginner({
   }
 
   return (
-    <div className={styles.woBeguinnerBase}>
-      <CustomPhraseStyle className={styles.phrase}>
-        <p>ど</p>
-        <p>の</p>
-        <p>ひ</p>
-        <p>ら</p>
-        <p>が</p>
-        <p>な</p>
-        <p>が</p>
-        <p>正</p>
-        <p>し</p>
-        <p>い</p>
-        <p>か</p>
-        <p>な</p>
-        <p>？</p>
-      </CustomPhraseStyle>
-
-      <div className={styles.choises}>
+    <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8">
+      <CustomPhrase phrase="どのひらがながただしいかな？" className="ml-12" />
+      <div className="flex flex-col gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
             drop(1, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef1}
         ></div>
         <div
@@ -107,33 +91,32 @@ export default function QuestionBeginner({
             drop(2, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef2}
         ></div>
       </div>
 
-      <CustomPhraseStyle>
+      <CustomPhrase>
         {question
           .additionalQuestion!.phrase_front!.split("")
           .map((char: string, idx) => {
-            return <p key={idx}>{char}</p>;
+            return <p key={idx} className="text-[calc(40/16*1rem)] text-center">{char}</p>;
           })}
-        <p></p>
         <div
           id="div3"
           onDrop={(ev) => {
             drop(3, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef3}
         ></div>
         {question
           .additionalQuestion!.phrase_back!.split("")
           .map((char: string, idx) => {
-            return <p key={idx}>{char}</p>;
+            return <p key={idx} className="text-[calc(40/16*1rem)] text-center">{char}</p>;
           })}
-      </CustomPhraseStyle>
+      </CustomPhrase>
 
       <Image
         id={question.choices[0].choice.en}
