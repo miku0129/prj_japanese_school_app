@@ -1,12 +1,8 @@
 "use client";
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import {
-  CustomBtnContainerStyle,
-  CustomColoredPhraseStyle,
-  CustomIconBtnStyle,
-} from "@/styles/styled-components/page";
-import styles from "./pass.module.scss";
+import CustomVerticalText from "../custom-vertical-text";
+import CustomBtn from "../custom-btn";
 
 export default function Pass({ params }: { params: Question[] }) {
   const pathname = usePathname();
@@ -27,20 +23,15 @@ export default function Pass({ params }: { params: Question[] }) {
     .filter((question) => question.level === level);
 
   return (
-    <div className={styles.resultContainerBase}>
-      <CustomColoredPhraseStyle
-        background="lightgreen"
-        className={styles.phrase}
-      >
-        <p>あ</p>
-        <p>た</p>
-        <p>り</p>
-        <p>🎉</p>
-      </CustomColoredPhraseStyle>
-      <CustomBtnContainerStyle className={styles.btn}>
+    <div className="flex justify-center">
+      <div className="h-screen flex flex-col justify-evenly ">
+        <CustomVerticalText
+          phrase="あたり!"
+          className="text-5xl text-green-600"
+        />
         {current_exercise[current_exercise.length - 1].categoryId >
           Number(category_id) && (
-          <CustomIconBtnStyle
+          <CustomBtn
             onClick={() =>
               router.push(
                 `/${category}/${Number(category_id) + 1}?level=${level}`
@@ -48,16 +39,15 @@ export default function Pass({ params }: { params: Question[] }) {
             }
           >
             <i className="fa-solid fa-check"></i>
-          </CustomIconBtnStyle>
+          </CustomBtn>
         )}
-
         {current_exercise[current_exercise.length - 1].categoryId ===
           Number(category_id) && (
-          <CustomIconBtnStyle onClick={getMessage}>
+          <CustomBtn onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink"></i>
-          </CustomIconBtnStyle>
+          </CustomBtn>
         )}
-      </CustomBtnContainerStyle>
+      </div>
     </div>
   );
 }
