@@ -1,6 +1,6 @@
 import prisma from "../../../../../../prisma";
 import Fail from "@/components/fail/fail.component";
-import Pass from "@/components/pass/pass.component";
+import TestPassed from "@/components/test-passed/test-passed.component";
 
 export default async function Page({
   searchParams,
@@ -28,7 +28,7 @@ export default async function Page({
   const result = searchParams.state === "true" ? true : false;
   return (
     <div>
-      {result && <Pass params={questions} />}
+      {result && <TestPassed params={questions} />}
       {!result && <Fail />}
     </div>
   );
