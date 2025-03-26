@@ -6,7 +6,7 @@ export default function CustomBtn(props: Props) {
   const { children, className, ...rest } = props;
   return (
     <button
-      className={`h-28 text-4xl bg-gray-300 border-0 rounded-lg py-4 px-8 cursor-pointer ${
+      className={`h-28 text-3xl bg-gray-300 border-0 rounded-lg py-4 px-8 cursor-pointer ${
         className ? className : ""
       }`}
       {...rest}
