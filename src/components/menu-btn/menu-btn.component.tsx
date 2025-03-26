@@ -7,7 +7,7 @@ import CustomBtn from "../custom-btn";
 export default function MenuBtn({ params }: { params: Question }) {
   const router = useRouter();
   return (
-    <div>
+    <div className="text-3xl">
       {params.level === "beginner" && (
         <CustomVerticalText phrase="ことばをさがそう" />
       )}

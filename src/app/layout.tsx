@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="max-w-screen overflow-x-hidden text-[calc(10/16*1rem)]">
+    <html lang="en" className="text-base">
       <head>
         <link
           rel="stylesheet"
@@ -22,7 +22,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className="max-w-screen overflow-x-hidden">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

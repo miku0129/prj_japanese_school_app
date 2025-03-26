@@ -73,7 +73,7 @@ export default function QuestionBeginner({
   }
 
   return (
-    <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8">
+    <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8 text-3xl">
       <CustomVerticalText
         phrase="どのひらがながただしいかな？"
         className="ml-12"
