@@ -3,12 +3,8 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {
-  CustomPhraseStyle,
-  CustomBtnContainerStyle,
-  CustomIconBtnStyle,
-} from "@/styles/styled-components/page";
-import styles from "./question-intermediate.style.module.scss";
+import CustomVerticalText from "@/components/custom-vertical-text";
+import CustomBtn from "@/components/custom-btn";
 
 import { mobileDragNDrop } from "@/lib";
 
@@ -105,30 +101,20 @@ export default function QuestionIntermediate({
   }
 
   return (
-    <div className={styles.particlesIntermediateBase}>
-      <CustomPhraseStyle className={styles.phrase}>
-        <p>ど</p>
-        <p>ん</p>
-        <p>な</p>
-        <p>ぶ</p>
-        <p>ん</p>
-        <p>が</p>
-        <p>正</p>
-        <p>し</p>
-        <p>い</p>
-        <p>か</p>
-        <p>な</p>
-        <p>？</p>
-      </CustomPhraseStyle>
+    <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8 text-3xl">
+      <CustomVerticalText
+        phrase="どんなぶんがただしいかな？"
+        className="ml-12"
+      />
 
-      <div className={styles.choises}>
+      <div className="flex flex-col gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
             drop(1, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef1}
         ></div>
         <div
@@ -137,7 +123,7 @@ export default function QuestionIntermediate({
             drop(2, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef2}
         ></div>
         <div
@@ -146,7 +132,7 @@ export default function QuestionIntermediate({
             drop(3, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef3}
         ></div>
         <div
@@ -155,19 +141,19 @@ export default function QuestionIntermediate({
             drop(4, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef4}
         ></div>
       </div>
 
-      <div className={styles.particlesIntermediateAnswerContainer}>
+      <div className="flex flex-col justify-center gap-2.5 w-[calc(75/16*1rem)] border-1 border-gray-200 bg-gray-200">
         <div
           id="div5"
           onDrop={(ev) => {
             drop(5, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
+          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
           ref={containerRef5}
         ></div>
         <div
@@ -176,7 +162,7 @@ export default function QuestionIntermediate({
             drop(6, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
+          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
           ref={containerRef6}
         ></div>
         <div
@@ -185,7 +171,7 @@ export default function QuestionIntermediate({
             drop(7, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
+          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
           ref={containerRef7}
         ></div>
       </div>
@@ -234,12 +220,11 @@ export default function QuestionIntermediate({
         width={Number(question.choices[3].choice.styleWidth)}
         height={Number(question.choices[3].choice.styleHeight)}
       />
-
-      <CustomBtnContainerStyle onClick={submitAnswer}>
-        <CustomIconBtnStyle>
+      <div className="flex flex-col justify-end">
+        <CustomBtn onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-left"></i>
-        </CustomIconBtnStyle>
-      </CustomBtnContainerStyle>
+        </CustomBtn>
+      </div>
     </div>
   );
 }
