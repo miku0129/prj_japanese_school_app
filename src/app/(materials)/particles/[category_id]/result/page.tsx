@@ -1,5 +1,5 @@
 import prisma from "../../../../../../prisma";
-import Fail from "@/components/fail/fail.component";
+import TestFailed from "@/components/test-failed/test-failed.component";
 import TestPassed from "@/components/test-passed/test-passed.component";
 
 export default async function Page({
@@ -29,7 +29,7 @@ export default async function Page({
   return (
     <div>
       {result && <TestPassed params={questions} />}
-      {!result && <Fail />}
+      {!result && <TestFailed />}
     </div>
   );
 }
