@@ -3,13 +3,9 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import CustomVerticalText from "@/components/custom-vertical-text";
-import {
-  CustomBtnContainerStyle,
-  CustomIconBtnStyle,
-} from "@/styles/styled-components/page";
-
 import { mobileDragNDrop } from "@/lib";
+import CustomVerticalText from "@/components/custom-vertical-text";
+import CustomBtn from "@/components/custom-btn";
 
 export default function QuestionBeginner({
   params: question,
@@ -151,12 +147,11 @@ export default function QuestionBeginner({
         width="70"
         height="70"
       />
-
-      <CustomBtnContainerStyle onClick={submitAnswer}>
-        <CustomIconBtnStyle>
+      <div className="flex flex-col justify-end">
+        <CustomBtn onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-left"></i>
-        </CustomIconBtnStyle>
-      </CustomBtnContainerStyle>
+        </CustomBtn>
+      </div>
     </div>
   );
 }
