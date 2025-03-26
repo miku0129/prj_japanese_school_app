@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import CustomPhrase from "../custom-phrase";
+import CustomVerticalText from "../custom-vertical-text";
 import CustomBtn from "../custom-btn";
 
 export default function MenuBtn({ params }: { params: Question }) {
@@ -9,13 +9,13 @@ export default function MenuBtn({ params }: { params: Question }) {
   return (
     <div>
       {params.level === "beginner" && (
-        <CustomPhrase phrase="ことばをさがそう" />
+        <CustomVerticalText phrase="ことばをさがそう" />
       )}
       {params.level === "intermediate" && (
-        <CustomPhrase phrase="ことばをつくろう" />
+        <CustomVerticalText phrase="ことばをつくろう" />
       )}
       {params.level === "advanced" && (
-        <CustomPhrase phrase="ことばをかきとろう" />
+        <CustomVerticalText phrase="ことばをかきとろう" />
       )}
 
       <div className="text-center p-8">

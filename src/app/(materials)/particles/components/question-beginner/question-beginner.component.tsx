@@ -3,7 +3,7 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import CustomPhrase from "@/components/custom-phrase";
+import CustomVerticalText from "@/components/custom-vertical-text";
 import {
   CustomBtnContainerStyle,
   CustomIconBtnStyle,
@@ -74,7 +74,10 @@ export default function QuestionBeginner({
 
   return (
     <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8">
-      <CustomPhrase phrase="どのひらがながただしいかな？" className="ml-12" />
+      <CustomVerticalText
+        phrase="どのひらがながただしいかな？"
+        className="ml-12"
+      />
       <div className="flex flex-col gap-4">
         <div
           id="div1"
@@ -96,11 +99,15 @@ export default function QuestionBeginner({
         ></div>
       </div>
 
-      <CustomPhrase>
+      <CustomVerticalText>
         {question
           .additionalQuestion!.phrase_front!.split("")
           .map((char: string, idx) => {
-            return <p key={idx} className="text-[calc(40/16*1rem)] text-center">{char}</p>;
+            return (
+              <p key={idx} className="text-[calc(40/16*1rem)] text-center">
+                {char}
+              </p>
+            );
           })}
         <div
           id="div3"
@@ -114,9 +121,13 @@ export default function QuestionBeginner({
         {question
           .additionalQuestion!.phrase_back!.split("")
           .map((char: string, idx) => {
-            return <p key={idx} className="text-[calc(40/16*1rem)] text-center">{char}</p>;
+            return (
+              <p key={idx} className="text-[calc(40/16*1rem)] text-center">
+                {char}
+              </p>
+            );
           })}
-      </CustomPhrase>
+      </CustomVerticalText>
 
       <Image
         id={question.choices[0].choice.en}
