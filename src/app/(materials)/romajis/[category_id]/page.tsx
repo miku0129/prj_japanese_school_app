@@ -1,14 +1,15 @@
 // import prisma from "../../../../../prisma";
-// import QuestionBeginner from "../components/question-beginner/question-beginner.component";
-// import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
-// import QuestionAdvanced from "../components/question-advanced/question-advanced.component";
+import { romajiQuestions } from "../romaji-questions";
+import Question from "../components/question";
 
 export default async function Page({
   params,
 }: {
   params: { category_id: string };
 }) {
+
   const category_id = params.category_id;
+  const question = romajiQuestions.filter(question => String(question.categoryId) === category_id)[0]
 
 //   const getQuestion = async () => {
 //     const questions = await prisma.question.findMany({
@@ -34,13 +35,5 @@ export default async function Page({
 //   const { props } = await getQuestion();
 //   const question = props.question;
 
-//   if (question?.level === "beginner") {
-//     return <div>{<QuestionBeginner params={question} />}</div>;
-//   } else if (question?.level === "intermediate") {
-//     return <div>{<QuestionIntermediate params={question} />}</div>;
-//   } else if (question?.level === "advanced") {
-//     return <div>{<QuestionAdvanced params={question} />}</div>;
-//   }
-
-return <div>this is question of{category_id}</div>
+return <Question params={question}/>
 }

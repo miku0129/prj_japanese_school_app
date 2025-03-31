@@ -22,7 +22,6 @@ interface Choice extends ItemSkeleton {
   image: string;
   styleHeight?: string | null;
   styleWidth?: string | null;
-
 }
 interface ChoiceContainer {
   choice: Choice;
@@ -57,7 +56,9 @@ interface DragItemProps {
 interface QuestionRomaji extends ItemSkeleton {
   category: string;
   categoryId: number;
+  group: string;
+  groupExp: string;
   isIndex: boolean;
-  hiragana: string; 
+  hiragana: string;
   answer: string | null;
 }
