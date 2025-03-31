@@ -1,11 +1,10 @@
 "use client";
 
 import PaticlesMenuBtn from "../menu-btns/particles-menu-btn.component";
-import styles from "./menu-board.module.scss";
 
 export default function ParticlesMenuBoard({ params }: { params: Question[] }) {
   return (
-    <div className={styles.menuBoard}>
+    <div className="flex flex-row-reverse justify-around p-8">
       {params
         .filter((item: Question) => item.isIndex)
         .map((item: Question) => {

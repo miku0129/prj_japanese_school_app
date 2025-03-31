@@ -1,5 +1,5 @@
 // import prisma from "../../../../prisma";
-import MenuBoard from "@/components/menu-board/menu-board.component";
+import RomajisMenuBoard from "@/components/menu-boards/romajis-menu-board.component copy";
 
 export default async function Page() {
   //   const getQuestions = async () => {
@@ -24,7 +24,7 @@ export default async function Page() {
   const params: QuestionRomaji[] = [
     {
       id: 18,
-      category: "romaji",
+      category: "romajis",
       categoryId: 1,
       isIndex: true,
       hiragana: "いぬ",
@@ -32,5 +32,5 @@ export default async function Page() {
     },
   ];
 
-  return <MenuBoard params={params} />;
+  return <RomajisMenuBoard params={params} />;
 }

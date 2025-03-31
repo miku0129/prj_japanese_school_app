@@ -8,7 +8,7 @@ export default async function HomeBoard() {
       sample: "は、を、へ",
     },
     {
-      en: "romaji",
+      en: "romajis",
       jp: "ローマ字",
       sample: "コンピュータのローマ字",
     },
