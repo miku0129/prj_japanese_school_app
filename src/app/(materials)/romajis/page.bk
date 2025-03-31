@@ -1,0 +1,36 @@
+// import prisma from "../../../../prisma";
+import MenuBoard from "@/components/menu-board/menu-board.component";
+
+export default async function Page() {
+  //   const getQuestions = async () => {
+  //     const questions = await prisma.question.findMany({
+  //       include: {
+  //         additionalQuestion: true,
+  //         choices: {
+  //           include: {
+  //             choice: true,
+  //           },
+  //         },
+  //       },
+  //     });
+  //     return {
+  //       props: { questions },
+  //     };
+  //   };
+  //   const { props } = await getQuestions();
+
+  //   const params: Question[] = props.questions;
+
+  const params: QuestionRomaji[] = [
+    {
+      id: 18,
+      category: "romaji",
+      categoryId: 1,
+      isIndex: true,
+      hiragana: "いぬ",
+      answer: "inu",
+    },
+  ];
+
+  return <MenuBoard params={params} />;
+}

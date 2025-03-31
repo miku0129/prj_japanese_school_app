@@ -7,10 +7,15 @@ export default async function HomeBoard() {
       jp: "助詞",
       sample: "は、を、へ",
     },
+    {
+      en: "romaji",
+      jp: "ローマ字",
+      sample: "コンピュータのローマ字",
+    },
   ];
   return (
     <div className="h-screen flex justify-center">
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center gap-5">
         {indexes.map((index: HomeIndex, _idx: number) => {
           return (
             <div key={_idx}>

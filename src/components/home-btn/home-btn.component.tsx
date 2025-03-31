@@ -7,7 +7,7 @@ export default function HomeBtn({ params: index }: { params: HomeIndex }) {
   const router = useRouter();
   return (
     <CustomBtn onClick={() => router.push(`/${index.en}`)}>
-      『{index.sample}』をれんしゅうする
+      {index.sample}
     </CustomBtn>
   );
 }

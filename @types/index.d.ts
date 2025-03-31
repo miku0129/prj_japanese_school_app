@@ -53,3 +53,11 @@ interface DragItemProps {
   handleDragStart: (ev: DragEvent<HTMLDivElement>) => void;
   isDragging: boolean;
 }
+
+interface QuestionRomaji extends ItemSkeleton {
+  category: string;
+  categoryId: number;
+  isIndex: boolean;
+  hiragana: string; 
+  answer: string | null;
+}

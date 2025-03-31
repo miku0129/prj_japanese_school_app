@@ -1,5 +1,5 @@
 import prisma from "../../../../prisma";
-import MenuBoard from "@/components/menu-board/menu-board.component";
+import ParticlesMenuBoard from "@/components/menu-boards/particles-menu-board.component";
 
 export default async function Page() {
   const getQuestions = async () => {
@@ -21,5 +21,5 @@ export default async function Page() {
 
   const params: Question[] = props.questions;
 
-  return <MenuBoard params={params} />;
+  return <ParticlesMenuBoard params={params} />;
 }
