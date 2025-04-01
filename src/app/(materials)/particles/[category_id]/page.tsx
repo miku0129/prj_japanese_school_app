@@ -34,11 +34,11 @@ export default async function Page({
   const { props } = await getQuestion();
   const question = props.question;
 
-  if (question?.level === "beginner") {
+  if (question?.group === "beginner") {
     return <div>{<QuestionBeginner params={question} />}</div>;
-  } else if (question?.level === "intermediate") {
+  } else if (question?.group === "intermediate") {
     return <div>{<QuestionIntermediate params={question} />}</div>;
-  } else if (question?.level === "advanced") {
+  } else if (question?.group === "advanced") {
     return <div>{<QuestionAdvanced params={question} />}</div>;
   }
 }

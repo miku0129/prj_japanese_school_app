@@ -1,7 +1,7 @@
 export const SEEDS = [
   {
     character: "wo",
-    level: "beginner",
+    group: "beginner",
     isIndex: true,
     category: "particles",
     choices: [
@@ -23,7 +23,7 @@ export const SEEDS = [
   },
   {
     character: "wo",
-    level: "beginner",
+    group: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
@@ -45,7 +45,7 @@ export const SEEDS = [
   },
   {
     character: "ha",
-    level: "beginner",
+    group: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
@@ -67,7 +67,7 @@ export const SEEDS = [
   },
   {
     character: "he",
-    level: "beginner",
+    group: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
@@ -89,7 +89,7 @@ export const SEEDS = [
   },
   {
     character: "he",
-    level: "beginner",
+    group: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
@@ -111,7 +111,7 @@ export const SEEDS = [
   },
   {
     character: "ha",
-    level: "beginner",
+    group: "beginner",
     isIndex: false,
     category: "particles",
     choices: [
@@ -134,7 +134,7 @@ export const SEEDS = [
   {
     character: "wo",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: true,
     answer: "imouto wo yobu",
     choices: [
@@ -171,7 +171,7 @@ export const SEEDS = [
   {
     character: "he",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: false,
     answer: "migi he ugoku",
     choices: [
@@ -208,7 +208,7 @@ export const SEEDS = [
   {
     character: "wo",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: false,
     answer: "boushi wo kaburu",
     choices: [
@@ -245,7 +245,7 @@ export const SEEDS = [
   {
     character: "ha",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: false,
     answer: "natu ha atui",
     choices: [
@@ -282,7 +282,7 @@ export const SEEDS = [
   {
     character: "ha",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: false,
     answer: "kuruma ha hashiru",
     choices: [
@@ -319,7 +319,7 @@ export const SEEDS = [
   {
     character: "he",
     category: "particles",
-    level: "intermediate",
+    group: "intermediate",
     isIndex: false,
     answer: "ushiro he sagaru",
     choices: [
@@ -355,7 +355,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: true,
     answer: "うちゅうへいく",
     choices: [],
@@ -366,7 +366,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: false,
     answer: "おにはこわい",
     choices: [],
@@ -377,7 +377,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: false,
     answer: "ひだりへとぶ",
     choices: [],
@@ -388,7 +388,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: false,
     answer: "おかしをたべる",
     choices: [],
@@ -399,7 +399,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: false,
     answer: "ばななはおいしい",
     choices: [],
@@ -410,7 +410,7 @@ export const SEEDS = [
   },
   {
     category: "particles",
-    level: "advanced",
+    group: "advanced",
     isIndex: false,
     answer: "ろうそくをけす",
     choices: [],

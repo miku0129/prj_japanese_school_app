@@ -37,7 +37,7 @@ interface AdditionalQuestion extends ItemSkeleton {
 interface Question extends ItemSkeleton {
   category: string;
   categoryId: number;
-  level: string;
+  group: string;
   isIndex: boolean;
   additionalQuestion: AdditionalQuestion | null;
   choices: ChoiceContainer[];

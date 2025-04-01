@@ -17,15 +17,15 @@ export default function QuestionAdvanced({
 
   function submitAnswer() {
     router.push(
-      `/particles/${question.categoryId}/result/?level=${
-        question.level
+      `/particles/${question.categoryId}/result/?group=${
+        question.group
       }&state=${question.answer === userAnswer}`
     );
   }
 
   return (
     <div className="flex flex-row-reverse justify-center py-4 px-8 text-3xl">
-      <CustomVerticalText phrase="おとをききとろう" className="w-16"/>
+      <CustomVerticalText phrase="おとをききとろう" className="w-16" />
       <div className="w-screen">
         <div className="flex justify-center">
           <div className="flex flex-row-reverse gap-5 max-w-[calc(800/16*1rem)]">

@@ -93,8 +93,8 @@ export default function QuestionIntermediate({
         user_answer2!.getElementsByTagName("img")[0].id +
         ` ${user_answer3!.getElementsByTagName("img")[0].id}`;
       router.push(
-        `/particles/${question.categoryId}/result/?level=${
-          question.level
+        `/particles/${question.categoryId}/result/?group=${
+          question.group
         }&state=${correct_answer === user_answer}`
       );
     }

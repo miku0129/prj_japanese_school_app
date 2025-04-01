@@ -8,13 +8,13 @@ export default function ParticlesMenuBtn({ params }: { params: Question }) {
   const router = useRouter();
   return (
     <div className="text-3xl">
-      {params.level === "beginner" && (
+      {params.group === "beginner" && (
         <CustomVerticalText phrase="ことばをさがそう" />
       )}
-      {params.level === "intermediate" && (
+      {params.group === "intermediate" && (
         <CustomVerticalText phrase="ことばをつくろう" />
       )}
-      {params.level === "advanced" && (
+      {params.group === "advanced" && (
         <CustomVerticalText phrase="ことばをかきとろう" />
       )}
 
@@ -22,7 +22,7 @@ export default function ParticlesMenuBtn({ params }: { params: Question }) {
         <CustomBtn
           onClick={() =>
             router.push(
-              `/${params.category}/${params.categoryId}?level=${params.level}`
+              `/${params.category}/${params.categoryId}?group=${params.group}`
             )
           }
         >
