@@ -35,10 +35,10 @@ export default async function Page({
   const question = props.question;
 
   if (question?.group === "beginner") {
-    return <div>{<QuestionBeginner params={question} />}</div>;
+    return <QuestionBeginner params={question} />;
   } else if (question?.group === "intermediate") {
-    return <div>{<QuestionIntermediate params={question} />}</div>;
+    return <QuestionIntermediate params={question} />;
   } else if (question?.group === "advanced") {
-    return <div>{<QuestionAdvanced params={question} />}</div>;
+    return <QuestionAdvanced params={question} />;
   }
 }

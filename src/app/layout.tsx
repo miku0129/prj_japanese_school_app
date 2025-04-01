@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../styles/global-tailwind-css/globals.tailwind.css"
+import "../styles/global-tailwind-css/globals.tailwind.css";
 
 export const metadata: Metadata = {
   title: "Learning together",
@@ -22,6 +22,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>{children}</body>
     </html>
   );

@@ -24,9 +24,9 @@ export default function QuestionAdvanced({
   }
 
   return (
-    <div className="flex flex-row-reverse justify-center py-4 px-8 text-3xl">
-      <CustomVerticalText phrase="おとをききとろう" className="w-16" />
-      <div className="w-screen">
+    <div className="w-screen h-screen flex flex-row-reverse justify-center gap-5 py-4 px-8 text-3xl">
+      <CustomVerticalText phrase="おとをききとろう" className="w-16 text-3xl" />
+      <div className="h-screen flex flex-col justify-center glow-2">
         <div className="flex justify-center">
           <div className="flex flex-row-reverse gap-5 max-w-[calc(800/16*1rem)]">
             <div className="form-like-field">
@@ -36,7 +36,7 @@ export default function QuestionAdvanced({
                 placeholder="ひらがなでこたえをかいてね"
                 rows={2}
                 value={userAnswer}
-                className="text-5xl"
+                className="text-4xl md:text-3xl lg:text-2xl"
               />
             </div>
             <div className="flex flex-col justify-end">
@@ -46,9 +46,11 @@ export default function QuestionAdvanced({
             </div>
           </div>
         </div>
-        {question.additionalQuestion?.sound_resource && (
-          <Audio audioLink={question.additionalQuestion!.sound_resource} />
-        )}
+        <div>
+          {question.additionalQuestion?.sound_resource && (
+            <Audio audioLink={question.additionalQuestion!.sound_resource} />
+          )}
+        </div>
       </div>
     </div>
   );
