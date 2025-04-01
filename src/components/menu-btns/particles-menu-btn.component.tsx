@@ -7,7 +7,7 @@ import CustomBtn from "../custom-btn";
 export default function ParticlesMenuBtn({ params }: { params: Question }) {
   const router = useRouter();
   return (
-    <div className="text-3xl">
+    <div>
       {params.group === "beginner" && (
         <CustomVerticalText phrase="ことばをさがそう" />
       )}
@@ -18,7 +18,7 @@ export default function ParticlesMenuBtn({ params }: { params: Question }) {
         <CustomVerticalText phrase="ことばをかきとろう" />
       )}
 
-      <div className="text-center p-8">
+      <div className="text-3xl text-center p-8">
         <CustomBtn
           onClick={() =>
             router.push(

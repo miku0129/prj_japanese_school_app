@@ -101,13 +101,13 @@ export default function QuestionIntermediate({
   }
 
   return (
-    <div className="flex flex-row-reverse gap-4 justify-center py-4 px-8 text-3xl">
+    <div className="h-screen flex flex-row-reverse gap-4 justify-center py-4 px-8 text-3xl">
       <CustomVerticalText
         phrase="どんなぶんがただしいかな？"
         className="ml-12"
       />
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col justify-center gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
@@ -146,34 +146,36 @@ export default function QuestionIntermediate({
         ></div>
       </div>
 
-      <div className="flex flex-col justify-center gap-2.5 w-[calc(75/16*1rem)] border-1 border-gray-200 bg-gray-200">
-        <div
-          id="div5"
-          onDrop={(ev) => {
-            drop(5, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
-          ref={containerRef5}
-        ></div>
-        <div
-          id="div6"
-          onDrop={(ev) => {
-            drop(6, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
-          ref={containerRef6}
-        ></div>
-        <div
-          id="div7"
-          onDrop={(ev) => {
-            drop(7, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
-          ref={containerRef7}
-        ></div>
+      <div className="flex flex-col justify-center">
+        <div className="h-fit w-[calc(75/16*1rem)] flex flex-col justify-center gap-2.5 border-1 border-gray-200 bg-gray-200">
+          <div
+            id="div5"
+            onDrop={(ev) => {
+              drop(5, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef5}
+          ></div>
+          <div
+            id="div6"
+            onDrop={(ev) => {
+              drop(6, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef6}
+          ></div>
+          <div
+            id="div7"
+            onDrop={(ev) => {
+              drop(7, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef7}
+          ></div>
+        </div>
       </div>
 
       <Image
@@ -220,7 +222,7 @@ export default function QuestionIntermediate({
         width={Number(question.choices[3].choice.styleWidth)}
         height={Number(question.choices[3].choice.styleHeight)}
       />
-      <div className="flex flex-col justify-end">
+      <div className="flex flex-col justify-end mb-20 lg:mb-0">
         <CustomBtn onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-left"></i>
         </CustomBtn>
