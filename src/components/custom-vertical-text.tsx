@@ -5,14 +5,14 @@ type Props = ComponentProps<"div"> & {
 };
 
 const getPhrase = (phrase: string) => {
-  return phrase.split("").map((char) => (
-    <p key={char} className="text-3xl text-center">
+  return phrase.split("").map((char, _idx) => (
+    <p key={String(_idx)} className="text-3xl text-center">
       {char}
     </p>
   ));
 };
 
-export default function CustomVerticalText (props: Props) {
+export default function CustomVerticalText(props: Props) {
   const { phrase, children, className, ...rest } = props;
   return (
     <div
