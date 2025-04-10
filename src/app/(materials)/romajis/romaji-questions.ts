@@ -8,7 +8,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきな単語",
     isIndex: true,
     hiragana: "がっこう",
-    answer: "gakkou",
+    answer: ["gakkou"]
   },
   {
     id: 19,
@@ -18,7 +18,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきな単語",
     isIndex: false,
     hiragana: "きって",
-    answer: "kitte",
+    answer: ["kitte"]
   },
   {
     id: 20,
@@ -28,7 +28,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきな単語",
     isIndex: false,
     hiragana: "せんせい",
-    answer: "sensei",
+    answer: ["sensei"]
   },
   {
     id: 21,
@@ -38,7 +38,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきな単語",
     isIndex: false,
     hiragana: "ほうりつ",
-    answer: "houritu",
+    answer: ["houritu", "houritsu"]
   },
   {
     id: 22,
@@ -48,7 +48,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきな単語",
     isIndex: false,
     hiragana: "とうきょう",
-    answer: "toukyou",
+    answer: ["toukyou"]
   },
 
   // 撥音 (Category 2)
@@ -60,7 +60,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむ単語",
     isIndex: true,
     hiragana: "えんぴつ",
-    answer: "enpitu",
+    answer: ["enpitu", "enpitsu"]
   },
   {
     id: 24,
@@ -70,7 +70,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむ単語",
     isIndex: false,
     hiragana: "しんぶん",
-    answer: "sinbun",
+    answer: ["shinbun", "sinbun"]
   },
   {
     id: 25,
@@ -80,7 +80,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむ単語",
     isIndex: false,
     hiragana: "けんこう",
-    answer: "kenkou",
+    answer: ["kenkou"]
   },
   {
     id: 26,
@@ -90,7 +90,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむ単語",
     isIndex: false,
     hiragana: "はんたい",
-    answer: "hantai",
+    answer: ["hantai"]
   },
   {
     id: 27,
@@ -100,7 +100,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむ単語",
     isIndex: false,
     hiragana: "おんがく",
-    answer: "ongaku",
+    answer: ["ongaku"]
   },
 
   // 拗音 (Category 3)
@@ -112,7 +112,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
     isIndex: true,
     hiragana: "きゃく",
-    answer: "kyaku",
+    answer: ["kyaku"]
   },
   {
     id: 29,
@@ -122,7 +122,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
     isIndex: false,
     hiragana: "しゅくだい",
-    answer: "syukudai",
+    answer: ["shukudai", "syukudai"]
   },
   {
     id: 30,
@@ -132,7 +132,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
     isIndex: false,
     hiragana: "じゅぎょう",
-    answer: "zyugyou",
+    answer: ["jugyou", "jyugyou", "zyugyou"]
   },
   {
     id: 31,
@@ -142,7 +142,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
     isIndex: false,
     hiragana: "ちゃいろ",
-    answer: "tyairo",
+    answer: ["chairo", "tyairo"]
   },
   {
     id: 32,
@@ -152,7 +152,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
     isIndex: false,
     hiragana: "りょこう",
-    answer: "ryokou",
+    answer: ["ryokou"]
   },
 
   // 濁音・半濁音 (Category 4)
@@ -164,7 +164,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむ単語",
     isIndex: true,
     hiragana: "じどうしゃ",
-    answer: "zidousya",
+    answer: ["jidousha", "jidousya","zidousya"]
   },
   {
     id: 34,
@@ -174,7 +174,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむ単語",
     isIndex: false,
     hiragana: "でんしゃ",
-    answer: "densya",
+    answer: ["densha", "densya"]
   },
   {
     id: 35,
@@ -184,7 +184,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむ単語",
     isIndex: false,
     hiragana: "びょういん",
-    answer: "byouin",
+    answer: ["byouin"]
   },
   {
     id: 36,
@@ -194,7 +194,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむ単語",
     isIndex: false,
     hiragana: "げんき",
-    answer: "genki",
+    answer: ["genki"]
   },
   {
     id: 37,
@@ -204,6 +204,6 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむ単語",
     isIndex: false,
     hiragana: "ぴあの",
-    answer: "piano",
-  },
+    answer: ["piano"]
+  }
 ];

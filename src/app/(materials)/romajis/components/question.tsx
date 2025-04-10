@@ -16,7 +16,7 @@ export default function Question({
   function submitAnswer() {
     router.push(
       `/romajis/${question.categoryId}/result/?group=${question.group}&state=${
-        question.answer === userAnswer
+        question.answer.includes(userAnswer)
       }`
     );
   }
@@ -27,10 +27,10 @@ export default function Question({
         <textarea
           cols={30}
           onChange={(e) => setUserAnswer(e.target.value)}
-          placeholder="ローマ字で答えをかこう"
+          placeholder="ここにローマ字で答えを書いてね"
           rows={2}
           value={userAnswer}
-          className="text-5xl"
+          className="text-3xl md:text-5xl"
         />
         <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-right"></i>

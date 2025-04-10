@@ -60,5 +60,5 @@ interface QuestionRomaji extends ItemSkeleton {
   groupExp: string;
   isIndex: boolean;
   hiragana: string;
-  answer: string | null;
+  answer: (string | null)[];
 }
