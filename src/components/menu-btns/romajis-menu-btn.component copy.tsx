@@ -13,6 +13,7 @@ export default function RomajisMenuBtn({ params }: { params: QuestionRomaji }) {
             `/${params.category}/${params.categoryId}?group=${params.group}`
           )
         }
+        className="text-white"
       >
         <p>{params.groupExp}</p>
       </CustomBtn>

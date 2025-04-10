@@ -16,7 +16,11 @@ export default function CustomVerticalText(props: Props) {
   const { phrase, children, className, ...rest } = props;
   return (
     <div
-      className={`flex flex-col justify-center ${className ? className : ""}`}
+      className={`
+        flex 
+        flex-col 
+        justify-center 
+        ${className ? className : ""}`}
       {...rest}
     >
       {phrase ? getPhrase(phrase) : children}

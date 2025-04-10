@@ -14,7 +14,7 @@ export default function TestFailed() {
           className="text-5xl text-pink-600"
         />
         <CustomBtn onClick={() => router.back()}>
-          <i className="fa-solid fa-rotate-right"></i>
+          <i className="fa-solid fa-rotate-right text-white"></i>
         </CustomBtn>
       </div>
     </div>

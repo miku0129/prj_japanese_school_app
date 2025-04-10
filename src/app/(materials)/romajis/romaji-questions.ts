@@ -5,7 +5,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 1,
     group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきな単語",
+    groupExp: "いっぱんてきなことば",
     isIndex: true,
     hiragana: "がっこう",
     answer: ["gakkou"]
@@ -15,7 +15,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 2,
     group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきな単語",
+    groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "きって",
     answer: ["kitte"]
@@ -25,7 +25,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 3,
     group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきな単語",
+    groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "せんせい",
     answer: ["sensei"]
@@ -35,7 +35,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 4,
     group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきな単語",
+    groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "ほうりつ",
     answer: ["houritu", "houritsu"]
@@ -45,7 +45,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 5,
     group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきな単語",
+    groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "とうきょう",
     answer: ["toukyou"]
@@ -57,7 +57,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 6,
     group: "hatsuon",
-    groupExp: "「ん」をふくむ単語",
+    groupExp: "「ん」をふくむことば",
     isIndex: true,
     hiragana: "えんぴつ",
     answer: ["enpitu", "enpitsu"]
@@ -67,7 +67,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 7,
     group: "hatsuon",
-    groupExp: "「ん」をふくむ単語",
+    groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "しんぶん",
     answer: ["shinbun", "sinbun"]
@@ -77,7 +77,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 8,
     group: "hatsuon",
-    groupExp: "「ん」をふくむ単語",
+    groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "けんこう",
     answer: ["kenkou"]
@@ -87,7 +87,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 9,
     group: "hatsuon",
-    groupExp: "「ん」をふくむ単語",
+    groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "はんたい",
     answer: ["hantai"]
@@ -97,7 +97,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 10,
     group: "hatsuon",
-    groupExp: "「ん」をふくむ単語",
+    groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "おんがく",
     answer: ["ongaku"]
@@ -109,7 +109,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 11,
     group: "youon",
-    groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
+    groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: true,
     hiragana: "きゃく",
     answer: ["kyaku"]
@@ -119,7 +119,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 12,
     group: "youon",
-    groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
+    groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "しゅくだい",
     answer: ["shukudai", "syukudai"]
@@ -129,7 +129,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 13,
     group: "youon",
-    groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
+    groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "じゅぎょう",
     answer: ["jugyou", "jyugyou", "zyugyou"]
@@ -139,17 +139,17 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 14,
     group: "youon",
-    groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
+    groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "ちゃいろ",
-    answer: ["chairo", "tyairo"]
+    answer: ["chairo", "cyairo", "tyairo"]
   },
   {
     id: 32,
     category: "romajis",
     categoryId: 15,
     group: "youon",
-    groupExp: "「ゃ、ゅ、ょ」をふくむ単語",
+    groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "りょこう",
     answer: ["ryokou"]
@@ -161,7 +161,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 16,
     group: "dakuon",
-    groupExp: "にごる発音をふくむ単語",
+    groupExp: "にごる発音をふくむことば",
     isIndex: true,
     hiragana: "じどうしゃ",
     answer: ["jidousha", "jidousya","zidousya"]
@@ -171,7 +171,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 17,
     group: "dakuon",
-    groupExp: "にごる発音をふくむ単語",
+    groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "でんしゃ",
     answer: ["densha", "densya"]
@@ -181,7 +181,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 18,
     group: "dakuon",
-    groupExp: "にごる発音をふくむ単語",
+    groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "びょういん",
     answer: ["byouin"]
@@ -191,7 +191,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 19,
     group: "dakuon",
-    groupExp: "にごる発音をふくむ単語",
+    groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "げんき",
     answer: ["genki"]
@@ -201,7 +201,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     category: "romajis",
     categoryId: 20,
     group: "dakuon",
-    groupExp: "にごる発音をふくむ単語",
+    groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "ぴあの",
     answer: ["piano"]

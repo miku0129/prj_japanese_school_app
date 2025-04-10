@@ -44,13 +44,13 @@ export default function RomajisTestPassed({
               )
             }
           >
-            <i className="fa-solid fa-check"></i>
+            <i className="fa-solid fa-check text-white"></i>
           </CustomBtn>
         )}
         {current_exercise[current_exercise.length - 1].categoryId ===
           Number(category_id) && (
           <CustomBtn onClick={getMessage}>
-            <i className="fa-regular fa-face-smile-wink"></i>
+            <i className="fa-regular fa-face-smile-wink text-white"></i>
           </CustomBtn>
         )}
       </div>

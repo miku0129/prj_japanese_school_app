@@ -15,9 +15,9 @@ export default function Question({
 
   function submitAnswer() {
     router.push(
-      `/romajis/${question.categoryId}/result/?group=${question.group}&state=${
-        question.answer.includes(userAnswer)
-      }`
+      `/romajis/${question.categoryId}/result/?group=${
+        question.group
+      }&state=${question.answer.includes(userAnswer)}`
     );
   }
   return (
@@ -30,10 +30,10 @@ export default function Question({
           placeholder="ここにローマ字で答えを書いてね"
           rows={2}
           value={userAnswer}
-          className="text-3xl md:text-5xl"
+          className="text-3xl md:text-5xl border-2 border-gray-300 rounded-lg"
         />
         <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-right text-white"></i>
         </CustomBtn>
       </div>
     </div>

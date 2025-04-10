@@ -6,8 +6,8 @@ import CustomBtn from "../custom-btn";
 export default function HomeBtn({ params: index }: { params: HomeIndex }) {
   const router = useRouter();
   return (
-    <CustomBtn onClick={() => router.push(`/${index.en}`)}>
-      {index.sample}
+    <CustomBtn onClick={() => router.push(`/${index.en}`)} className="text-white">
+      {index.sample}をまなぶ
     </CustomBtn>
   );
 }
