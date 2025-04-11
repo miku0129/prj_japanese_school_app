@@ -111,8 +111,8 @@ export const romajiQuestions: QuestionRomaji[] = [
     group: "youon",
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: true,
-    hiragana: "きゃく",
-    answer: ["kyaku"]
+    hiragana: "おきゃくさま",
+    answer: ["okyakusama"]
   },
   {
     id: 29,
