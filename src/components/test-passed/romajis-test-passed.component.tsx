@@ -7,7 +7,7 @@ import CustomBtn from "../custom-btn";
 export default function RomajisTestPassed({
   params,
 }: {
-  params: QuestionRomaji[];
+  params: RomajisQuestion[];
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();

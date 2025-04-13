@@ -7,7 +7,7 @@ import CustomBtn from "@/components/custom-btn";
 export default function Question({
   params: question,
 }: {
-  params: QuestionRomaji;
+  params: RomajisQuestion;
 }) {
   const [userAnswer, setUserAnswer] = useState("");
 

@@ -3,7 +3,11 @@
 import { useRouter } from "next/navigation";
 import CustomBtn from "../custom-btn";
 
-export default function RomajisMenuBtn({ params }: { params: QuestionRomaji }) {
+export default function RomajisMenuBtn({
+  params,
+}: {
+  params: RomajisQuestion;
+}) {
   const router = useRouter();
   return (
     <div>

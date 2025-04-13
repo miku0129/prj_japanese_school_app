@@ -1,4 +1,4 @@
-export const romajiQuestions: QuestionRomaji[] = [
+export const romajiQuestions: RomajisQuestion[] = [
   // 促音・長音・清音 (Category 1)
   {
     id: 18,
@@ -8,7 +8,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきなことば",
     isIndex: true,
     hiragana: "がっこう",
-    answer: ["gakkou"]
+    answer: ["gakkou"],
   },
   {
     id: 19,
@@ -18,7 +18,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "きって",
-    answer: ["kitte"]
+    answer: ["kitte"],
   },
   {
     id: 20,
@@ -28,7 +28,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "せんせい",
-    answer: ["sensei"]
+    answer: ["sensei"],
   },
   {
     id: 21,
@@ -38,7 +38,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "ほうりつ",
-    answer: ["houritu", "houritsu"]
+    answer: ["houritu", "houritsu"],
   },
   {
     id: 22,
@@ -48,7 +48,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "とうきょう",
-    answer: ["toukyou"]
+    answer: ["toukyou"],
   },
 
   // 撥音 (Category 2)
@@ -60,7 +60,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむことば",
     isIndex: true,
     hiragana: "えんぴつ",
-    answer: ["enpitu", "enpitsu"]
+    answer: ["enpitu", "enpitsu"],
   },
   {
     id: 24,
@@ -70,7 +70,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "しんぶん",
-    answer: ["shinbun", "sinbun"]
+    answer: ["shinbun", "sinbun"],
   },
   {
     id: 25,
@@ -80,7 +80,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "けんこう",
-    answer: ["kenkou"]
+    answer: ["kenkou"],
   },
   {
     id: 26,
@@ -90,7 +90,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "はんたい",
-    answer: ["hantai"]
+    answer: ["hantai"],
   },
   {
     id: 27,
@@ -100,7 +100,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "おんがく",
-    answer: ["ongaku"]
+    answer: ["ongaku"],
   },
 
   // 拗音 (Category 3)
@@ -112,7 +112,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: true,
     hiragana: "おきゃくさま",
-    answer: ["okyakusama"]
+    answer: ["okyakusama"],
   },
   {
     id: 29,
@@ -122,7 +122,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "しゅくだい",
-    answer: ["shukudai", "syukudai"]
+    answer: ["shukudai", "syukudai"],
   },
   {
     id: 30,
@@ -132,7 +132,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "じゅぎょう",
-    answer: ["jugyou", "jyugyou", "zyugyou"]
+    answer: ["jugyou", "jyugyou", "zyugyou"],
   },
   {
     id: 31,
@@ -142,7 +142,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "ちゃいろ",
-    answer: ["chairo", "cyairo", "tyairo"]
+    answer: ["chairo", "cyairo", "tyairo"],
   },
   {
     id: 32,
@@ -152,7 +152,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "りょこう",
-    answer: ["ryokou"]
+    answer: ["ryokou"],
   },
 
   // 濁音・半濁音 (Category 4)
@@ -164,7 +164,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむことば",
     isIndex: true,
     hiragana: "じどうしゃ",
-    answer: ["jidousha", "jidousya","zidousya"]
+    answer: ["jidousha", "jidousya", "zidousya"],
   },
   {
     id: 34,
@@ -174,7 +174,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "でんしゃ",
-    answer: ["densha", "densya"]
+    answer: ["densha", "densya"],
   },
   {
     id: 35,
@@ -184,7 +184,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "びょういん",
-    answer: ["byouin"]
+    answer: ["byouin"],
   },
   {
     id: 36,
@@ -194,7 +194,7 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "げんき",
-    answer: ["genki"]
+    answer: ["genki"],
   },
   {
     id: 37,
@@ -204,6 +204,6 @@ export const romajiQuestions: QuestionRomaji[] = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "ぴあの",
-    answer: ["piano"]
-  }
+    answer: ["piano"],
+  },
 ];
