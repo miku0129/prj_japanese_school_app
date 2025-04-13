@@ -7,7 +7,7 @@ import CustomBtn from "../custom-btn";
 export default function ParticlesMenuBtn({ params }: { params: Question }) {
   const router = useRouter();
   return (
-    <div>
+    <div className="flex flex-col gap-5 text-3xl">
       {params.group === "beginner" && (
         <CustomVerticalText phrase="ことばをさがそう" />
       )}
@@ -18,17 +18,15 @@ export default function ParticlesMenuBtn({ params }: { params: Question }) {
         <CustomVerticalText phrase="ことばをかきとろう" />
       )}
 
-      <div className="text-3xl text-center p-8">
-        <CustomBtn
-          onClick={() =>
-            router.push(
-              `/${params.category}/${params.categoryId}?group=${params.group}`
-            )
-          }
-        >
-          <i className="fa-solid fa-check"></i>
-        </CustomBtn>
-      </div>
+      <CustomBtn
+        onClick={() =>
+          router.push(
+            `/${params.category}/${params.categoryId}?group=${params.group}`
+          )
+        }
+      >
+        <i className="fa-solid fa-check text-white"></i>
+      </CustomBtn>
     </div>
   );
 }

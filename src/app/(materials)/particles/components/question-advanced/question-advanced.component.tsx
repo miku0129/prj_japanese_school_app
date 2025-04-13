@@ -24,7 +24,7 @@ export default function QuestionAdvanced({
   }
 
   return (
-    <div className="w-screen h-screen flex flex-row-reverse justify-center gap-5 py-4 px-8 text-3xl">
+    <div className="h-full flex flex-row-reverse justify-center gap-5 py-4 px-8">
       <CustomVerticalText phrase="おとをききとろう" className="w-16 text-3xl" />
       <div className="h-screen flex flex-col justify-center glow-2">
         <div className="flex justify-center">
@@ -41,7 +41,7 @@ export default function QuestionAdvanced({
             </div>
             <div className="flex flex-col justify-end">
               <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
-                <i className="fa-solid fa-arrow-left"></i>
+                <i className="fa-solid fa-arrow-left text-white"></i>
               </CustomBtn>
             </div>
           </div>

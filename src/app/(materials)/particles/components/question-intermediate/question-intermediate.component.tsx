@@ -101,13 +101,13 @@ export default function QuestionIntermediate({
   }
 
   return (
-    <div className="h-screen flex flex-row-reverse gap-4 justify-center py-4 px-8 text-3xl">
+    <div className="h-full flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
       <CustomVerticalText
         phrase="どんなぶんがただしいかな？"
         className="ml-12"
       />
 
-      <div className="flex flex-col justify-center gap-4">
+      <div className="min-w-fit flex flex-col justify-center gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
@@ -224,7 +224,7 @@ export default function QuestionIntermediate({
       />
       <div className="flex flex-col justify-end mb-20 lg:mb-0">
         <CustomBtn onClick={submitAnswer}>
-          <i className="fa-solid fa-arrow-left"></i>
+          <i className="fa-solid fa-arrow-left text-white"></i>
         </CustomBtn>
       </div>
     </div>
