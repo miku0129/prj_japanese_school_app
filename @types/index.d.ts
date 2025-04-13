@@ -16,7 +16,7 @@ interface ItemSkeleton {
   id: number;
 }
 
-interface Choice extends ItemSkeleton { //ParticlesOption
+interface ParticlesOption extends ItemSkeleton { 
   character: string;
   en: string;
   image: string;
@@ -24,9 +24,9 @@ interface Choice extends ItemSkeleton { //ParticlesOption
   styleWidth?: string | null;
 }
 
-interface ChoiceContainer { //ParticlesOptionContainer
-  choice: Choice; //option: ParticlesOption
-  choiceId: number; //optionId: number
+interface ParticlesOptionContainer { 
+  option: ParticlesOption;
+  optionId: number;
   questionId: number; 
 }
 
@@ -36,19 +36,19 @@ interface AdditionalQuestion extends ItemSkeleton {
   sound_resource?: string | null;
 }
 
-interface Question extends ItemSkeleton { // ParticlesQuestion
+interface ParticlesQuestion extends ItemSkeleton { 
   category: string;
   categoryId: number;
   group: string;
   isIndex: boolean;
-  choices: ChoiceContainer[]; // options: ParticlesOptionContainer[]
+  options: ParticlesOptionContainer[];
   additionalQuestion: AdditionalQuestion | null;
   character?: string | null;
   answer?: string | null;
 }
 
-interface DragItemProps { //ParticlesDragItemProps
-  children: Question; // children: ParticlesQuestion
+interface ParticlesDragItemProps {
+  children: ParticlesQuestion;
   dragging: HTMLElement | null;
   handleDragEnter: (ev: DragEvent<HTMLDivElement>) => void;
   handleDragStart: (ev: DragEvent<HTMLDivElement>) => void;
@@ -64,7 +64,6 @@ interface RomajisOptionContainer {
   optionId: number;
   questionId: number;
 }
-
 
 interface RomajisQuestion extends ItemSkeleton {
   category: string;

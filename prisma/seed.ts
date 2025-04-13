@@ -8,57 +8,57 @@ async function main() {
   console.log("Seeding data...");
   let id = 0;
   let category_id = 0;
-  let choice_id = 0;
-  let choices = [];
+  let option_id = 0;
+  let options = [];
 
   for (let i = 0; i < seedData.length; i++) {
-    if (seedData[i].choices[0]) {
-      for (let k = 0; k < seedData[i].choices.length; k++) {
-        choices[k] = {
-          choice: {
+    if (seedData[i].options[0]) {
+      for (let k = 0; k < seedData[i].options.length; k++) {
+        options[k] = {
+          option: {
             create: {
-              id: choice_id,
-              ...seedData[i].choices[k],
+              id: option_id,
+              ...seedData[i].options[k],
             },
           },
         };
-        choice_id++;
+        option_id++;
       }
     } else {
-      choices = [];
+      options = [];
     }
 
     if (seedData[i].additionalQuestion) {
-      await prisma.question.create({
+      await prisma.particlesQuestion.create({
         data: {
           id: id,
-          character: seedData[i].character,
+          category: seedData[i].category,
           categoryId: category_id,
           group: seedData[i].group,
           isIndex: seedData[i].isIndex,
-          category: seedData[i].category,
-          answer: seedData[i].answer,
-          choices: {
-            create: choices,
+          options: {
+            create: options,
           },
           additionalQuestion: {
             create: seedData[i].additionalQuestion,
           },
+          character: seedData[i].character,
+          answer: seedData[i].answer,
         },
       });
     } else if (!seedData[i].additionalQuestion) {
-      await prisma.question.create({
+      await prisma.particlesQuestion.create({
         data: {
           id: id,
-          character: seedData[i].character,
+          category: seedData[i].category,
           categoryId: category_id,
           group: seedData[i].group,
           isIndex: seedData[i].isIndex,
-          category: seedData[i].category,
-          answer: seedData[i].answer,
-          choices: {
-            create: choices,
+          options: {
+            create: options,
           },
+          character: seedData[i].character,
+          answer: seedData[i].answer,
         },
       });
     }

@@ -11,7 +11,7 @@ import { mobileDragNDrop } from "@/lib";
 export default function QuestionIntermediate({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   // // iOS/Androidのときだけ、usePolyfill=trueになる
   mobileDragNDrop();
@@ -28,22 +28,22 @@ export default function QuestionIntermediate({
   const correct_answer = question.answer;
 
   useEffect(() => {
-    const setChoices = () => {
+    const setOptions = () => {
       containerRef1.current!.appendChild(
-        document.getElementById(question.choices[0].choice.en)!
+        document.getElementById(question.options[0].option.en)!
       );
       containerRef2.current!.appendChild(
-        document.getElementById(question.choices[1].choice.en)!
+        document.getElementById(question.options[1].option.en)!
       );
       containerRef3.current!.appendChild(
-        document.getElementById(question.choices[2].choice.en)!
+        document.getElementById(question.options[2].option.en)!
       );
       containerRef4.current!.appendChild(
-        document.getElementById(question.choices[3].choice.en)!
+        document.getElementById(question.options[3].option.en)!
       );
     };
-    setChoices();
-  }, [question.choices]);
+    setOptions();
+  }, [question.options]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -179,48 +179,48 @@ export default function QuestionIntermediate({
       </div>
 
       <Image
-        id={question.choices[0].choice.en}
-        src={question.choices[0].choice.image}
+        id={question.options[0].option.en}
+        src={question.options[0].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[0].choice.styleWidth)}
-        height={Number(question.choices[0].choice.styleHeight)}
+        width={Number(question.options[0].option.styleWidth)}
+        height={Number(question.options[0].option.styleHeight)}
       />
       <Image
-        id={question.choices[1].choice.en}
-        src={question.choices[1].choice.image}
+        id={question.options[1].option.en}
+        src={question.options[1].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[1].choice.styleWidth)}
-        height={Number(question.choices[1].choice.styleHeight)}
+        width={Number(question.options[1].option.styleWidth)}
+        height={Number(question.options[1].option.styleHeight)}
       />
       <Image
-        id={question.choices[2].choice.en}
-        src={question.choices[2].choice.image}
+        id={question.options[2].option.en}
+        src={question.options[2].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[2].choice.styleWidth)}
-        height={Number(question.choices[2].choice.styleHeight)}
+        width={Number(question.options[2].option.styleWidth)}
+        height={Number(question.options[2].option.styleHeight)}
       />
       <Image
-        id={question.choices[3].choice.en}
-        src={question.choices[3].choice.image}
+        id={question.options[3].option.en}
+        src={question.options[3].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[3].choice.styleWidth)}
-        height={Number(question.choices[3].choice.styleHeight)}
+        width={Number(question.options[3].option.styleWidth)}
+        height={Number(question.options[3].option.styleHeight)}
       />
       <div className="flex flex-col justify-end mb-20 lg:mb-0">
         <CustomBtn onClick={submitAnswer}>

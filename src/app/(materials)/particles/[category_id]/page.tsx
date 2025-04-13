@@ -11,12 +11,12 @@ export default async function Page({
   const category_id = params.category_id;
 
   const getQuestion = async () => {
-    const questions = await prisma.question.findMany({
+    const questions = await prisma.particlesQuestion.findMany({
       include: {
         additionalQuestion: true,
-        choices: {
+        options: {
           include: {
-            choice: true,
+            option: true,
           },
         },
       },
@@ -25,7 +25,7 @@ export default async function Page({
       },
     });
     const question = questions.find(
-      (question: Question) => question.categoryId === Number(category_id)
+      (question: ParticlesQuestion) => question.categoryId === Number(category_id)
     );
     return {
       props: { question },

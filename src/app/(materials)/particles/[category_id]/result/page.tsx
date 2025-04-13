@@ -8,12 +8,12 @@ export default async function Page({
   searchParams: SearchParams;
 }) {
   const getQuestions = async () => {
-    const questions = await prisma.question.findMany({
+    const questions = await prisma.particlesQuestion.findMany({
       include: {
         additionalQuestion: true,
-        choices: {
+        options: {
           include: {
-            choice: true,
+            option: true,
           },
         },
       },

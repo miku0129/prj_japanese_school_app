@@ -3,12 +3,12 @@ import ParticlesMenuBoard from "@/components/menu-boards/particles-menu-board.co
 
 export default async function Page() {
   const getQuestions = async () => {
-    const questions = await prisma.question.findMany({
+    const questions = await prisma.particlesQuestion.findMany({
       include: {
         additionalQuestion: true,
-        choices: {
+        options: {
           include: {
-            choice: true,
+            option: true,
           },
         },
       },
@@ -19,7 +19,7 @@ export default async function Page() {
   };
   const { props } = await getQuestions();
 
-  const params: Question[] = props.questions;
+  const params: ParticlesQuestion[] = props.questions;
 
   return <ParticlesMenuBoard params={params} />;
 }

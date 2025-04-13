@@ -10,7 +10,7 @@ import CustomBtn from "@/components/custom-btn";
 export default function QuestionBeginner({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
@@ -24,12 +24,12 @@ export default function QuestionBeginner({
 
   useEffect(() => {
     containerRef1.current!.appendChild(
-      document.getElementById(question.choices[0].choice.en)!
+      document.getElementById(question.options[0].option.en)!
     );
     containerRef2.current!.appendChild(
-      document.getElementById(question.choices[1].choice.en)!
+      document.getElementById(question.options[1].option.en)!
     );
-  }, [question.choices]);
+  }, [question.options]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -126,8 +126,8 @@ export default function QuestionBeginner({
       </CustomVerticalText>
 
       <Image
-        id={question.choices[0].choice.en}
-        src={question.choices[0].choice.image}
+        id={question.options[0].option.en}
+        src={question.options[0].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -137,8 +137,8 @@ export default function QuestionBeginner({
         height="70"
       />
       <Image
-        id={question.choices[1].choice.en}
-        src={question.choices[1].choice.image}
+        id={question.options[1].option.en}
+        src={question.options[1].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(

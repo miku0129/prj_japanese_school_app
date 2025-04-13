@@ -9,7 +9,7 @@ import CustomBtn from "@/components/custom-btn";
 export default function QuestionAdvanced({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   const [userAnswer, setUserAnswer] = useState("");
 

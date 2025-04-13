@@ -10,40 +10,40 @@ datasource db {
   url = env("VPS_DATABASE_URL") // uses connection pooling
 }
 
-model Question {
+model ParticlesQuestion {
   id   Int   @id @default(autoincrement())
   category     String
   categoryId   Int
   group  String
   isIndex Boolean @default(false)
+  options OptionsOnParticlesQuestions[]
+  additionalQuestion Additionalquestion?
   character    String?
   answer  String?
-  additionalQuestion Additionalquestion?
-  choices ChoicesOnQuestions[]
 }
 
 model Additionalquestion {
   id  Int  @id @default(autoincrement())
-  question Question @relation(fields: [id], references: [id])
+  question ParticlesQuestion @relation(fields: [id], references: [id])
   phrase_front String?
   phrase_back String?
   sound_resource String?
 }
 
-model Choice {
+model ParticlesOption {
   id  Int  @id @default(autoincrement())
   character String
   en String
   image String
   styleHeight String?
   styleWidth String?
-  questions ChoicesOnQuestions[]
+  questions OptionsOnParticlesQuestions[]
 }
 
-model ChoicesOnQuestions {
-  question Question @relation(fields: [questionId], references: [id])
+model OptionsOnParticlesQuestions {
+  option ParticlesOption @relation(fields: [optionId], references: [id])
+  optionId Int
+  question ParticlesQuestion @relation(fields: [questionId], references: [id])
   questionId Int
-  choice Choice @relation(fields: [choiceId], references: [id])
-  choiceId Int
-  @@id([questionId, choiceId])
+  @@id([questionId, optionId])
 }

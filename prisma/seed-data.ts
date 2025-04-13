@@ -4,7 +4,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: true,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "お",
         en: "o",
@@ -26,7 +26,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: false,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "お",
         en: "o",
@@ -48,7 +48,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: false,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "わ",
         en: "wa",
@@ -70,7 +70,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: false,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "へ",
         en: "he",
@@ -92,7 +92,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: false,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "へ",
         en: "he",
@@ -114,7 +114,7 @@ export const SEEDS = [
     group: "beginner",
     isIndex: false,
     category: "particles",
-    choices: [
+    options: [
       {
         character: "は",
         en: "ha",
@@ -137,7 +137,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: true,
     answer: "imouto wo yobu",
-    choices: [
+    options: [
       {
         character: "お",
         en: "o",
@@ -174,7 +174,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: false,
     answer: "migi he ugoku",
-    choices: [
+    options: [
       {
         character: "うごく",
         en: "ugoku",
@@ -211,7 +211,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: false,
     answer: "boushi wo kaburu",
-    choices: [
+    options: [
       {
         character: "お",
         en: "o",
@@ -248,7 +248,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: false,
     answer: "natu ha atui",
-    choices: [
+    options: [
       {
         character: "なつ",
         en: "natu",
@@ -285,7 +285,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: false,
     answer: "kuruma ha hashiru",
-    choices: [
+    options: [
       {
         character: "はしる",
         en: "hashiru",
@@ -322,7 +322,7 @@ export const SEEDS = [
     group: "intermediate",
     isIndex: false,
     answer: "ushiro he sagaru",
-    choices: [
+    options: [
       {
         character: "へ",
         en: "he",
@@ -358,7 +358,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: true,
     answer: "うちゅうへいく",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/2eqfql8sqx7i2tfmybhtw/uchyuheiku.m4a?rlkey=36idrjqz2qkjoja2zqh07esnl&st=x8a82nvr&dl=0",
@@ -369,7 +369,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: false,
     answer: "おにはこわい",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/ybe00sx6hc87nhycica3n/onihakowai.m4a?rlkey=hcdddo8i2mjn7cl45ptkatwgs&st=8qnwuots&dl=0",
@@ -380,7 +380,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: false,
     answer: "ひだりへとぶ",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/z3d7njvi3a23zkaquxplt/hidarihetobu.m4a?rlkey=qvwareez8az4j9aalc0sicz4l&st=o896ygmb&dl=0",
@@ -391,7 +391,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: false,
     answer: "おかしをたべる",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/058e25tmspifom94vep3h/okashiwotaberu.m4a?rlkey=yynjlfxfoj69eekq7cgd7njza&st=edqqtisn&dl=0",
@@ -402,7 +402,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: false,
     answer: "ばななはおいしい",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/1f77r5cj6g4bethfmydwx/bananahaoishii.m4a?rlkey=3g5bdu36lxdc92l5tbjov8arr&st=xp6xhwev&dl=0",
@@ -413,7 +413,7 @@ export const SEEDS = [
     group: "advanced",
     isIndex: false,
     answer: "ろうそくをけす",
-    choices: [],
+    options: [],
     additionalQuestion: {
       sound_resource:
         "https://dl.dropboxusercontent.com/scl/fi/8u0gnh3il6bc5nhufn6z0/rousokuwokesu.m4a?rlkey=xegb85a6zc6zkcagu4f3kqh4r&st=3x0c6t6t&dl=0",
