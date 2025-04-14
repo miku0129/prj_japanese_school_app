@@ -16,7 +16,7 @@ interface ItemSkeleton {
   id: number;
 }
 
-interface ParticlesOption extends ItemSkeleton { 
+interface ParticlesOption extends ItemSkeleton {
   character: string;
   en: string;
   image: string;
@@ -24,10 +24,10 @@ interface ParticlesOption extends ItemSkeleton {
   styleWidth?: string | null;
 }
 
-interface ParticlesOptionContainer { 
+interface ParticlesOptionContainer {
   option: ParticlesOption;
   optionId: number;
-  questionId: number; 
+  questionId: number;
 }
 
 interface AdditionalQuestion extends ItemSkeleton {
@@ -36,7 +36,7 @@ interface AdditionalQuestion extends ItemSkeleton {
   sound_resource?: string | null;
 }
 
-interface ParticlesQuestion extends ItemSkeleton { 
+interface ParticlesQuestion extends ItemSkeleton {
   category: string;
   categoryId: number;
   group: string;
@@ -72,6 +72,5 @@ interface RomajisQuestion extends ItemSkeleton {
   groupExp: string;
   isIndex: boolean;
   hiragana: string;
-  answer: (string | null)[];
-  // options: RomajisOptionContainer[];
+  options: RomajisOptionContainer[];
 }

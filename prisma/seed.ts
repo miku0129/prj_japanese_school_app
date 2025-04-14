@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { PARTICLES_SEED_DATA } from "./particles-seed-data";
+import { ROMAJIS_SEED_DATA } from "./romajis-seed-data";
 
 const prisma = new PrismaClient();
 
@@ -68,6 +69,45 @@ async function main() {
       category_id++;
     }
     console.log("PARTICLES_SEED_DATA seeding complete.");
+  })();
+
+  (async function () {
+    console.log("Seeding ROMAJIS_SEED_DATA...");
+    const seedData = ROMAJIS_SEED_DATA;
+    let category_id = 0;
+
+    for (let i = 0; i < seedData.length; i++) {
+      let options = [];
+      if (seedData[i].options[0]) {
+        for (let k = 0; k < seedData[i].options.length; k++) {
+          options[k] = {
+            option: {
+              create: {
+                ...seedData[i].options[k],
+              },
+            },
+          };
+        }
+      } else {
+        options = [];
+      }
+
+      await prisma.romajisQuestion.create({
+        data: {
+          category: seedData[i].category,
+          categoryId: category_id,
+          group: seedData[i].group,
+          groupExp: seedData[i].groupExp,
+          isIndex: seedData[i].isIndex,
+          hiragana: seedData[i].hiragana,
+          options: {
+            create: options,
+          },
+        },
+      });
+      category_id++;
+    }
+    console.log("ROMAJIS_SEED_DATA seeding complete.");
   })();
 }
 

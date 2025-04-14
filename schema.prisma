@@ -47,3 +47,28 @@ model OptionsOnParticlesQuestions {
   questionId Int
   @@id([questionId, optionId])
 }
+
+model RomajisQuestion {
+  id   Int   @id @default(autoincrement())
+  category   String
+  categoryId   Int
+  group   String
+  groupExp   String
+  isIndex   Boolean @default(false)
+  hiragana   String
+  options   OptionsOnRomajisQuestions[]
+}
+
+model RomajisOption {
+  id   Int   @id @default(autoincrement())
+  option   String
+  questions   OptionsOnRomajisQuestions[]
+}
+
+model OptionsOnRomajisQuestions {
+  option RomajisOption @relation(fields: [optionId], references: [id])
+  optionId Int
+  question RomajisQuestion @relation(fields: [questionId], references: [id])
+  questionId Int
+  @@id([questionId, optionId])
+}

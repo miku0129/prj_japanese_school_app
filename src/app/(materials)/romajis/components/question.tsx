@@ -17,9 +17,12 @@ export default function Question({
     router.push(
       `/romajis/${question.categoryId}/result/?group=${
         question.group
-      }&state=${question.answer.includes(userAnswer)}`
+      }&state=${question.options
+        .map((item) => item.option.option)
+        .includes(userAnswer)}`
     );
   }
+
   return (
     <div className="h-screen flex flex-col justify-center gap-5 py-4 px-8">
       <div className="text-6xl">{question.hiragana}</div>

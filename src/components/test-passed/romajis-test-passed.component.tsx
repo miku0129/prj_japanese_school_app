@@ -17,16 +17,15 @@ export default function RomajisTestPassed({
   const group = searchParams.get("group");
 
   const router = useRouter();
+
   const getMessage = () => {
-    window.alert("💯クリアおめでとう！");
+    window.alert("クリアおめでとう！🎉🎉🎉");
     router.push(`/${category}`);
   };
 
-  const current_exercise = params
+  const current_exercise_group = params
     .filter((question) => question.category === category)
     .filter((question) => question.group === group);
-
-  console.log(params);
 
   return (
     <div className="flex justify-center">
@@ -35,7 +34,7 @@ export default function RomajisTestPassed({
           phrase="あたり!"
           className="text-5xl text-green-600"
         />
-        {current_exercise[current_exercise.length - 1].categoryId >
+        {current_exercise_group[current_exercise_group.length - 1].categoryId >
           Number(category_id) && (
           <CustomBtn
             onClick={() =>
@@ -47,8 +46,8 @@ export default function RomajisTestPassed({
             <i className="fa-solid fa-check text-white"></i>
           </CustomBtn>
         )}
-        {current_exercise[current_exercise.length - 1].categoryId ===
-          Number(category_id) && (
+        {current_exercise_group[current_exercise_group.length - 1]
+          .categoryId === Number(category_id) && (
           <CustomBtn onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink text-white"></i>
           </CustomBtn>
