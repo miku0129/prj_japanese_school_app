@@ -1,18 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import styles from "./home-btn.module.scss";
+import CustomBtn from "../custom-btn";
 
 export default function HomeBtn({ params: index }: { params: HomeIndex }) {
   const router = useRouter();
   return (
-    <div>
-      <button
-        className={styles.homeBtn}
-        onClick={() => router.push(`/${index.en}`)}
-      >
-        『{index.sample}』をれんしゅうする
-      </button>
-    </div>
+    <CustomBtn onClick={() => router.push(`/${index.en}`)} className="text-white">
+      {index.sample}をまなぶ
+    </CustomBtn>
   );
 }

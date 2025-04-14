@@ -3,19 +3,15 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {
-  CustomPhraseStyle,
-  CustomBtnContainerStyle,
-  CustomIconBtnStyle,
-} from "@/styles/styled-components/page";
-import styles from "./question-intermediate.style.module.scss";
+import CustomVerticalText from "@/components/custom-vertical-text";
+import CustomBtn from "@/components/custom-btn";
 
 import { mobileDragNDrop } from "@/lib";
 
 export default function QuestionIntermediate({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   // // iOS/Androidのときだけ、usePolyfill=trueになる
   mobileDragNDrop();
@@ -32,22 +28,22 @@ export default function QuestionIntermediate({
   const correct_answer = question.answer;
 
   useEffect(() => {
-    const setChoices = () => {
+    const setOptions = () => {
       containerRef1.current!.appendChild(
-        document.getElementById(question.choices[0].choice.en)!
+        document.getElementById(question.options[0].option.en)!
       );
       containerRef2.current!.appendChild(
-        document.getElementById(question.choices[1].choice.en)!
+        document.getElementById(question.options[1].option.en)!
       );
       containerRef3.current!.appendChild(
-        document.getElementById(question.choices[2].choice.en)!
+        document.getElementById(question.options[2].option.en)!
       );
       containerRef4.current!.appendChild(
-        document.getElementById(question.choices[3].choice.en)!
+        document.getElementById(question.options[3].option.en)!
       );
     };
-    setChoices();
-  }, [question.choices]);
+    setOptions();
+  }, [question.options]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -97,38 +93,28 @@ export default function QuestionIntermediate({
         user_answer2!.getElementsByTagName("img")[0].id +
         ` ${user_answer3!.getElementsByTagName("img")[0].id}`;
       router.push(
-        `/particles/${question.categoryId}/result/?level=${
-          question.level
+        `/particles/${question.categoryId}/result/?group=${
+          question.group
         }&state=${correct_answer === user_answer}`
       );
     }
   }
 
   return (
-    <div className={styles.particlesIntermediateBase}>
-      <CustomPhraseStyle className={styles.phrase}>
-        <p>ど</p>
-        <p>ん</p>
-        <p>な</p>
-        <p>ぶ</p>
-        <p>ん</p>
-        <p>が</p>
-        <p>正</p>
-        <p>し</p>
-        <p>い</p>
-        <p>か</p>
-        <p>な</p>
-        <p>？</p>
-      </CustomPhraseStyle>
+    <div className="h-full flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
+      <CustomVerticalText
+        phrase="どんなぶんがただしいかな？"
+        className="ml-12"
+      />
 
-      <div className={styles.choises}>
+      <div className="min-w-fit flex flex-col justify-center gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
             drop(1, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef1}
         ></div>
         <div
@@ -137,7 +123,7 @@ export default function QuestionIntermediate({
             drop(2, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef2}
         ></div>
         <div
@@ -146,7 +132,7 @@ export default function QuestionIntermediate({
             drop(3, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef3}
         ></div>
         <div
@@ -155,91 +141,92 @@ export default function QuestionIntermediate({
             drop(4, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateChoice}
+          className="p-[calc(10/16*1rem)] border-1 border-gray-500 touch-none min-h-[calc(70/16*1rem)]"
           ref={containerRef4}
         ></div>
       </div>
 
-      <div className={styles.particlesIntermediateAnswerContainer}>
-        <div
-          id="div5"
-          onDrop={(ev) => {
-            drop(5, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
-          ref={containerRef5}
-        ></div>
-        <div
-          id="div6"
-          onDrop={(ev) => {
-            drop(6, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
-          ref={containerRef6}
-        ></div>
-        <div
-          id="div7"
-          onDrop={(ev) => {
-            drop(7, ev);
-          }}
-          onDragOver={(ev) => allowDrop(ev)}
-          className={styles.particlesIntermediateAnswer}
-          ref={containerRef7}
-        ></div>
+      <div className="flex flex-col justify-center">
+        <div className="h-fit w-[calc(75/16*1rem)] flex flex-col justify-center gap-2.5 border-1 border-gray-200 bg-gray-200">
+          <div
+            id="div5"
+            onDrop={(ev) => {
+              drop(5, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef5}
+          ></div>
+          <div
+            id="div6"
+            onDrop={(ev) => {
+              drop(6, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef6}
+          ></div>
+          <div
+            id="div7"
+            onDrop={(ev) => {
+              drop(7, ev);
+            }}
+            onDragOver={(ev) => allowDrop(ev)}
+            className="p-2.5 m-1 touch-none min-h-32 border-dotted border-1 border-gray-200 bg-white"
+            ref={containerRef7}
+          ></div>
+        </div>
       </div>
 
       <Image
-        id={question.choices[0].choice.en}
-        src={question.choices[0].choice.image}
+        id={question.options[0].option.en}
+        src={question.options[0].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[0].choice.styleWidth)}
-        height={Number(question.choices[0].choice.styleHeight)}
+        width={Number(question.options[0].option.styleWidth)}
+        height={Number(question.options[0].option.styleHeight)}
       />
       <Image
-        id={question.choices[1].choice.en}
-        src={question.choices[1].choice.image}
+        id={question.options[1].option.en}
+        src={question.options[1].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[1].choice.styleWidth)}
-        height={Number(question.choices[1].choice.styleHeight)}
+        width={Number(question.options[1].option.styleWidth)}
+        height={Number(question.options[1].option.styleHeight)}
       />
       <Image
-        id={question.choices[2].choice.en}
-        src={question.choices[2].choice.image}
+        id={question.options[2].option.en}
+        src={question.options[2].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[2].choice.styleWidth)}
-        height={Number(question.choices[2].choice.styleHeight)}
+        width={Number(question.options[2].option.styleWidth)}
+        height={Number(question.options[2].option.styleHeight)}
       />
       <Image
-        id={question.choices[3].choice.en}
-        src={question.choices[3].choice.image}
+        id={question.options[3].option.en}
+        src={question.options[3].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
           ev: { target: HTMLTextAreaElement } & DragEvent<HTMLImageElement>
         ) => drag(ev)}
-        width={Number(question.choices[3].choice.styleWidth)}
-        height={Number(question.choices[3].choice.styleHeight)}
+        width={Number(question.options[3].option.styleWidth)}
+        height={Number(question.options[3].option.styleHeight)}
       />
-
-      <CustomBtnContainerStyle onClick={submitAnswer}>
-        <CustomIconBtnStyle>
-          <i className="fa-solid fa-arrow-left"></i>
-        </CustomIconBtnStyle>
-      </CustomBtnContainerStyle>
+      <div className="flex flex-col justify-end mb-20 lg:mb-0">
+        <CustomBtn onClick={submitAnswer}>
+          <i className="fa-solid fa-arrow-left text-white"></i>
+        </CustomBtn>
+      </div>
     </div>
   );
 }

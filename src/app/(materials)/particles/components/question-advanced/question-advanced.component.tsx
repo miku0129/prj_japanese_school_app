@@ -3,17 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Audio from "@/components/audio/audio.component";
-import {
-  CustomPhraseStyle,
-  CustomIconBtnStyle,
-  CustomBtnContainerStyle,
-} from "@/styles/styled-components/page";
-import styles from "./question-advanced.style.module.scss";
+import CustomVerticalText from "@/components/custom-vertical-text";
+import CustomBtn from "@/components/custom-btn";
 
 export default function QuestionAdvanced({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   const [userAnswer, setUserAnswer] = useState("");
 
@@ -21,28 +17,18 @@ export default function QuestionAdvanced({
 
   function submitAnswer() {
     router.push(
-      `/particles/${question.categoryId}/result/?level=${
-        question.level
+      `/particles/${question.categoryId}/result/?group=${
+        question.group
       }&state=${question.answer === userAnswer}`
     );
   }
 
   return (
-    <div className={styles.phraseContainer}>
-      <CustomPhraseStyle>
-        <p>👂</p>
-        <p>音</p>
-        <p>を</p>
-        <p>き</p>
-        <p>き</p>
-        <p>と</p>
-        <p>ろ</p>
-        <p>う</p>
-      </CustomPhraseStyle>
-
-      <div className={styles.formContainer}>
-        <div className={styles.formOuter}>
-          <div className={styles.formIner}>
+    <div className="h-full flex flex-row-reverse justify-center gap-5 py-4 px-8">
+      <CustomVerticalText phrase="おとをききとろう" className="w-16 text-3xl" />
+      <div className="h-screen flex flex-col justify-center glow-2">
+        <div className="flex justify-center">
+          <div className="flex flex-row-reverse gap-5 max-w-[calc(800/16*1rem)]">
             <div className="form-like-field">
               <textarea
                 cols={30}
@@ -50,19 +36,21 @@ export default function QuestionAdvanced({
                 placeholder="ひらがなでこたえをかいてね"
                 rows={2}
                 value={userAnswer}
-                className={styles.inputField}
+                className="text-4xl md:text-3xl lg:text-2xl"
               />
             </div>
-            <CustomBtnContainerStyle>
-              <CustomIconBtnStyle disabled={!userAnswer} onClick={submitAnswer}>
-                <i className="fa-solid fa-arrow-left"></i>
-              </CustomIconBtnStyle>
-            </CustomBtnContainerStyle>
+            <div className="flex flex-col justify-end">
+              <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
+                <i className="fa-solid fa-arrow-left text-white"></i>
+              </CustomBtn>
+            </div>
           </div>
         </div>
-        {question.additionalQuestion?.sound_resource && (
-          <Audio audioLink={question.additionalQuestion!.sound_resource} />
-        )}
+        <div>
+          {question.additionalQuestion?.sound_resource && (
+            <Audio audioLink={question.additionalQuestion!.sound_resource} />
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+.form-like-field {
+  @apply [writing-mode:vertical-rl]; /* Tailwindに直接ないため、任意プロパティとして記述 */
+}
+.label {
+  @apply block;
+}

@@ -38,8 +38,8 @@ next-env.d.ts
 data.sql
 .env
 init-data.ts
-question-advanced.component_bk
-seed-data copy.ts
+particles-seed-data-raw.ts
+romajis-seed-data-raw.ts
 
 ghcr.txt
 .env_vercel.bk
