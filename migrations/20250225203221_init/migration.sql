@@ -3,7 +3,7 @@ CREATE TABLE "Question" (
     "id" SERIAL NOT NULL,
     "category" TEXT NOT NULL,
     "categoryId" INTEGER NOT NULL,
-    "level" TEXT NOT NULL,
+    "group" TEXT NOT NULL,
     "isIndex" BOOLEAN NOT NULL DEFAULT false,
     "character" TEXT,
     "answer" TEXT,

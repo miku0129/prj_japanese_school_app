@@ -16,40 +16,61 @@ interface ItemSkeleton {
   id: number;
 }
 
-interface Choice extends ItemSkeleton {
+interface ParticlesOption extends ItemSkeleton {
   character: string;
   en: string;
   image: string;
   styleHeight?: string | null;
   styleWidth?: string | null;
-
 }
-interface ChoiceContainer {
-  choice: Choice;
-  choiceId: number;
+
+interface ParticlesOptionContainer {
+  option: ParticlesOption;
+  optionId: number;
   questionId: number;
 }
+
 interface AdditionalQuestion extends ItemSkeleton {
   phrase_front?: string | null;
   phrase_back?: string | null;
   sound_resource?: string | null;
 }
 
-interface Question extends ItemSkeleton {
+interface ParticlesQuestion extends ItemSkeleton {
   category: string;
   categoryId: number;
-  level: string;
+  group: string;
   isIndex: boolean;
+  options: ParticlesOptionContainer[];
   additionalQuestion: AdditionalQuestion | null;
-  choices: ChoiceContainer[];
   character?: string | null;
   answer?: string | null;
 }
 
-interface DragItemProps {
-  children: Question;
+interface ParticlesDragItemProps {
+  children: ParticlesQuestion;
   dragging: HTMLElement | null;
   handleDragEnter: (ev: DragEvent<HTMLDivElement>) => void;
   handleDragStart: (ev: DragEvent<HTMLDivElement>) => void;
   isDragging: boolean;
+}
+
+interface RomajisOption extends ItemSkeleton {
+  option: string;
+}
+
+interface RomajisOptionContainer {
+  option: RomajisOption;
+  optionId: number;
+  questionId: number;
+}
+
+interface RomajisQuestion extends ItemSkeleton {
+  category: string;
+  categoryId: number;
+  group: string;
+  groupExp: string;
+  isIndex: boolean;
+  hiragana: string;
+  options: RomajisOptionContainer[];
 }

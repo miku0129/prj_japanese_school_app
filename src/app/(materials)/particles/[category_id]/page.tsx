@@ -11,12 +11,12 @@ export default async function Page({
   const category_id = params.category_id;
 
   const getQuestion = async () => {
-    const questions = await prisma.question.findMany({
+    const questions = await prisma.particlesQuestion.findMany({
       include: {
         additionalQuestion: true,
-        choices: {
+        options: {
           include: {
-            choice: true,
+            option: true,
           },
         },
       },
@@ -25,7 +25,7 @@ export default async function Page({
       },
     });
     const question = questions.find(
-      (question: Question) => question.categoryId === Number(category_id)
+      (question: ParticlesQuestion) => question.categoryId === Number(category_id)
     );
     return {
       props: { question },
@@ -34,11 +34,11 @@ export default async function Page({
   const { props } = await getQuestion();
   const question = props.question;
 
-  if (question?.level === "beginner") {
-    return <div>{<QuestionBeginner params={question} />}</div>;
-  } else if (question?.level === "intermediate") {
-    return <div>{<QuestionIntermediate params={question} />}</div>;
-  } else if (question?.level === "advanced") {
-    return <div>{<QuestionAdvanced params={question} />}</div>;
+  if (question?.group === "beginner") {
+    return <QuestionBeginner params={question} />;
+  } else if (question?.group === "intermediate") {
+    return <QuestionIntermediate params={question} />;
+  } else if (question?.group === "advanced") {
+    return <QuestionAdvanced params={question} />;
   }
 }

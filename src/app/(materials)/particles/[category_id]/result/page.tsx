@@ -1,6 +1,6 @@
 import prisma from "../../../../../../prisma";
-import Fail from "@/components/fail/fail.component";
-import Pass from "@/components/pass/pass.component";
+import TestFailed from "@/components/test-failed/test-failed.component";
+import TestPassed from "@/components/test-passed/particles-test-passed.component";
 
 export default async function Page({
   searchParams,
@@ -8,12 +8,12 @@ export default async function Page({
   searchParams: SearchParams;
 }) {
   const getQuestions = async () => {
-    const questions = await prisma.question.findMany({
+    const questions = await prisma.particlesQuestion.findMany({
       include: {
         additionalQuestion: true,
-        choices: {
+        options: {
           include: {
-            choice: true,
+            option: true,
           },
         },
       },
@@ -28,8 +28,8 @@ export default async function Page({
   const result = searchParams.state === "true" ? true : false;
   return (
     <div>
-      {result && <Pass params={questions} />}
-      {!result && <Fail />}
+      {result && <TestPassed params={questions} />}
+      {!result && <TestFailed />}
     </div>
   );
 }

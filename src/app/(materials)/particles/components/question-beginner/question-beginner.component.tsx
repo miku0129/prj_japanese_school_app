@@ -3,19 +3,14 @@
 import React, { DragEvent, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {
-  CustomPhraseStyle,
-  CustomBtnContainerStyle,
-  CustomIconBtnStyle,
-} from "@/styles/styled-components/page";
-import styles from "./question-beginner.style.module.scss";
-
 import { mobileDragNDrop } from "@/lib";
+import CustomVerticalText from "@/components/custom-vertical-text";
+import CustomBtn from "@/components/custom-btn";
 
 export default function QuestionBeginner({
   params: question,
 }: {
-  params: Question;
+  params: ParticlesQuestion;
 }) {
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
@@ -29,12 +24,12 @@ export default function QuestionBeginner({
 
   useEffect(() => {
     containerRef1.current!.appendChild(
-      document.getElementById(question.choices[0].choice.en)!
+      document.getElementById(question.options[0].option.en)!
     );
     containerRef2.current!.appendChild(
-      document.getElementById(question.choices[1].choice.en)!
+      document.getElementById(question.options[1].option.en)!
     );
-  }, [question.choices]);
+  }, [question.options]);
 
   const allowDrop = (ev: DragEvent<HTMLDivElement>) => {
     ev.preventDefault();
@@ -66,39 +61,27 @@ export default function QuestionBeginner({
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
       router.push(
-        `/particles/${question.categoryId}/result/?level=${
-          question.level
+        `/particles/${question.categoryId}/result/?group=${
+          question.group
         }&state=${correct_answer === answer}`
       );
     }
   }
 
   return (
-    <div className={styles.woBeguinnerBase}>
-      <CustomPhraseStyle className={styles.phrase}>
-        <p>ど</p>
-        <p>の</p>
-        <p>ひ</p>
-        <p>ら</p>
-        <p>が</p>
-        <p>な</p>
-        <p>が</p>
-        <p>正</p>
-        <p>し</p>
-        <p>い</p>
-        <p>か</p>
-        <p>な</p>
-        <p>？</p>
-      </CustomPhraseStyle>
-
-      <div className={styles.choises}>
+    <div className="h-full flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
+      <CustomVerticalText
+        phrase="どのひらがながただしいかな？"
+        className="ml-12"
+      />
+      <div className="flex flex-col justify-center gap-4">
         <div
           id="div1"
           onDrop={(ev) => {
             drop(1, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef1}
         ></div>
         <div
@@ -107,37 +90,44 @@ export default function QuestionBeginner({
             drop(2, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef2}
         ></div>
       </div>
 
-      <CustomPhraseStyle>
+      <CustomVerticalText>
         {question
           .additionalQuestion!.phrase_front!.split("")
           .map((char: string, idx) => {
-            return <p key={idx}>{char}</p>;
+            return (
+              <p key={idx} className="text-[calc(40/16*1rem)] text-center">
+                {char}
+              </p>
+            );
           })}
-        <p></p>
         <div
           id="div3"
           onDrop={(ev) => {
             drop(3, ev);
           }}
           onDragOver={(ev) => allowDrop(ev)}
-          className={styles.woBeguinner}
+          className="w-[calc(70/16*1rem)] h-[calc(70/16*1rem)] p-2.5 border-1 border-gray-700 touch-none"
           ref={containerRef3}
         ></div>
         {question
           .additionalQuestion!.phrase_back!.split("")
           .map((char: string, idx) => {
-            return <p key={idx}>{char}</p>;
+            return (
+              <p key={idx} className="text-[calc(40/16*1rem)] text-center">
+                {char}
+              </p>
+            );
           })}
-      </CustomPhraseStyle>
+      </CustomVerticalText>
 
       <Image
-        id={question.choices[0].choice.en}
-        src={question.choices[0].choice.image}
+        id={question.options[0].option.en}
+        src={question.options[0].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -147,8 +137,8 @@ export default function QuestionBeginner({
         height="70"
       />
       <Image
-        id={question.choices[1].choice.en}
-        src={question.choices[1].choice.image}
+        id={question.options[1].option.en}
+        src={question.options[1].option.image}
         alt="picture"
         draggable="true"
         onDragStart={(
@@ -157,12 +147,11 @@ export default function QuestionBeginner({
         width="70"
         height="70"
       />
-
-      <CustomBtnContainerStyle onClick={submitAnswer}>
-        <CustomIconBtnStyle>
-          <i className="fa-solid fa-arrow-left"></i>
-        </CustomIconBtnStyle>
-      </CustomBtnContainerStyle>
+      <div className="flex flex-col justify-end mb-20 lg:mb-0">
+        <CustomBtn onClick={submitAnswer}>
+          <i className="fa-solid fa-arrow-left text-white"></i>
+        </CustomBtn>
+      </div>
     </div>
   );
 }

@@ -1,71 +1,107 @@
 import { PrismaClient } from "@prisma/client";
-import { SEEDS } from "./seed-data";
+import { PARTICLES_SEED_DATA } from "./particles-seed-data";
+import { ROMAJIS_SEED_DATA } from "./romajis-seed-data";
 
 const prisma = new PrismaClient();
-const seedData = SEEDS;
 
 async function main() {
-  console.log("Seeding data...");
-  let id = 0;
-  let category_id = 0;
-  let choice_id = 0;
-  let choices = [];
+  (async function () {
+    console.log("Seeding PARTICLES_SEED_DATA...");
 
-  for (let i = 0; i < seedData.length; i++) {
-    if (seedData[i].choices[0]) {
-      for (let k = 0; k < seedData[i].choices.length; k++) {
-        choices[k] = {
-          choice: {
-            create: {
-              id: choice_id,
-              ...seedData[i].choices[k],
+    const seedData = PARTICLES_SEED_DATA;
+    let category_id = 0;
+
+    for (let i = 0; i < seedData.length; i++) {
+      let options = [];
+      if (seedData[i].options[0]) {
+        for (let k = 0; k < seedData[i].options.length; k++) {
+          options[k] = {
+            option: {
+              create: {
+                ...seedData[i].options[k],
+              },
             },
-          },
-        };
-        choice_id++;
+          };
+        }
+      } else {
+        options = [];
       }
-    } else {
-      choices = [];
-    }
 
-    if (seedData[i].additionalQuestion) {
-      await prisma.question.create({
-        data: {
-          id: id,
-          character: seedData[i].character,
-          categoryId: category_id,
-          level: seedData[i].level,
-          isIndex: seedData[i].isIndex,
-          category: seedData[i].category,
-          answer: seedData[i].answer,
-          choices: {
-            create: choices,
+      if (seedData[i].additionalQuestion) {
+        await prisma.particlesQuestion.create({
+          data: {
+            category: seedData[i].category,
+            categoryId: category_id,
+            group: seedData[i].group,
+            isIndex: seedData[i].isIndex,
+            options: {
+              create: options,
+            },
+            additionalQuestion: {
+              create: seedData[i].additionalQuestion,
+            },
+            character: seedData[i].character,
+            answer: seedData[i].answer,
           },
-          additionalQuestion: {
-            create: seedData[i].additionalQuestion,
+        });
+      } else if (!seedData[i].additionalQuestion) {
+        await prisma.particlesQuestion.create({
+          data: {
+            category: seedData[i].category,
+            categoryId: category_id,
+            group: seedData[i].group,
+            isIndex: seedData[i].isIndex,
+            options: {
+              create: options,
+            },
+            character: seedData[i].character,
+            answer: seedData[i].answer,
           },
-        },
-      });
-    } else if (!seedData[i].additionalQuestion) {
-      await prisma.question.create({
-        data: {
-          id: id,
-          character: seedData[i].character,
-          categoryId: category_id,
-          level: seedData[i].level,
-          isIndex: seedData[i].isIndex,
-          category: seedData[i].category,
-          answer: seedData[i].answer,
-          choices: {
-            create: choices,
-          },
-        },
-      });
+        });
+      }
+      category_id++;
     }
-    id++;
-    category_id++;
-  }
-  console.log("Data seeding complete.");
+    console.log("PARTICLES_SEED_DATA seeding complete.");
+  })();
+
+  (async function () {
+    console.log("Seeding ROMAJIS_SEED_DATA...");
+    const seedData = ROMAJIS_SEED_DATA;
+    let category_id = 0;
+
+    for (let i = 0; i < seedData.length; i++) {
+      let options = [];
+      if (seedData[i].options[0]) {
+        for (let k = 0; k < seedData[i].options.length; k++) {
+          options[k] = {
+            option: {
+              create: {
+                ...seedData[i].options[k],
+              },
+            },
+          };
+        }
+      } else {
+        options = [];
+      }
+
+      await prisma.romajisQuestion.create({
+        data: {
+          category: seedData[i].category,
+          categoryId: category_id,
+          group: seedData[i].group,
+          groupExp: seedData[i].groupExp,
+          isIndex: seedData[i].isIndex,
+          hiragana: seedData[i].hiragana,
+          options: {
+            create: options,
+          },
+        },
+      });
+      category_id++;
+    }
+    console.log("ROMAJIS_SEED_DATA seeding complete.");
+  })();
 }
 
 main()

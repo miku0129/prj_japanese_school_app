@@ -38,9 +38,11 @@ next-env.d.ts
 data.sql
 .env
 init-data.ts
-question-advanced.component_bk
-seed-data copy.ts
+particles-seed-data-raw.ts
+romajis-seed-data-raw.ts
 
-.env_vercel.bk
-.env.localdocker.bk
-schema.prisma_vercel.bk
+.env.vercel.bk
+.env.vps.bk
+.env.local.bk
+docker-compose.vps.bk
+/src/styles/styled-components.bk/

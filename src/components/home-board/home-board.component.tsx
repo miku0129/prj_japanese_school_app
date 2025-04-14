@@ -1,17 +1,21 @@
 import HomeBtn from "@/components/home-btn/home-btn.component";
-import styles from "./home-board.module.scss";
 
 export default async function HomeBoard() {
   const indexes: HomeIndex[] = [
     {
       en: "particles",
       jp: "助詞",
-      sample: "は、を、へ"
+      sample: "は、を、へ",
+    },
+    {
+      en: "romajis",
+      jp: "ローマ字",
+      sample: "コンピュータのローマ字",
     },
   ];
   return (
-    <div className={styles.homeBoardContainer}>
-      <div className={styles.homeBoard}>
+    <div className="h-screen flex justify-center">
+      <div className="flex flex-col justify-center gap-5">
         {indexes.map((index: HomeIndex, _idx: number) => {
           return (
             <div key={_idx}>
