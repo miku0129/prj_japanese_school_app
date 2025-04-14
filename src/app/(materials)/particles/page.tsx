@@ -1,5 +1,5 @@
 import prisma from "../../../../prisma";
-import ParticlesMenuBoard from "@/components/menu-boards/particles-menu-board.component";
+import ParticlesMenuBoard from "@/components/menu-board/particles-menu-board.component";
 
 export default async function Page() {
   const getQuestions = async () => {

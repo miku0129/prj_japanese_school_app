@@ -4,7 +4,11 @@ import { useRouter } from "next/navigation";
 import CustomVerticalText from "../custom-vertical-text";
 import CustomBtn from "../custom-btn";
 
-export default function ParticlesMenuBtn({ params }: { params: Question }) {
+export default function ParticlesMenuBtn({
+  params,
+}: {
+  params: ParticlesQuestion;
+}) {
   const router = useRouter();
   return (
     <div className="flex flex-col gap-5 text-3xl">

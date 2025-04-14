@@ -1,5 +1,5 @@
 import prisma from "../../../../prisma";
-import RomajisMenuBoard from "@/components/menu-boards/romajis-menu-board.component copy";
+import RomajisMenuBoard from "@/components/menu-board/romajis-menu-board.component copy";
 
 export default async function Page() {
   const getQuestions = async () => {

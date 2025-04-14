@@ -4,7 +4,11 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import CustomVerticalText from "../custom-vertical-text";
 import CustomBtn from "../custom-btn";
 
-export default function TestPassed({ params }: { params: Question[] }) {
+export default function TestPassed({
+  params,
+}: {
+  params: ParticlesQuestion[];
+}) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -18,7 +22,7 @@ export default function TestPassed({ params }: { params: Question[] }) {
     router.push(`/${category}`);
   };
 
-  const current_exercise = params
+  const current_exercise_group = params
     .filter((question) => question.category === category)
     .filter((question) => question.group === group);
 
@@ -29,7 +33,7 @@ export default function TestPassed({ params }: { params: Question[] }) {
           phrase="あたり!"
           className="text-5xl text-green-600"
         />
-        {current_exercise[current_exercise.length - 1].categoryId >
+        {current_exercise_group[current_exercise_group.length - 1].categoryId >
           Number(category_id) && (
           <CustomBtn
             onClick={() =>
@@ -41,8 +45,8 @@ export default function TestPassed({ params }: { params: Question[] }) {
             <i className="fa-solid fa-check text-white"></i>
           </CustomBtn>
         )}
-        {current_exercise[current_exercise.length - 1].categoryId ===
-          Number(category_id) && (
+        {current_exercise_group[current_exercise_group.length - 1]
+          .categoryId === Number(category_id) && (
           <CustomBtn onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink text-white"></i>
           </CustomBtn>

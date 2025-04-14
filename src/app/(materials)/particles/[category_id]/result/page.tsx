@@ -1,6 +1,6 @@
 import prisma from "../../../../../../prisma";
 import TestFailed from "@/components/test-failed/test-failed.component";
-import TestPassed from "@/components/test-passed/test-passed.component";
+import TestPassed from "@/components/test-passed/particles-test-passed.component";
 
 export default async function Page({
   searchParams,
