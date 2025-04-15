@@ -37,6 +37,7 @@ next-env.d.ts
 
 data.sql
 .env
+.env.local-app.template
 
 # non-VPS
 init-data.ts
@@ -49,6 +50,5 @@ docker-compose.vps.bk
 
 # VPS
 ghcr.txt
-.env.local-app.template
 .env.deploy-app.template
 .env.container-app.template
