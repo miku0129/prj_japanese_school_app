@@ -2,12 +2,12 @@ import prisma from "../../../../prisma";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const res = await prisma.question.findMany({
+  const res = await prisma.particlesQuestion.findMany({
     include: {
       additionalQuestion: true,
-      choices: {
+      options: {
         include: {
-          choice: true,
+          option: true,
         },
       },
     },
