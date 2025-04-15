@@ -37,14 +37,18 @@ next-env.d.ts
 
 data.sql
 .env
+.env.local-app.template
 
 # non-VPS
 init-data.ts
 particles-seed-data-raw.ts
 romajis-seed-data-raw.ts
+.env.vercel.template
+.env.vps.template
+/src/styles/styled-components.bk/
+docker-compose.vps.bk
 
 # VPS
 ghcr.txt
-.env.local-app.template
 .env.deploy-app.template
 .env.container-app.template
