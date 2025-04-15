@@ -69,7 +69,7 @@ export default function QuestionBeginner({
   }
 
   return (
-    <div className="h-full flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
+    <div className="flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
       <CustomVerticalText
         phrase="どのひらがながただしいかな？"
         className="ml-12"
@@ -147,7 +147,7 @@ export default function QuestionBeginner({
         width="70"
         height="70"
       />
-      <div className="flex flex-col justify-end mb-20 lg:mb-0">
+      <div className="flex flex-col justify-end">
         <CustomBtn onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-left text-white"></i>
         </CustomBtn>
