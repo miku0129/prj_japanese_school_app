@@ -24,7 +24,7 @@ export default function Question({
   }
 
   return (
-    <div className="h-screen flex flex-col justify-center gap-5 py-4 px-8">
+    <div className="h-dvh flex flex-col justify-center gap-5 p-8">
       <div className="text-6xl">{question.hiragana}</div>
       <div className="flex flex-row gap-5">
         <textarea

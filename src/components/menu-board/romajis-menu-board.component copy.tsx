@@ -8,7 +8,8 @@ export default function RomajisMenuBoard({
   params: RomajisQuestion[];
 }) {
   return (
-    <div className="h-screen flex flex-col justify-center gap-5 p-8">
+    <div className="h-svh flex justify-center">
+      <div className="flex flex-col justify-center gap-5">
       {params
         .filter((item: RomajisQuestion) => item.isIndex)
         .map((item: RomajisQuestion) => {
@@ -18,6 +19,7 @@ export default function RomajisMenuBoard({
             </div>
           );
         })}
+      </div>
     </div>
   );
 }
