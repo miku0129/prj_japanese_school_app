@@ -42,6 +42,10 @@ data.sql
 init-data.ts
 particles-seed-data-raw.ts
 romajis-seed-data-raw.ts
+.env.vercel.template
+.env.vps.template
+/src/styles/styled-components.bk/
+docker-compose.vps.bk
 
 # VPS
 ghcr.txt
