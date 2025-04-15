@@ -12,7 +12,7 @@ export default function ParticlesLayout({
         <NavBoard />
       </div>
 
-      <div className="h-screen">{children}</div>
+      <div className="h-svh py-8">{children}</div>
     </section>
   );
 }

@@ -101,7 +101,7 @@ export default function QuestionIntermediate({
   }
 
   return (
-    <div className="h-full flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
+    <div className="flex flex-row-reverse gap-4 justify-center text-3xl py-4 px-8">
       <CustomVerticalText
         phrase="どんなぶんがただしいかな？"
         className="ml-12"
@@ -222,7 +222,7 @@ export default function QuestionIntermediate({
         width={Number(question.options[3].option.styleWidth)}
         height={Number(question.options[3].option.styleHeight)}
       />
-      <div className="flex flex-col justify-end mb-20 lg:mb-0">
+      <div className="flex flex-col justify-end">
         <CustomBtn onClick={submitAnswer}>
           <i className="fa-solid fa-arrow-left text-white"></i>
         </CustomBtn>

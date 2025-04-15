@@ -14,7 +14,7 @@ export default async function HomeBoard() {
     },
   ];
   return (
-    <div className="h-screen flex justify-center">
+    <div className="h-svh flex justify-center">
       <div className="flex flex-col justify-center gap-5">
         {indexes.map((index: HomeIndex, _idx: number) => {
           return (
