@@ -8,7 +8,7 @@ export default function ParticlesMenuBoard({
   params: ParticlesQuestion[];
 }) {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="h-svh flex flex-col justify-center">
       <div className="flex flex-row-reverse justify-center gap-10">
         {params
           .filter((item: ParticlesQuestion) => item.isIndex)
