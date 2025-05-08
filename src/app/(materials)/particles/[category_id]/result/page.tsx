@@ -25,7 +25,9 @@ export default async function Page({
   const { props } = await getQuestions();
   const questions = props.questions;
 
-  const result = searchParams.state === "true" ? true : false;
+  const { state } = await searchParams;
+  const result = state === "true" ? true : false;
+
   return (
     <div>
       {result && <TestPassed params={questions} />}

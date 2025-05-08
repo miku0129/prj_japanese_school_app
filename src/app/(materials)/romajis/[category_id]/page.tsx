@@ -6,7 +6,7 @@ export default async function Page({
 }: {
   params: { category_id: string };
 }) {
-  const category_id = params.category_id;
+  const { category_id } = await params;
 
   const getQuestion = async () => {
     const questions = await prisma.romajisQuestion.findMany({

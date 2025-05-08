@@ -8,7 +8,7 @@ export default async function Page({
 }: {
   params: { category_id: string };
 }) {
-  const category_id = params.category_id;
+  const { category_id } = await params;
 
   const getQuestion = async () => {
     const questions = await prisma.particlesQuestion.findMany({
@@ -25,7 +25,8 @@ export default async function Page({
       },
     });
     const question = questions.find(
-      (question: ParticlesQuestion) => question.categoryId === Number(category_id)
+      (question: ParticlesQuestion) =>
+        question.categoryId === Number(category_id)
     );
     return {
       props: { question },
