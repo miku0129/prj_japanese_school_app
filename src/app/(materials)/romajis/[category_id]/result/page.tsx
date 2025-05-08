@@ -2,12 +2,12 @@ import prisma from "../../../../../../prisma";
 import RomajisTestPassed from "@/components/test-passed/romajis-test-passed.component";
 import TestFailed from "@/components/test-failed/test-failed.component";
 
-type PromiseSearchParams = Promise<SearchParams>
+type Params = Promise<SearchParams>
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams: PromiseSearchParams;
+  searchParams: Params;
 }) {
   const getQuestions = async () => {
     const questions = await prisma.romajisQuestion.findMany({
