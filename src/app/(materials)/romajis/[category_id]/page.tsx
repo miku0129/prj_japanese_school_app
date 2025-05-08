@@ -1,10 +1,12 @@
 import prisma from "../../../../../prisma";
 import Question from "../components/question";
 
+type Params = Promise<{ category_id: string }>
+
 export default async function Page({
   params,
 }: {
-  params: { category_id: string };
+  params: Params;
 }) {
   const { category_id } = await params;
 

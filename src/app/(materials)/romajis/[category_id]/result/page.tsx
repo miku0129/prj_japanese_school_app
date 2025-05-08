@@ -2,10 +2,12 @@ import prisma from "../../../../../../prisma";
 import RomajisTestPassed from "@/components/test-passed/romajis-test-passed.component";
 import TestFailed from "@/components/test-failed/test-failed.component";
 
+type Params = Promise<SearchParams>
+
 export default async function Page({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Params;
 }) {
   const getQuestions = async () => {
     const questions = await prisma.romajisQuestion.findMany({
@@ -26,6 +28,7 @@ export default async function Page({
 
   const { state } = await searchParams;
   const result = state === "true" ? true : false;
+  
   return (
     <div>
       {result && <RomajisTestPassed params={questions} />}

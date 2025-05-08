@@ -2,10 +2,12 @@ import prisma from "../../../../../../prisma";
 import TestFailed from "@/components/test-failed/test-failed.component";
 import TestPassed from "@/components/test-passed/particles-test-passed.component";
 
+type Params = Promise<SearchParams>
+
 export default async function Page({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Params;
 }) {
   const getQuestions = async () => {
     const questions = await prisma.particlesQuestion.findMany({
