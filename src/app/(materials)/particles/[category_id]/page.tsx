@@ -3,10 +3,12 @@ import QuestionBeginner from "../components/question-beginner/question-beginner.
 import QuestionIntermediate from "../components/question-intermediate/question-intermediate.component";
 import QuestionAdvanced from "../components/question-advanced/question-advanced.component";
 
+type Params = Promise<{ category_id: string }>
+
 export default async function Page({
   params,
 }: {
-  params: { category_id: string };
+  params: Params;
 }) {
   const { category_id } = await params;
 
