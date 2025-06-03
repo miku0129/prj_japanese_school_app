@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@msano/prj_msano_lib";
 import Audio from "@/components/audio/audio.component";
 import CustomVerticalText from "@/components/custom-vertical-text";
-import CustomBtn from "@/components/custom-btn";
 
 export default function QuestionAdvanced({
   params: question,
@@ -26,7 +26,10 @@ export default function QuestionAdvanced({
   return (
     <div className="h-full flex flex-row-reverse justify-center gap-5 px-8">
       <div className="flex flex-col pt-8">
-      <CustomVerticalText phrase="おとをききとろう" className="w-16 text-4xl" />
+        <CustomVerticalText
+          phrase="おとをききとろう"
+          className="w-16 text-4xl"
+        />
       </div>
       <div className="flex flex-col justify-center glow-2">
         <div className="flex justify-center">
@@ -42,9 +45,13 @@ export default function QuestionAdvanced({
               />
             </div>
             <div className="flex flex-col justify-end">
-              <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
-                <i className="fa-solid fa-arrow-left text-white"></i>
-              </CustomBtn>
+              <Button
+                size="lg"
+                aria-disabled={!userAnswer}
+                onClick={submitAnswer}
+              >
+                <i className="fa-solid fa-arrow-left"></i>
+              </Button>
             </div>
           </div>
         </div>

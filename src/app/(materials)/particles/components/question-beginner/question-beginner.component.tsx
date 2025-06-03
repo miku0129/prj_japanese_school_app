@@ -1,11 +1,11 @@
 "use client";
 
-import React, { DragEvent, useRef, useEffect } from "react";
+import React, { DragEvent, useRef, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Button } from "@msano/prj_msano_lib";
 import { mobileDragNDrop } from "@/lib";
 import CustomVerticalText from "@/components/custom-vertical-text";
-import CustomBtn from "@/components/custom-btn";
 
 export default function QuestionBeginner({
   params: question,
@@ -15,6 +15,8 @@ export default function QuestionBeginner({
   const containerRef1 = useRef<HTMLInputElement>(null);
   const containerRef2 = useRef<HTMLInputElement>(null);
   const containerRef3 = useRef<HTMLInputElement>(null);
+
+  const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
 
   const router = useRouter();
   const correct_answer = question.character;
@@ -51,12 +53,14 @@ export default function QuestionBeginner({
       containerRef2.current!.appendChild(document.getElementById(data)!);
     } else if (id === 3) {
       containerRef3.current!.appendChild(document.getElementById(data)!);
+      setBtnDisabled(false);
     }
   }
 
   function submitAnswer() {
     const data = document.getElementById("div3");
     if (data!.getElementsByTagName("img").length === 0) {
+      setBtnDisabled(!btnDisabled);
       window.alert("ひらがなをえらんでね");
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
@@ -148,9 +152,9 @@ export default function QuestionBeginner({
         height="70"
       />
       <div className="flex flex-col justify-end">
-        <CustomBtn onClick={submitAnswer}>
-          <i className="fa-solid fa-arrow-left text-white"></i>
-        </CustomBtn>
+        <Button size="lg" aria-disabled={btnDisabled} onClick={submitAnswer}>
+          <i className="fa-solid fa-arrow-left"></i>
+        </Button>
       </div>
     </div>
   );

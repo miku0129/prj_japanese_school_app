@@ -1,11 +1,10 @@
 "use client";
 
-import React, { DragEvent, useRef, useEffect } from "react";
+import React, { DragEvent, useRef, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Button } from "@msano/prj_msano_lib";
 import CustomVerticalText from "@/components/custom-vertical-text";
-import CustomBtn from "@/components/custom-btn";
-
 import { mobileDragNDrop } from "@/lib";
 
 export default function QuestionIntermediate({
@@ -23,6 +22,8 @@ export default function QuestionIntermediate({
   const containerRef5 = useRef<HTMLInputElement>(null);
   const containerRef6 = useRef<HTMLInputElement>(null);
   const containerRef7 = useRef<HTMLInputElement>(null);
+
+  const [btnDisabled, setBtnDisabled] = useState<boolean>(true);
 
   const router = useRouter();
   const correct_answer = question.answer;
@@ -69,10 +70,13 @@ export default function QuestionIntermediate({
       containerRef4.current!.appendChild(document.getElementById(data)!);
     } else if (id === 5) {
       containerRef5.current!.appendChild(document.getElementById(data)!);
+      setBtnDisabled(false);
     } else if (id === 6) {
       containerRef6.current!.appendChild(document.getElementById(data)!);
+      setBtnDisabled(false);
     } else if (id === 7) {
       containerRef7.current!.appendChild(document.getElementById(data)!);
+      setBtnDisabled(false);
     }
   }
 
@@ -86,6 +90,7 @@ export default function QuestionIntermediate({
       user_answer2!.getElementsByTagName("img").length === 0 ||
       user_answer3!.getElementsByTagName("img").length === 0
     ) {
+      setBtnDisabled(!btnDisabled);
       window.alert("ひらがなをえらんでね");
     } else {
       const user_answer =
@@ -223,9 +228,9 @@ export default function QuestionIntermediate({
         height={Number(question.options[3].option.styleHeight)}
       />
       <div className="flex flex-col justify-end">
-        <CustomBtn onClick={submitAnswer}>
-          <i className="fa-solid fa-arrow-left text-white"></i>
-        </CustomBtn>
+        <Button size="lg" aria-disabled={btnDisabled} onClick={submitAnswer}>
+          <i className="fa-solid fa-arrow-left"></i>
+        </Button>
       </div>
     </div>
   );
