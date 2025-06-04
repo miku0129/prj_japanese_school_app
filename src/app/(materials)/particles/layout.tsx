@@ -7,11 +7,7 @@ export default function ParticlesLayout({
 }) {
   return (
     <section>
-      <div className="flex justify-center gap-5 text-center pt-5 items-center">
-        <p className="text-2xl text-blue-300">は、を、へをまなぶ</p>
-        <NavBoard />
-      </div>
-
+      <NavBoard text="は、を、へをまなぶ" />
       <div className="h-svh py-8">{children}</div>
     </section>
   );

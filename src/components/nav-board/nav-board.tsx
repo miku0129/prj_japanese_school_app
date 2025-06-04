@@ -1,19 +1,21 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import CustomBtn from "@/components/custom-btn";
+import { Button } from "@msano/prj_msano_lib";
 
-export default function NavBoard() {
+export default function NavBoard(props: { text: string }) {
   const router = useRouter();
   return (
-    <CustomBtn
-      btnType="custom"
-      className="bg-blue-300 text-lg text-white p-1.5"
-      onClick={() => {
-        router.push(`/`);
-      }}
-    >
-      <i className="fa-solid fa-house"></i>
-    </CustomBtn>
+    <div className="flex justify-center gap-5 text-center pt-5 items-center opacity-50">
+      <p className="text-2xl text-blue-500">{props.text}</p>
+      <Button
+        size="sm"
+        onClick={() => {
+          router.push(`/`);
+        }}
+      >
+        <i className="fa-solid fa-house"></i>
+      </Button>
+    </div>
   );
 }
