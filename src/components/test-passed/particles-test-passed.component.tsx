@@ -31,7 +31,7 @@ export default function TestPassed({
       <div className="h-screen flex flex-col justify-evenly ">
         <CustomVerticalText
           phrase="あたり!"
-          className="text-5xl text-green-600"
+          className="text-5xl text-blue-500"
         />
         {current_exercise_group[current_exercise_group.length - 1].categoryId >
           Number(category_id) && (
