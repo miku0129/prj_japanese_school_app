@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import CustomBtn from "../custom-btn";
+import { Button } from "@msano/prj_msano_lib";
 
 export default function RomajisMenuBtn({
   params,
@@ -11,16 +11,16 @@ export default function RomajisMenuBtn({
   const router = useRouter();
   return (
     <div>
-      <CustomBtn
+      <Button
+        size="lg"
         onClick={() =>
           router.push(
             `/${params.category}/${params.categoryId}?group=${params.group}`
           )
         }
-        className="text-white"
       >
         <p>{params.groupExp}</p>
-      </CustomBtn>
+      </Button>
     </div>
   );
 }
