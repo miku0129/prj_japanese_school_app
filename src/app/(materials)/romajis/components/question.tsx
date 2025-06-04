@@ -32,7 +32,7 @@ export default function Question({
           onChange={(e) => setUserAnswer(e.target.value)}
           placeholder="ここにローマ字で答えを書いてね"
           rows={2}
-          value={userAnswer}
+          value={userAnswer.toLowerCase()}
           className="text-3xl md:text-5xl border-2 border-gray-300 rounded-lg"
         />
         <Button size="lg" aria-disabled={!userAnswer} onClick={submitAnswer}>
