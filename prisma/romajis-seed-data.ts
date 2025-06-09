@@ -21,7 +21,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "いっぱんてきなことば",
     isIndex: false,
     hiragana: "せんせい",
-    options: [{ option: "sennsei" }],
+    options: [{ option: "sennsei" }, { option: "sensei" }],
   },
   {
     category: "romajis",
@@ -53,7 +53,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: true,
     hiragana: "えんぴつ",
-    options: [{ option: "ennpitu" }, { option: "ennpitsu" }],
+    options: [{ option: "enpitu" }, { option: "enpitsu" },{ option: "ennpitu" }, { option: "ennpitsu" }],
   },
   {
     category: "romajis",
@@ -61,7 +61,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "しんぶん",
-    options: [{ option: "shinnbunn" }, { option: "sinnbunn" }],
+    options: [{ option: "sinbun" }, { option: "shinbun" },{ option: "sinnbun" }, { option: "shinnbun" },{ option: "sinbunn" }, { option: "shinbunn" }, { option: "sinnbunn" }, { option: "shinnbunn" }],
   },
   {
     category: "romajis",
@@ -69,7 +69,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "けんこう 💪",
-    options: [{ option: "kennkou" }],
+    options: [{ option: "kenkou" },{ option: "kennkou" }],
   },
   {
     category: "romajis",
@@ -77,7 +77,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "はんたい",
-    options: [{ option: "hanntai" }],
+    options: [{ option: "hantai" },{ option: "hanntai" }],
   },
   {
     category: "romajis",
@@ -85,7 +85,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "おんがく",
-    options: [{ option: "onngaku" }],
+    options: [{ option: "ongaku" },{ option: "onngaku" }],
   },
   {
     category: "romajis",
@@ -93,7 +93,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "もんすたー 👾",
-    options: [{ option: "monnsuta-" }],
+    options: [{ option: "monsuta-" },{ option: "monnsuta-" }],
   },
   {
     category: "romajis",
@@ -157,7 +157,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "でんしゃ",
-    options: [{ option: "dennsha" }, { option: "dennsya" }],
+    options: [{ option: "dennsha" }, { option: "dennsya" }, { option: "densha" }, { option: "densya" }],
   },
   {
     category: "romajis",
@@ -165,7 +165,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "びょういん",
-    options: [{ option: "byouinn" }],
+    options: [{ option: "byouin" },{ option: "byouinn" }],
   },
   {
     category: "romajis",
@@ -173,7 +173,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "げんき 😄",
-    options: [{ option: "gennki" }],
+    options: [{ option: "genki" },{ option: "gennki" }],
   },
   {
     category: "romajis",
