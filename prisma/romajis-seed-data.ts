@@ -61,7 +61,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "しんぶん",
-    options: [{ option: "sinbun" }, { option: "shinbun" },{ option: "sinbunn" }, { option: "shinbunn" }, { option: "sinnbunn" }, { option: "shinnbunn" }],
+    options: [{ option: "sinbun" }, { option: "shinbun" },{ option: "sinnbun" }, { option: "shinnbun" },{ option: "sinbunn" }, { option: "shinbunn" }, { option: "sinnbunn" }, { option: "shinnbunn" }],
   },
   {
     category: "romajis",
