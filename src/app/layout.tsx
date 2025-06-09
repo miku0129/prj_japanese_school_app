@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/global-tailwind-css/globals.tailwind.css";
+import "@msano/prj_msano_lib/dist/style.css";
 
 export const metadata: Metadata = {
   title: "Learning together",

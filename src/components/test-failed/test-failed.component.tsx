@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { Button } from "@msano/prj_msano_lib";
 import CustomVerticalText from "../custom-vertical-text";
-import CustomBtn from "../custom-btn";
 
 export default function TestFailed() {
   const router = useRouter();
@@ -11,11 +11,11 @@ export default function TestFailed() {
       <div className="h-screen flex flex-col justify-evenly ">
         <CustomVerticalText
           phrase="はずれ"
-          className="text-5xl text-pink-600"
+          className="text-5xl text-orange-500"
         />
-        <CustomBtn onClick={() => router.back()}>
-          <i className="fa-solid fa-rotate-right text-white"></i>
-        </CustomBtn>
+        <Button size="lg" variant="warning" onClick={() => router.back()}>
+          <i className="fa-solid fa-rotate-right"></i>
+        </Button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import CustomBtn from "@/components/custom-btn";
+import { Button } from "@msano/prj_msano_lib";
 
 export default function Question({
   params: question,
@@ -32,12 +32,12 @@ export default function Question({
           onChange={(e) => setUserAnswer(e.target.value)}
           placeholder="ここにローマ字で答えを書いてね"
           rows={2}
-          value={userAnswer}
+          value={userAnswer.toLowerCase()}
           className="text-3xl md:text-5xl border-2 border-gray-300 rounded-lg"
         />
-        <CustomBtn disabled={!userAnswer} onClick={submitAnswer}>
-          <i className="fa-solid fa-arrow-right text-white"></i>
-        </CustomBtn>
+        <Button size="lg" aria-disabled={!userAnswer} onClick={submitAnswer}>
+          <i className="fa-solid fa-arrow-right"></i>
+        </Button>
       </div>
     </div>
   );

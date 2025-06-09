@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { Button } from "@msano/prj_msano_lib";
 import CustomVerticalText from "../custom-vertical-text";
-import CustomBtn from "../custom-btn";
 
 export default function TestPassed({
   params,
@@ -31,25 +31,26 @@ export default function TestPassed({
       <div className="h-screen flex flex-col justify-evenly ">
         <CustomVerticalText
           phrase="あたり!"
-          className="text-5xl text-green-600"
+          className="text-5xl text-blue-500"
         />
         {current_exercise_group[current_exercise_group.length - 1].categoryId >
           Number(category_id) && (
-          <CustomBtn
+          <Button
+            size="lg"
             onClick={() =>
               router.push(
                 `/${category}/${Number(category_id) + 1}?group=${group}`
               )
             }
           >
-            <i className="fa-solid fa-check text-white"></i>
-          </CustomBtn>
+            <i className="fa-solid fa-check"></i>
+          </Button>
         )}
         {current_exercise_group[current_exercise_group.length - 1]
           .categoryId === Number(category_id) && (
-          <CustomBtn onClick={getMessage}>
-            <i className="fa-regular fa-face-smile-wink text-white"></i>
-          </CustomBtn>
+          <Button size="lg" onClick={getMessage}>
+            <i className="fa-regular fa-face-smile-wink"></i>
+          </Button>
         )}
       </div>
     </div>

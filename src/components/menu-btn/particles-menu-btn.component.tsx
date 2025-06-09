@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { Button } from "@msano/prj_msano_lib";
 import CustomVerticalText from "../custom-vertical-text";
-import CustomBtn from "../custom-btn";
 
 export default function ParticlesMenuBtn({
   params,
@@ -21,16 +21,16 @@ export default function ParticlesMenuBtn({
       {params.group === "advanced" && (
         <CustomVerticalText phrase="ことばをかきとろう" />
       )}
-
-      <CustomBtn
+      <Button
+        size="lg"
         onClick={() =>
           router.push(
             `/${params.category}/${params.categoryId}?group=${params.group}`
           )
         }
       >
-        <i className="fa-solid fa-check text-white"></i>
-      </CustomBtn>
+        <i className="fa-solid fa-check"></i>
+      </Button>
     </div>
   );
 }

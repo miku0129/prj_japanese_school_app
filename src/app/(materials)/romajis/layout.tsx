@@ -7,11 +7,7 @@ export default function RomajisLayout({
 }) {
   return (
     <section>
-      <div className="flex justify-center gap-5 text-center pt-5 items-center">
-        <p className="text-lg text-blue-300">コンピュータのローマ字をまなぶ</p>
-        <NavBoard />
-      </div>
-
+      <NavBoard text="コンピュータのローマ字をまなぶ" />
       {children}
     </section>
   );

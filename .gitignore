@@ -41,8 +41,8 @@ data.sql
 
 # non-VPS
 init-data.ts
-particles-seed-data-raw.ts
-romajis-seed-data-raw.ts
+particles-seed-data-raw
+romajis-seed-data-raw
 .env.vercel.template
 .env.vps.template
 /src/styles/styled-components.bk/
