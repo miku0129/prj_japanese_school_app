@@ -45,7 +45,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: true,
     hiragana: "えんぴつ",
-    options: [{ option: "ennpitu" }, { option: "ennpitsu" }],
+    options: [{ option: "enpitu" }, { option: "enpitsu" },{ option: "ennpitu" }, { option: "ennpitsu" }],
   },
   {
     category: "romajis",
@@ -61,7 +61,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "けんこう 💪",
-    options: [{ option: "kennkou" }],
+    options: [{ option: "kenkou" },{ option: "kennkou" }],
   },
   {
     category: "romajis",
@@ -69,7 +69,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "はんたい",
-    options: [{ option: "hanntai" }],
+    options: [{ option: "hantai" },{ option: "hanntai" }],
   },
   {
     category: "romajis",
@@ -77,7 +77,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "おんがく",
-    options: [{ option: "onngaku" }],
+    options: [{ option: "ongaku" },{ option: "onngaku" }],
   },
   {
     category: "romajis",
@@ -85,7 +85,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ん」をふくむことば",
     isIndex: false,
     hiragana: "もんすたー 👾",
-    options: [{ option: "monnsuta-" }],
+    options: [{ option: "monsuta-" },{ option: "monnsuta-" }],
   },
   {
     category: "romajis",
@@ -146,7 +146,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "でんしゃ",
-    options: [{ option: "dennsha" }, { option: "dennsya" }],
+    options: [{ option: "dennsha" }, { option: "dennsya" }, { option: "densha" }, { option: "densya" }],
   },
   {
     category: "romajis",
@@ -155,6 +155,7 @@ export const ROMAJIS_SEED_DATA = [
     isIndex: false,
     hiragana: "はなぢ",
     options: [{ option: "hanadi" }],
+
   },
   {
     category: "romajis",
@@ -163,6 +164,7 @@ export const ROMAJIS_SEED_DATA = [
     isIndex: false,
     hiragana: "こづつみ【小包】",
     options: [{ option: "kodutumi" }],
+
   },
   {
     category: "romajis",
