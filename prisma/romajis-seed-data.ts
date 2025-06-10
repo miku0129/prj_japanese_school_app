@@ -4,8 +4,8 @@ export const ROMAJIS_SEED_DATA = [
     group: "sokuon_chouon_seion",
     groupExp: "いっぱんてきなことば",
     isIndex: true,
-    hiragana: "がっこう",
-    options: [{ option: "gakkou" }],
+    hiragana: "くうき",
+    options: [{ option: "kuuki" }],
   },
   {
     category: "romajis",
@@ -14,14 +14,6 @@ export const ROMAJIS_SEED_DATA = [
     isIndex: false,
     hiragana: "きって",
     options: [{ option: "kitte" }],
-  },
-  {
-    category: "romajis",
-    group: "sokuon_chouon_seion",
-    groupExp: "いっぱんてきなことば",
-    isIndex: false,
-    hiragana: "せんせい",
-    options: [{ option: "sennsei" }],
   },
   {
     category: "romajis",
@@ -44,8 +36,8 @@ export const ROMAJIS_SEED_DATA = [
     group: "sokuon_chouon_seion",
     groupExp: "いっぱんてきなことば",
     isIndex: false,
-    hiragana: "とうきょう",
-    options: [{ option: "toukyou" }],
+    hiragana: "おかしをもらう",
+    options: [{ option: "okashiwomorau" }, { option: "okasiwomorau" }],
   },
   {
     category: "romajis",
@@ -60,8 +52,8 @@ export const ROMAJIS_SEED_DATA = [
     group: "hatsuon",
     groupExp: "「ん」をふくむことば",
     isIndex: false,
-    hiragana: "しんぶん",
-    options: [{ option: "shinnbunn" }, { option: "sinnbunn" }],
+    hiragana: "せんせい",
+    options: [{ option: "sennsei" }],
   },
   {
     category: "romajis",
@@ -100,8 +92,8 @@ export const ROMAJIS_SEED_DATA = [
     group: "youon",
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: true,
-    hiragana: "おきゃくさま",
-    options: [{ option: "okyakusama" }],
+    hiragana: "しゃかい",
+    options: [{ option: "shakai" }, { option: "syakai" }],
   },
   {
     category: "romajis",
@@ -117,11 +109,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "じゅぎょう",
-    options: [
-      { option: "jugyou" },
-      { option: "jyugyou" },
-      { option: "zyugyou" },
-    ],
+    options: [{ option: "jugyou" }, { option: "zyugyou" }],
   },
   {
     category: "romajis",
@@ -129,7 +117,7 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "「ゃ、ゅ、ょ」をふくむことば",
     isIndex: false,
     hiragana: "ちゃいろ",
-    options: [{ option: "chairo" }, { option: "cyairo" }, { option: "tyairo" }],
+    options: [{ option: "chairo" }, { option: "tyairo" }],
   },
   {
     category: "romajis",
@@ -148,7 +136,8 @@ export const ROMAJIS_SEED_DATA = [
     options: [
       { option: "jidousha" },
       { option: "jidousya" },
-      { option: "zidousya" }, 
+      { option: "zidousha" },
+      { option: "zidousya" },
     ],
   },
   {
@@ -164,16 +153,16 @@ export const ROMAJIS_SEED_DATA = [
     group: "dakuon",
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
-    hiragana: "びょういん",
-    options: [{ option: "byouinn" }],
+    hiragana: "はなぢ",
+    options: [{ option: "hanadi" }],
   },
   {
     category: "romajis",
     group: "dakuon",
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
-    hiragana: "げんき 😄",
-    options: [{ option: "gennki" }],
+    hiragana: "こづつみ【小包】",
+    options: [{ option: "kodutumi" }],
   },
   {
     category: "romajis",
@@ -181,6 +170,6 @@ export const ROMAJIS_SEED_DATA = [
     groupExp: "にごる発音をふくむことば",
     isIndex: false,
     hiragana: "じゅーす 🥤",
-    options: [{ option: "ju-su" }, { option: "jyu-su" }, { option: "zyu-su" }],
+    options: [{ option: "ju-su" }, { option: "zyu-su" }],
   },
 ];
