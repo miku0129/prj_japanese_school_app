@@ -74,3 +74,15 @@ interface RomajisQuestion extends ItemSkeleton {
   hiragana: string;
   options: RomajisOptionContainer[];
 }
+
+interface ProverbsQuestion extends ItemSkeleton {
+  category: string;
+  categoryId: number;
+  group: string;
+  groupExp: string;
+  isIndex: boolean;
+  question: string[];
+  answer: string;
+  proverb: string;
+  meaning: string;
+}

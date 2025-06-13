@@ -1,19 +1,26 @@
 # Learning together 🎌
 
-## Concept of this application
+## Motivation
 
-The primary purpose of [this application](https://prj-japanese-school-app.vercel.app/) is to create an **enjoyable environment** for children to learn Japanese.
+My goal of [this application](https://learnjp.msano.ovh/), as a tutor of Japanese school, is to create an **enjoyable environment** for everyone to learn Japanese.
 
-Currently, the app offers exercises focusing on the particles 'ha' and 'wo'. 
+## Features
 
-The questions are divided into three levels of difficulty, allowing students to select the level that best matches their ability:
+- To implement **CI/CD**, this application is deployed on a **VPS**.
+- Hosting setup is scripted with **Docker** and managed via **Portainer**.
+- A user-friendly and memorable URL is routed using **Nginx Proxy Manager**.
 
-* <font color="gray">Beginner level:</font> "Let's look for words" – Select the appropriate particle to complete the sentence.
-* <font color="gray">Intermediate level</font>: "Let's make up words" – Combine words and particles to form sentences.
-* <font color="gray">Advanced level</font>: "Let's dictate words" – Dictation practice.
+
 
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWV6YTU3MjRxNWVyNjk4ZWFqYnM2eDIwNzhocWxraDEybGVheGpyNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jnKiDYlTj6laIQmc3l/giphy.gif" height=300px style="border: 1px red solid;">
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWlieTgzZ2E3eHljOGN2bXh2MDZlNnZmdWZjdG5qNHF3eHliYjVicCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BZMrH67BYp3Y9RfWow/giphy.gif" height=300px style="border: 1px red solid;">
 <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTZtNGN6emIzOXdkZ3pkbWZ4MHNxcnN6c3BvN2c4aWZuZ3Nqdms3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zr66kx2qxaJz3FiTBo/giphy.gif" height=300px style="border: 1px red solid;">
 
-Enjoy your learning path! 😉  
+#### Enjoy your learning path!
+
+<hr>
+
+## Reference
+
+- [ Deploy app in VPS via Portainer 🤩](https://hugo.msano.ovh/post/20250222-deploy-app-in-vps/)
+- [ Deploy Fullstack in Vps 💪](https://hugo.msano.ovh/post/20250316-deploy-fullstack-in-vps/)
