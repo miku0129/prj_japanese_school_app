@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@msano/prj_msano_lib";
 
-export default function RomajisMenuBtn({
+export default function MenuBtn({
   params,
 }: {
-  params: RomajisQuestion;
+  params: RomajisQuestion | ProverbsQuestion ;
 }) {
   const router = useRouter();
   return (
