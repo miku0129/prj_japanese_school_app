@@ -1,6 +1,6 @@
 "use client";
 
-import RomajisMenuBtn from "../menu-btn/romajis-menu-btn.component copy";
+import RomajisMenuBtn from "../menu-btn/romajis-menu-btn.component";
 
 export default function RomajisMenuBoard({
   params,
