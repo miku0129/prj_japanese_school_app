@@ -67,7 +67,6 @@ interface RomajisOptionContainer {
 
 interface RomajisQuestion extends ItemSkeleton {
   category: string;
-  categoryId: number;
   group: string;
   groupExp: string;
   isIndex: boolean;

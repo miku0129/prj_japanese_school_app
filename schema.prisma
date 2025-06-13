@@ -52,7 +52,6 @@ model OptionsOnParticlesQuestions {
 model RomajisQuestion {
   id   Int   @id @default(autoincrement())
   category   String
-  categoryId   Int
   group   String
   groupExp   String
   isIndex   Boolean @default(false)

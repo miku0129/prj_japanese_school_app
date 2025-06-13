@@ -1,14 +1,10 @@
 import prisma from "../../../../../prisma";
 import Question from "../components/question";
 
-type Params = Promise<{ category_id: string }>
+type Params = Promise<{ id: string }>;
 
-export default async function Page({
-  params,
-}: {
-  params: Params;
-}) {
-  const { category_id } = await params;
+export default async function Page({ params }: { params: Params }) {
+  const { id } = await params;
 
   const getQuestion = async () => {
     const questions = await prisma.romajisQuestion.findMany({
@@ -24,7 +20,8 @@ export default async function Page({
       },
     });
     const question = questions.find(
-      (question: RomajisQuestion) => question.categoryId === Number(category_id)
+      (question: RomajisQuestion) => 
+       question.id === Number(id)
     );
     return {
       props: { question },
