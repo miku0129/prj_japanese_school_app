@@ -8,7 +8,7 @@ export default function ParticlesLayout({
   return (
     <section>
       <NavBoard text="は、を、へをまなぶ" />
-      <div className="h-svh py-8">{children}</div>
+      <div className="h-svh">{children}</div>
     </section>
   );
 }
