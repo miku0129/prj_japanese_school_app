@@ -9,7 +9,6 @@ async function main() {
     console.log("Seeding PARTICLES_SEED_DATA...");
 
     const seedData = PARTICLES_SEED_DATA;
-    let category_id = 0;
 
     for (let i = 0; i < seedData.length; i++) {
       let options = [];
@@ -31,7 +30,6 @@ async function main() {
         await prisma.particlesQuestion.create({
           data: {
             category: seedData[i].category,
-            categoryId: category_id,
             group: seedData[i].group,
             isIndex: seedData[i].isIndex,
             options: {
@@ -48,7 +46,6 @@ async function main() {
         await prisma.particlesQuestion.create({
           data: {
             category: seedData[i].category,
-            categoryId: category_id,
             group: seedData[i].group,
             isIndex: seedData[i].isIndex,
             options: {
@@ -59,7 +56,6 @@ async function main() {
           },
         });
       }
-      category_id++;
     }
     console.log("PARTICLES_SEED_DATA seeding complete.");
   })();

@@ -38,7 +38,6 @@ interface AdditionalQuestion extends ItemSkeleton {
 
 interface ParticlesQuestion extends ItemSkeleton {
   category: string;
-  categoryId: number;
   group: string;
   isIndex: boolean;
   options: ParticlesOptionContainer[];

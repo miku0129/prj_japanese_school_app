@@ -24,9 +24,7 @@ export default function ParticlesMenuBtn({
       <Button
         size="lg"
         onClick={() =>
-          router.push(
-            `/${params.category}/${params.categoryId}?group=${params.group}`
-          )
+          router.push(`/${params.category}/${params.id}?group=${params.group}`)
         }
       >
         <i className="fa-solid fa-check"></i>

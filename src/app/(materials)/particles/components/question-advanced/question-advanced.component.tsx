@@ -17,7 +17,7 @@ export default function QuestionAdvanced({
 
   function submitAnswer() {
     router.push(
-      `/particles/${question.categoryId}/result/?group=${
+      `/particles/${question.id}/result/?group=${
         question.group
       }&state=${question.answer === userAnswer}`
     );
