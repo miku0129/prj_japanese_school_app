@@ -39,6 +39,7 @@ interface AdditionalQuestion extends ItemSkeleton {
 interface ParticlesQuestion extends ItemSkeleton {
   category: string;
   group: string;
+  groupExp: string;
   isIndex: boolean;
   options: ParticlesOptionContainer[];
   additionalQuestion: AdditionalQuestion | null;
@@ -75,7 +76,6 @@ interface RomajisQuestion extends ItemSkeleton {
 
 interface ProverbsQuestion extends ItemSkeleton {
   category: string;
-  categoryId: number;
   group: string;
   groupExp: string;
   isIndex: boolean;

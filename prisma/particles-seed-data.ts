@@ -2,6 +2,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "wo",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: true,
     category: "particles",
     options: [
@@ -24,6 +25,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "wo",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: false,
     category: "particles",
     options: [
@@ -46,6 +48,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "ha",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: false,
     category: "particles",
     options: [
@@ -68,6 +71,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "he",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: false,
     category: "particles",
     options: [
@@ -90,6 +94,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "he",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: false,
     category: "particles",
     options: [
@@ -112,6 +117,7 @@ export const PARTICLES_SEED_DATA = [
   {
     character: "ha",
     group: "beginner",
+    groupExp: "ただしいことばをみつけよう",
     isIndex: false,
     category: "particles",
     options: [
@@ -135,6 +141,7 @@ export const PARTICLES_SEED_DATA = [
     character: "wo",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: true,
     answer: "imouto wo yobu",
     options: [
@@ -172,6 +179,7 @@ export const PARTICLES_SEED_DATA = [
     character: "he",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: false,
     answer: "migi he ugoku",
     options: [
@@ -209,6 +217,7 @@ export const PARTICLES_SEED_DATA = [
     character: "wo",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: false,
     answer: "boushi wo kaburu",
     options: [
@@ -246,6 +255,7 @@ export const PARTICLES_SEED_DATA = [
     character: "ha",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: false,
     answer: "natu ha atui",
     options: [
@@ -283,6 +293,7 @@ export const PARTICLES_SEED_DATA = [
     character: "ha",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: false,
     answer: "kuruma ha hashiru",
     options: [
@@ -320,6 +331,7 @@ export const PARTICLES_SEED_DATA = [
     character: "he",
     category: "particles",
     group: "intermediate",
+    groupExp: "ことばをただしくならべよう",
     isIndex: false,
     answer: "ushiro he sagaru",
     options: [
@@ -356,6 +368,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: true,
     answer: "うちゅうへいく",
     options: [],
@@ -367,6 +380,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: false,
     answer: "おにはこわい",
     options: [],
@@ -378,6 +392,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: false,
     answer: "ひだりへとぶ",
     options: [],
@@ -389,6 +404,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: false,
     answer: "おかしをたべる",
     options: [],
@@ -400,6 +416,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: false,
     answer: "ばななはおいしい",
     options: [],
@@ -411,6 +428,7 @@ export const PARTICLES_SEED_DATA = [
   {
     category: "particles",
     group: "advanced",
+    groupExp: "ことばをただしくききとろう",
     isIndex: false,
     answer: "ろうそくをけす",
     options: [],

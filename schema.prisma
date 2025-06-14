@@ -15,6 +15,7 @@ model ParticlesQuestion {
   id   Int   @id @default(autoincrement())
   category     String
   group  String
+  groupExp   String
   isIndex Boolean @default(false)
   options OptionsOnParticlesQuestions[]
   additionalQuestion Additionalquestion?

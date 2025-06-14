@@ -31,6 +31,7 @@ async function main() {
           data: {
             category: seedData[i].category,
             group: seedData[i].group,
+            groupExp: seedData[i].groupExp,
             isIndex: seedData[i].isIndex,
             options: {
               create: options,
@@ -47,6 +48,7 @@ async function main() {
           data: {
             category: seedData[i].category,
             group: seedData[i].group,
+            groupExp: seedData[i].groupExp,
             isIndex: seedData[i].isIndex,
             options: {
               create: options,

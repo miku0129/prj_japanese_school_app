@@ -1,6 +1,7 @@
 "use client";
 
-import PaticlesMenuBtn from "../menu-btn/particles-menu-btn.component";
+import MenuBtn from "../menu-btn/menu-btn.component";
+import CustomVerticalText from "../custom-vertical-text";
 
 export default function ParticlesMenuBoard({
   params,
@@ -14,8 +15,11 @@ export default function ParticlesMenuBoard({
           .filter((item: ParticlesQuestion) => item.isIndex)
           .map((item: ParticlesQuestion) => {
             return (
-              <div key={item.id}>
-                <PaticlesMenuBtn params={item} />
+              <div key={item.id} className="flex flex-col gap-2">
+                <CustomVerticalText phrase={item.groupExp} />
+                <MenuBtn item={item}>
+                  <i className="fa-solid fa-check"></i>
+                </MenuBtn>
               </div>
             );
           })}

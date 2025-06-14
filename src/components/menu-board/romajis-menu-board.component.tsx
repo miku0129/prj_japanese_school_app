@@ -15,7 +15,7 @@ export default function RomajisMenuBoard({
           .map((item: RomajisQuestion) => {
             return (
               <div key={item.id}>
-                <MenuBtn params={item} />
+                <MenuBtn item={item}>{item.groupExp}</MenuBtn>
               </div>
             );
           })}
