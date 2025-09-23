@@ -16,8 +16,14 @@ services:
     ports:
       - "4000:3000"
     volumes:
-      - /home/ubuntu/apps/prj_japanese_school_app/:/app
-      - /home/ubuntu/apps/prj_japanese_school_app/node_modules:/app/node_modules
+      # For VPS, use the following lines to mount the code from host to container
+      # - /home/ubuntu/apps/prj_japanese_school_app/:/app
+      # - /home/ubuntu/apps/prj_japanese_school_app/node_modules:/app/node_modules
+
+      # For local, use the following lines to mount the code from host to container
+      - .:/app:cached
+      - app_node_modules:/app/node_modules
+
     networks:
       jp-school-net:
         aliases:
@@ -43,6 +49,8 @@ services:
 
 volumes:
   pgdata:
+    driver: local
+  app_node_modules:
     driver: local
 
 networks:
