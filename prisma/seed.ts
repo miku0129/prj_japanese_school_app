@@ -9,7 +9,6 @@ async function main() {
     console.log("Seeding PARTICLES_SEED_DATA...");
 
     const seedData = PARTICLES_SEED_DATA;
-    let category_id = 0;
 
     for (let i = 0; i < seedData.length; i++) {
       let options = [];
@@ -31,8 +30,8 @@ async function main() {
         await prisma.particlesQuestion.create({
           data: {
             category: seedData[i].category,
-            categoryId: category_id,
             group: seedData[i].group,
+            groupExp: seedData[i].groupExp,
             isIndex: seedData[i].isIndex,
             options: {
               create: options,
@@ -48,8 +47,8 @@ async function main() {
         await prisma.particlesQuestion.create({
           data: {
             category: seedData[i].category,
-            categoryId: category_id,
             group: seedData[i].group,
+            groupExp: seedData[i].groupExp,
             isIndex: seedData[i].isIndex,
             options: {
               create: options,
@@ -59,7 +58,6 @@ async function main() {
           },
         });
       }
-      category_id++;
     }
     console.log("PARTICLES_SEED_DATA seeding complete.");
   })();
@@ -67,7 +65,6 @@ async function main() {
   (async function () {
     console.log("Seeding ROMAJIS_SEED_DATA...");
     const seedData = ROMAJIS_SEED_DATA;
-    let category_id = 0;
 
     for (let i = 0; i < seedData.length; i++) {
       let options = [];
@@ -88,7 +85,6 @@ async function main() {
       await prisma.romajisQuestion.create({
         data: {
           category: seedData[i].category,
-          categoryId: category_id,
           group: seedData[i].group,
           groupExp: seedData[i].groupExp,
           isIndex: seedData[i].isIndex,
@@ -98,7 +94,6 @@ async function main() {
           },
         },
       });
-      category_id++;
     }
     console.log("ROMAJIS_SEED_DATA seeding complete.");
   })();

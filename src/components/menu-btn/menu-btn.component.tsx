@@ -2,24 +2,25 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "@msano/prj_msano_lib";
+import { ReactNode } from "react";
 
-export default function MenuBtn({
-  params,
-}: {
-  params: RomajisQuestion | ProverbsQuestion ;
-}) {
+type MenuBtnProps = {
+  item: ParticlesQuestion | RomajisQuestion | ProverbsQuestion;
+  children: ReactNode;
+};
+
+export default function MenuBtn(params: MenuBtnProps) {
   const router = useRouter();
+  const { item, children } = params;
   return (
     <div>
       <Button
         size="lg"
         onClick={() =>
-          router.push(
-            `/${params.category}/${params.categoryId}?group=${params.group}`
-          )
+          router.push(`/${item.category}/${item.id}?group=${item.group}`)
         }
       >
-        <p>{params.groupExp}</p>
+        {children}
       </Button>
     </div>
   );

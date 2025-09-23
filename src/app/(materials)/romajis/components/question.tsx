@@ -15,7 +15,7 @@ export default function Question({
 
   function submitAnswer() {
     router.push(
-      `/romajis/${question.categoryId}/result/?group=${
+      `/romajis/${question.id}/result/?group=${
         question.group
       }&state=${question.options
         .map((item) => item.option.option)

@@ -12,11 +12,11 @@ export default async function HomeBoard() {
       jp: "ローマ字",
       sample: "コンピュータのローマ字",
     },
-        {
-      en: "proverbs",
-      jp: "ことわざ",
-      sample: "ことわざ",
-    },
+    //     {
+    //   en: "proverbs",
+    //   jp: "ことわざ",
+    //   sample: "ことわざ",
+    // },
 
   ];
   return (

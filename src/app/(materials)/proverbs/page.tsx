@@ -24,7 +24,6 @@ export default async function Page() {
     {
       id: 0,
       category: "proverb",
-      categoryId: 0,
       group: "group_1",
       groupExp: "group 1",
       isIndex: true,

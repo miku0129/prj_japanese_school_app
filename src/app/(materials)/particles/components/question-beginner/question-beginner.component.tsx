@@ -65,7 +65,7 @@ export default function QuestionBeginner({
     } else {
       const answer = data!.getElementsByTagName("img")[0].id;
       router.push(
-        `/particles/${question.categoryId}/result/?group=${
+        `/particles/${question.id}/result/?group=${
           question.group
         }&state=${correct_answer === answer}`
       );

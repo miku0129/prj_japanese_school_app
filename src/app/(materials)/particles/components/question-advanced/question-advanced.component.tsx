@@ -17,7 +17,7 @@ export default function QuestionAdvanced({
 
   function submitAnswer() {
     router.push(
-      `/particles/${question.categoryId}/result/?group=${
+      `/particles/${question.id}/result/?group=${
         question.group
       }&state=${question.answer === userAnswer}`
     );
@@ -31,7 +31,7 @@ export default function QuestionAdvanced({
           className="w-16 text-4xl"
         />
       </div>
-      <div className="flex flex-col justify-center glow-2">
+      <div className="flex flex-col pt-8">
         <div className="flex justify-center">
           <div className="flex flex-row-reverse gap-5 max-w-[calc(800/16*1rem)]">
             <div className="form-like-field">

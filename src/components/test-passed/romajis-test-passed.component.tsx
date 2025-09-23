@@ -13,7 +13,7 @@ export default function RomajisTestPassed({
   const searchParams = useSearchParams();
 
   const category = pathname.split("/")[1];
-  const category_id = pathname.split("/")[2];
+  const id = pathname.split("/")[2];
   const group = searchParams.get("group");
 
   const router = useRouter();
@@ -34,21 +34,19 @@ export default function RomajisTestPassed({
           phrase="あたり!"
           className="text-5xl text-blue-500"
         />
-        {current_exercise_group[current_exercise_group.length - 1].categoryId >
-          Number(category_id) && (
+        {current_exercise_group[current_exercise_group.length - 1].id >
+          Number(id) && (
           <Button
             size="lg"
             onClick={() =>
-              router.push(
-                `/${category}/${Number(category_id) + 1}?group=${group}`
-              )
+              router.push(`/${category}/${Number(id) + 1}?group=${group}`)
             }
           >
             <i className="fa-solid fa-check"></i>
           </Button>
         )}
-        {current_exercise_group[current_exercise_group.length - 1]
-          .categoryId === Number(category_id) && (
+        {current_exercise_group[current_exercise_group.length - 1].id ===
+          Number(id) && (
           <Button size="lg" onClick={getMessage}>
             <i className="fa-regular fa-face-smile-wink"></i>
           </Button>
